@@ -1,0 +1,13 @@
+λ composer install
+λ cp .env.example .env
+λ import DB, name:db_isan
+λ edit .env namedatabase:db_isan
+λ php artisan key:generate
+λ php artisan config:cache
+λ php artisan serve
+
+RAJAONGKIR_API_KEY=d6d29f847560b916b9b107a496ef4d39
+RAJAONGKIR_PACKAGE=starter
+
+login email :isan@gmail.com
+login pw :Pa$$w0rd!
