@@ -37,15 +37,15 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($orderbaru as $order)
+                          @foreach($order_terbaru as $order)
                             <tr>
-                                <td align="center"></td>
+                                <td class="text-center"></td>
                                 <td>{{ $order->invoice }}</td>
                                 <td>{{ $order->nama_pemesan }}</td>
                                 <td>{{ $order->subtotal + $order->biaya_cod }}</td>
                                 <td>{{ $order->metode_pembayaran }}</td>
                                 <td>{{ $order->name }}</td>
-                                <td align="center">
+                                <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                   <a href="{{ route('admin.transaksi.detail',['id'=>$order->id]) }}" class="btn btn-warning btn-sm">
                                    Lihat Detail

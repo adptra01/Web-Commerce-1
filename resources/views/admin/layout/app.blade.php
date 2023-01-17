@@ -21,7 +21,8 @@
 	<!-- partial:partials/_navbar.html -->
 	<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 		<div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-			<a class="navbar-brand brand-logo" href="{{ route('admin.dashboard') }}"><img src="{{ asset('adminassets') }}/assets/images/logo.svg" alt="logo" /></a>
+			<a class="navbar-brand brand-logo" href="{{ route('admin.dashboard') }}"><img src="{{ asset('adminassets') }}/assets/images/logo-mini.svg" alt="logo" /></a>
+			
 			<a class="navbar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}"><img src="{{ asset('adminassets') }}/assets/images/logo-mini.svg" alt="logo" /></a>
 		</div>
 		<div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -63,13 +64,9 @@
 			<ul class="nav">
 				<li class="nav-item nav-profile">
 					<a href="#" class="nav-link">
-						<div class="nav-profile-image">
-							<img src="{{ asset('adminassets') }}/assets/images/faces/face1.jpg" alt="profile">
-							<span class="login-status online"></span>
-							<!--change to offline or busy as needed-->
-						</div>
-						<div class="nav-profile-text d-flex flex-column">
-							<small class="font-weight-bold mb-2">THANKS DREAMS</small>
+						
+						<div class="nav-profile d-flex flex-column">
+							<h3 class="font-weight-bold mb-2">THANKS DREAMS</h3>
 							<span class="text-secondary text-small">Admin</span>
 						</div>
 						<i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -90,7 +87,7 @@
 				{{--  --}}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('admin.product') }}">
-						<span class="menu-title">Product</span>
+						<span class="menu-title">Produk</span>
 						<i class="mdi mdi mdi-ethernet menu-icon"></i>
 					</a>
 				</li>
@@ -100,24 +97,43 @@
 						<i class="mdi mdi mdi-alphabetical menu-icon"></i>
 					</a>
 				</li>
-				{{--  --}}
+				
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="true" aria-controls="page-layouts">
-					  <span class="menu-title">Transaksi</span>
-					  <i class="menu-arrow"></i>
-					  <i class="mdi mdi-apps menu-icon"></i>
+					<a class="nav-link" href="{{ route('admin.transaksi') }}">
+						<span class="menu-title">Semua transaksi</span>
+						<i class="mdi mdi mdi-apple-keyboard-caps menu-icon"></i>
 					</a>
-					<div class="collapse-show" id="page-layouts" style="">
-					  <ul class="nav flex-column sub-menu">
-						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.dibatalkan') }}"></a>Transaksi dibatalkan</li>
-						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.perludicek') }}">Transaksi perlu dicek</a></li>
-						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.perludikirim') }}">Transaksi perlu dikirm</a></li>
-						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.dikirim') }}">Transaksi dikirim</a></li>
-						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.selesai') }}">Transaksi selesai</a></li>
-					  </ul>
-					</div>
-				  </li>
-				{{--  --}}
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.transaksi.perludicek') }}">
+						<span class="nav-item menu-title">Transaksi Perlu Dicek</span>
+						{{-- <i class="mdi mdi mdi-alert-box menu-icon"></i> --}}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.transaksi.perludikirim') }}">
+						<span class="nav-item menu-title">Transaksi Perlu Dikirim</span>
+						{{-- <i class="mdi mdi mdi-apple-keyboard-caps menu-icon"></i> --}}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.transaksi.dikirim') }}">
+						<span class="nav-item menu-title">Transaksi Dikirim</span>
+						{{-- <i class="mdi mdi mdi-calendar-clock menu-icon"></i> --}}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.transaksi.selesai') }}">
+						<span class="nav-item menu-title">Transaksi Selesai</span>
+						{{-- <i class="mdi mdi mdi-check-all menu-icon"></i> --}}
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.transaksi.dibatalkan') }}">
+						<span class="nav-item menu-title">Transaksi Dibatalkan</span>
+						{{-- <i class="mdi mdi mdi-close menu-icon"></i> --}}
+					</a>
+				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('admin.pengaturan.alamat') }}">
 						<span class="menu-title">Alamat Toko</span>

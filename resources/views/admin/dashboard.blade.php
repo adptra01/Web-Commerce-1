@@ -21,7 +21,8 @@
                     <img src="{{ asset('adminassets') }}/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Pendapatan <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">Rp. {{ number_format($pendapatan->penghasilan,2,',','.') }}</h2>
+                    <h5 class="mb-5">Rp. {{ number_format($pendapatan,2,',','.') }}</h5>
+                    <small>(Pendapatan setelah barang diterima)</small>
                   </div>
                 </div>
               </div>
@@ -31,7 +32,8 @@
                     <img src="{{ asset('adminassets') }}/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Transaksi <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">{{ $transaksi->total_order }}</h2>
+                    <h5 class="mb-5">{{ $transaksi->total_order }}</h5>
+                    <small>(Semua transaksi)</small>
                   </div>
                 </div>
               </div>
@@ -41,7 +43,8 @@
                     <img src="{{ asset('adminassets') }}/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Pelanggan <i class="mdi mdi-diamond mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">{{ $pelanggan->total_user }}</h2>
+                    <h2 class="mb-5">{{ $pelanggan}}</h2>
+                    <small>(Semua pelanggan)</small>
                   </div>
                 </div>
               </div>
@@ -67,7 +70,7 @@
                             <tr>
                               <td>{{ $order->invoice }}</td>
                               <td>{{ $order->nama_pemesan }}</td>
-                              <td>{{ $order->subtotal + $order->biaya_cod }}</td>
+                              <td>Rp. {{ number_format($order->subtotal + $order->ongkir,2,',','.') }}</td>
                               <td>{{ $order->name }}</td>
                               <td> <a href="{{ route('admin.transaksi.detail',['id'=>$order->id]) }}" class="btn btn-warning btn-sm">Detail</a></td>
                             </tr>

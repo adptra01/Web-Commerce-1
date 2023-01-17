@@ -14,13 +14,13 @@ class TransaksiController extends Controller
     public function index()
     {
         //ambil data order yang status nya 1 atau masih baru/belum melalukan pembayaran
-        $orderbaru = Order::join('status_order', 'status_order.id', '=', 'order.status_order_id')
-            ->join('users', 'users.id', '=', 'order.user_id')
-            ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
-            ->where('order.status_order_id', 1)
-            ->get();
+        $order_terbaru = Order::join('status_order', 'status_order.id', '=', 'order.status_order_id')
+        ->join('users', 'users.id', '=', 'order.user_id')
+        ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
+        ->limit(10)
+        ->get();
 
-        return view('admin.transaksi.index', compact('orderbaru'));
+        return view('admin.transaksi.index', compact('order_terbaru'));
     }
 
     public function detail($id)
