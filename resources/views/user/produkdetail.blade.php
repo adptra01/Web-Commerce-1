@@ -3,7 +3,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span><a href="#">Produk</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">{{ $category->name }}</strong></div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                         {{ $produk->description }}
                     </p>
                     <p>
-                        <strong class="text-primary h4">Rp {{ number_format($produk->price,2,',','.')}} </strong>
+                        <strong class="text-primary h4">Rp {{ number_format($produk->price, 2, ',', '.') }} </strong>
                     </p>
                     <div class="mb-5">
                         <form action="{{ route('user.keranjang.simpan') }}" method="post">
@@ -47,7 +47,7 @@
                             </div>
 
                     </div>
-                    <p><button type="submit" class="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
+                    <p><button type="submit" class="buy-now btn btn-sm btn-primary">Masukkan ke keranjang</button></p>
                     </form>
                 </div>
             </div>

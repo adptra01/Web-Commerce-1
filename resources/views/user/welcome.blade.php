@@ -4,9 +4,9 @@
     <div class="container">
     <div class="row align-items-start align-items-md-center justify-content-end">
         <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-        <h1 class="mb-2">Lorem ipsum dolor sit amet.</h1> <br>
+        <h1 class="mb-2">HELLO FRIENDS THANKS DREAMS!!!</h1> <br>
         <div class="intro-text text-center text-md-left">
-            <span class="mb-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, nisi?</span> 
+            <span class="mb-4 text-white fw-bold">Tampil epic dengan pakaian menarik!!!</span> 
             <p><a href="{{ route('user.produk') }}" class="btn btn-sm btn-primary mt-5">Belanja Sekarang</a></p>
         </div>
         </div>

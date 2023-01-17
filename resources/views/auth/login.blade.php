@@ -35,7 +35,8 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
                             <div class="brand-logo">
-                                <img src="{{ asset('adminassets') }}/assets/images/logo.svg">
+                                {{-- <img src="{{ asset('adminassets') }}/assets/images/logo.svg"> --}}
+                                <H3 class="font-weight-bold">THANKS DREAMS DISTRO ONLINE SHOP</H3>
                             </div>
                             <h4>Halo! Selamat Datang</h4>
                             <h6 class="font-weight-light">Silahkan Login Untuk Melanjutkan.</h6>

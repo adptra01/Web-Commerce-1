@@ -35,10 +35,12 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
                             <div class="brand-logo">
-                                <img src="{{ asset('adminassets') }}/assets/images/logo.svg">
+                                {{-- <img src="{{ asset('adminassets') }}/assets/images/logo.svg"> --}}
+                                <H3 class="font-weight-bold">THANKS DREAMS DISTRO ONLINE SHOP</H3>
                             </div>
-                            <h4>New here?</h4>
-                            <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                            <h4>Baru disini?</h4>
+                            <h6 class="font-weight-light">                                Mendaftar itu mudah. Hanya membutuhkan beberapa langkah
+                                </h6>
                             <form class="pt-3" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
@@ -82,7 +84,7 @@
                                         name="password_confirmation" required autocomplete="new-password"
                                         placeholder="Konfirmasi Password">
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-4 d-none">
                                     <div class="form-check">
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input"> I agree to all Terms &
@@ -93,7 +95,7 @@
                                     <button type="submit"
                                         class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Daftar</button>
                                 </div>
-                                <div class="text-center mt-4 font-weight-light"> Already have an account? <a
+                                <div class="text-center mt-4 font-weight-light">Sudah punya akun, yuk belanja!!! <a
                                         href="{{ route('login') }}" class="text-primary">Login</a>
                                 </div>
                             </form>

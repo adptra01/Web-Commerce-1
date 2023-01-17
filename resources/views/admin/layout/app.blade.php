@@ -100,42 +100,25 @@
 						<i class="mdi mdi mdi-alphabetical menu-icon"></i>
 					</a>
 				</li>
+				{{--  --}}
+				
 				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi') }}">
-						<span class="menu-title">Transaksi</span>
-						<i class="mdi mdi mdi-apple-keyboard-caps menu-icon"></i>
+					<a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="true" aria-controls="page-layouts">
+					  <span class="menu-title">Transaksi</span>
+					  <i class="menu-arrow"></i>
+					  <i class="mdi mdi-apps menu-icon"></i>
 					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi.perludicek') }}">
-						<span class="menu-title">Transaksi Perlu Dicek</span>
-						<i class="mdi mdi mdi-alert-box menu-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi.perludikirim') }}">
-						<span class="menu-title">Transaksi Perlu Dikirim</span>
-						<i class="mdi mdi mdi-apple-keyboard-caps menu-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi.dikirim') }}">
-						<span class="menu-title">Transaksi Dikirim</span>
-						<i class="mdi mdi mdi-calendar-clock menu-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi.selesai') }}">
-						<span class="menu-title">Transaksi Selesai</span>
-						<i class="mdi mdi mdi-check-all menu-icon"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('admin.transaksi.dibatalkan') }}">
-						<span class="menu-title">Transaksi Dibatalkan</span>
-						<i class="mdi mdi mdi-close menu-icon"></i>
-					</a>
-				</li>
+					<div class="collapse-show" id="page-layouts" style="">
+					  <ul class="nav flex-column sub-menu">
+						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.dibatalkan') }}"></a>Transaksi dibatalkan</li>
+						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.perludicek') }}">Transaksi perlu dicek</a></li>
+						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.perludikirim') }}">Transaksi perlu dikirm</a></li>
+						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.dikirim') }}">Transaksi dikirim</a></li>
+						<li class="nav-item"> <a class="nav-link" href="{{ route('admin.transaksi.selesai') }}">Transaksi selesai</a></li>
+					  </ul>
+					</div>
+				  </li>
+				{{--  --}}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('admin.pengaturan.alamat') }}">
 						<span class="menu-title">Alamat Toko</span>
@@ -154,15 +137,7 @@
 		<!-- partial -->
 		<div class="main-panel">
 			@yield('content')
-			<!-- content-wrapper ends -->
-			<!-- partial:partials/_footer.html -->
-			<footer class="footer">
-				<div class="d-sm-flex justify-content-center justify-content-sm-between">
-					<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">SKRIPSI</a>. All rights reserved.</span>
-					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger">ISAN</i></span>
-				</div>
-			</footer>
-			<!-- partial -->
+			
 		</div>
 		<!-- main-panel ends -->
 	</div>

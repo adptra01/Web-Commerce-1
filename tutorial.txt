@@ -1,13 +1,26 @@
-λ composer install
-λ cp .env.example .env
-λ import DB, name:db_isan
-λ edit .env namedatabase:db_isan
-λ php artisan key:generate
-λ php artisan config:cache
-λ php artisan serve
+ composer install
+ cp .env.example .env
+ import DB, name:db_isan
+ edit .env namedatabase:db_isan
+ php artisan key:generate
+ php artisan config:cache
+ php artisan serve
 
 RAJAONGKIR_API_KEY=d6d29f847560b916b9b107a496ef4d39
 RAJAONGKIR_PACKAGE=starter
 
-login email :isan@gmail.com
-login pw :Pa$$w0rd!
+login email : isan@user.com
+login pw : password
+
+login email : isan@admin.com
+login pw : password
+
+tambah terminal laragon
+ "laragon": {
+            "path": "D:\\laragon\\bin\\cmder\\cmder.bat",
+            "args": [
+                "."
+            ],
+        },
+
+tambah phpmyadmin : https://amperakoding.com/article/cara-install-phpmyadmin-di-laragon
