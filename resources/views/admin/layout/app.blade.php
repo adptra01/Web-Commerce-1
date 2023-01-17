@@ -148,8 +148,8 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/admin/laporan">
-						<span class="menu-title">laporan</span>
-						<i class="mdi mdi mdi-credit-card menu-icon"></i>
+						<span class="menu-title">Laporan</span>
+						<i class="mdi mdi-cloud-print menu-icon"></i>
 					</a>
 				</li>
 				{{--  --}}
