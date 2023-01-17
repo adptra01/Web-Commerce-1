@@ -101,7 +101,6 @@
 					</a>
 				</li>
 				{{--  --}}
-				
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="true" aria-controls="page-layouts">
 					  <span class="menu-title">Transaksi</span>
