@@ -229,7 +229,7 @@
     $('#example').DataTable( {
         dom: 'QBfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            'copy', 'excel', 'pdf', 'print'
         ]
     } );
 } );
