@@ -33,7 +33,7 @@
 				<li class="nav-item nav-profile dropdown">
 					<a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
 						<div class="nav-profile-img">
-							<img src="https://api.dicebear.com/5.x/adventurer/svg?eyes=variant{{rand(01, 26)}}" alt="image">
+							<img src="https://api.dicebear.com/5.x/adventurer/svg?seed={{rand(01, 100)}}" alt="image">
 							<span class="availability-status online"></span>
 						</div>
 						<div class="nav-profile-text">
