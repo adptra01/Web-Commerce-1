@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div class="table-responsive">
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered text-center">
                                 <thead>
                                     <tr>
                                         <th class="product-thumbnail">Invoice</th>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
                                     <th class="product-thumbnail">Invoice</th>
@@ -102,7 +102,7 @@
                         <div class="row mb-5">
                             <div class="col-md-12">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered text-center">
                                         <thead>
                                             <tr>
                                                 <th class="product-thumbnail">Invoice</th>

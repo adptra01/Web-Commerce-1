@@ -33,7 +33,7 @@
 				<li class="nav-item nav-profile dropdown">
 					<a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
 						<div class="nav-profile-img">
-							<img src="{{ asset('adminassets') }}/assets/images/faces/face1.jpg" alt="image">
+							<img src="https://api.dicebear.com/5.x/adventurer/svg?eyes=variant{{rand(01, 26)}}" alt="image">
 							<span class="availability-status online"></span>
 						</div>
 						<div class="nav-profile-text">
@@ -82,6 +82,12 @@
 					<a class="nav-link" href="{{ route('admin.pelanggan') }}">
 						<span class="menu-title">Pelanggan</span>
 						<i class="mdi mdi mdi-account-multiple menu-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/administrator">
+						<span class="menu-title">Administrator</span>
+						<i class="mdi mdi mdi-account menu-icon"></i>
 					</a>
 				</li>
 				{{--  --}}

@@ -5,7 +5,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white mr-2">
                   <i class="mdi mdi-home"></i>
-                </span> Pesanan </h3>
+                </span> Transaksi </h3>
               <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item active" aria-current="page">
@@ -20,7 +20,7 @@
                   <div class="card-body">
                     <div class="row mb-3">
                       <div class="col">
-                      <h4 class="card-title">Data Pesanan Baru</h4>
+                      <h4 class="card-title">Semua transaksi</h4>
                       </div>
                     </div>
                     <div class="table-responsive">

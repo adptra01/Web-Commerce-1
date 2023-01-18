@@ -10,6 +10,7 @@
 |
 */
 
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\LaporanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,13 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
 
     Route::get('/admin/pelanggan','admin\PelangganController@index')->name('admin.pelanggan');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
+
+    Route::get('/administrator', [AdminController::class, 'index']);
+    Route::get('/administrator/create', [AdminController::class, 'create']);
+    Route::post('/administrator/store', [AdminController::class, 'store']);
+    Route::get('/administrator/{id}/edit', [AdminController::class, 'show']);
+    Route::put('/administrator/{id}', [AdminController::class, 'update']);
+    Route::delete('/administrator/{id}', [AdminController::class, 'destroy']);
 });
 
 Route::group(['middleware' => ['auth','checkRole:customer']],function(){

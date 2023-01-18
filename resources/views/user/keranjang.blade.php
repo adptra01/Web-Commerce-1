@@ -11,11 +11,11 @@
 
 <div class="site-section">
 <div class="container">
-<div class="row mb-5">
+<div class="row mb-5 table-responsive">
     <form class="col-md-12" method="post" action="{{ route('user.keranjang.update') }}">
         @csrf
-        <table class="table table-bordered table-responsive">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="text-center">
                 <tr>
                     <th class="product-thumbnail">Gambar</th>
                     <th class="product-name">Produk</th>

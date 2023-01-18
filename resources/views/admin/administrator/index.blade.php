@@ -5,7 +5,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white mr-2">
                   <i class="mdi mdi-home"></i>
-                </span> Transaksi </h3>
+                </span> Administrator </h3>
               <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item active" aria-current="page">
@@ -20,7 +20,10 @@
                   <div class="card-body">
                     <div class="row mb-3">
                       <div class="col">
-                      <h4 class="card-title">Data Pesanan Perlu Di Kirim</h4>
+                      <h4 class="card-title">Data Administrator</h4>
+                      </div>
+                      <div class="col text-right">
+                      <a href="/administrator/create" class="btn btn-primary">Tambah</a>
                       </div>
                     </div>
                     <div class="table-responsive">
@@ -28,28 +31,29 @@
                         <thead>
                           <tr>
                             <th width="5%">No</th>
-                            <th>No Invoice</th>
-                            <th>Pemesan</th>
-                            <th>Subtotal</th>
-                            <th>Metode Pembayaran</th>
-                            <th>Status Pesanan</th>
+                            <th>Nama </th>
+                            <th>email </th>
                             <th width="15%">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($orderbaru as $order)
+                          @foreach($admin as $no => $item)
                             <tr>
-                                <td align="center"></td>
-                                <td>{{ $order->invoice }}</td>
-                                <td>{{ $order->nama_pemesan }}</td>
-                                <td>{{ $order->subtotal + $order->biaya_cod }}</td>
-                                <td>{{ $order->metode_pembayaran }}</td>
-                                <td>{{ $order->name }}</td>
-                                <td align="center">
+                                <td class="text-center">{{ ++$no}}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                  <a href="{{ route('admin.transaksi.detail',['id'=>$order->id]) }}"  class="btn btn-warning btn-sm">
-                                    Input No Resi
+                                  <a href="/administrator/{{ $item->id }}/edit" class="btn btn-warning btn-sm">
+                                    <i class="mdi mdi-tooltip-edit"></i>
                                   </a>
+                                  <form action="/administrator/{{ $item->id}}" method="POST">
+                                  @csrf
+                                  @method('delete')
+                                  <button onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                                    <i class="mdi mdi-delete-forever"></i>
+                                  </button>
+                                </form>
                                 </div>
                                 </td>
                             </tr>
