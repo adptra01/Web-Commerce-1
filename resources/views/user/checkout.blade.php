@@ -62,7 +62,7 @@
                   </div>
                   <div class="form-group">
                     <label for="">No telepon yang bisa dihubungi</label>
-                    <input type="text" name="no_hp"  class="form-control" required>
+                    <input type="number" name="no_hp"  class="form-control" required>
                   </div>
                   <input type="hidden" name="invoice" value="{{ $invoice }}">
                   <input type="hidden" name="subtotal" value="{{ $alltotal }}">

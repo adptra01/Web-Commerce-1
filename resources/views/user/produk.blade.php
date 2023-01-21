@@ -20,17 +20,19 @@
                         @foreach ($produks as $produk)
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
-                                    <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}">
                                         <img src="{{ asset('imageproducts/' . $produk->image) }}" alt="Image placeholder"
                                             class="img-fluid" width="100%" style="height:200px">
                                     </a>
                                     <div class="block-4-text p-4">
-                                        <h3><a
-                                                href="{{ route('user.produk.detail', ['id' => $produk->id]) }}">{{ $produk->name }}</a>
+                                        <h3 class="text-primary">{{ $produk->name }}
                                         </h3>
                                         <p class="mb-0">RP {{ $produk->price }}</p>
-                                        <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                            class="btn btn-primary mt-2">Detail</a>
+                                        @if ($produk->stok == 0)
+                                        <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}" class="btn btn-primary mt-2 disabled"  tabindex="-1" role="button" aria-disabled="true">Habis</a>
+                                        @else
+                                        <a href="{{ route('user.produk.detail',['id' =>  $produk->id]) }}" class="btn btn-primary mt-2">Detail</a>
+                                        @endif
+                                       
                                     </div>
                                 </div>
                             </div>

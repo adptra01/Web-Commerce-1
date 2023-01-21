@@ -6,6 +6,7 @@ use App\Alamat;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Keranjang;
+use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -32,10 +33,21 @@ class KeranjangController extends Controller
 
     public function simpan(Request $request)
     {
+        $request->validate([
+            'user_id' => 'required',
+            'products_id' => 'required',
+            'qty' => 'required|numeric|min:1',
+        ]);
+        $product = Product::findOrFail($request->products_id);
+
+        if ($request->qty > $product->stok) {
+            return redirect()->back()->withErrors(['quantity' => 'Jumlah pemesanan melebihi stok yang tersedia']);
+        }
         Keranjang::create([
             'user_id' => $request->user_id,
             'products_id' => $request->products_id,
-            'qty' => $request->qty
+            'qty' => $request->qty,
+
         ]);
 
         return redirect()->route('user.keranjang');
@@ -51,6 +63,10 @@ class KeranjangController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'qty' => ' min:1',
+        ]);
+
         $index = 0;
         foreach ($request->id as $id) {
             $keranjang = Keranjang::findOrFail($id);

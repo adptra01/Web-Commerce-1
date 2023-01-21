@@ -3,12 +3,22 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span><a href="#">Produk</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span><a
+                        href="#">Produk</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">{{ $category->name }}</strong></div>
             </div>
         </div>
     </div>
 
+    @foreach ($errors->all() as $error)
+        <div class="container alert alert-danger alert-dismissible fade show text-center justify-content-center"
+            role="alert">
+           {{ $error }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endforeach
     <div class="site-section">
         <div class="container">
             <div class="row">
@@ -16,7 +26,7 @@
                     <img src="{{ asset('imageproducts/' . $produk->image) }}" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-black">{{ $produk->name }}</h2>
+                    <h2 class="text-primary">{{ $produk->name }}</h2>
                     <p>
                         {{ $produk->description }}
                     </p>
