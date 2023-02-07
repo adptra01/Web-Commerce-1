@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Alamat;
 use App\Http\Controllers\Controller;
 use App\Keranjang;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -56,6 +57,12 @@ class CheckoutController extends Controller
                 ->select('alamat.*', 'cities.title as kota', 'provinces.title as prov')
                 ->where('alamat.user_id', $id_user)
                 ->first();
+
+            foreach($carts as $key){
+                $products = Product::findOrFail($key->products_id);
+                $products->stok -= $key->qty;
+                $products->save();
+            }
     
             //buat kode invoice sesua tanggalbulantahun dan jam
             return view('user.checkout', [

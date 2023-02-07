@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Detailorder;
 use App\Keranjang;
+use App\Product;
 use App\Rekening;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -113,6 +114,14 @@ class OrderController extends Controller
         $order->status_order_id = 6;
         $order->save();
 
+        $products = Detailorder::where('order_id', $order->id)->get();
+        foreach ($products as $product) {
+            $item = Product::find($product->product_id);
+            if ($item) {
+                $item->stok += $product->qty;
+                $item->save();
+            }
+        }
         return redirect()->route('user.order');
     }
 
@@ -133,7 +142,7 @@ class OrderController extends Controller
                     'ongkir' => $request->ongkir,
                     'biaya_cod' => 10000,
                     'no_hp' => $request->no_hp,
-                    'pesan' => $request->pesan
+                    'pesan' => $request->pesan,
                 ]);
             } else {
                 //jika memilih transfer maka data yang ini
