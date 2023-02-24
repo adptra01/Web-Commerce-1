@@ -11,11 +11,11 @@
 
     <div class="site-section">
         <div class="container">
-            @error('salah')
-            <div class="alert alert-danger">
-                    {{ $message }}
+            @if(session('salah'))
+                <div class="alert alert-warning text-center font-weight-bold">
+                    {{ session('salah') }}
                 </div>
-                @enderror
+            @endif
             
             <div class="row mb-5 table-responsive">
                 <form class="col-md-12" method="post" action="{{ route('user.keranjang.update') }}">

@@ -23,5 +23,7 @@ class UserSeeder extends Seeder
             ]
         ];
         User::insert($data);
+
+        // User::factory(10)->create();
     }
 }

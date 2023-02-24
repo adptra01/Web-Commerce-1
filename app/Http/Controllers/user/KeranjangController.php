@@ -70,8 +70,16 @@ class KeranjangController extends Controller
         $index = 0;
         foreach ($request->id as $id) {
             $keranjang = Keranjang::findOrFail($id);
-            $keranjang->qty = $request->qty[$index];
-            $keranjang->save();
+            $productId = $keranjang->products_id;
+            $product = Product::findOrFail($productId);
+            $stok = $product->stok;
+            if($request->qty[$index] <= $stok){
+                $keranjang->qty = $request->qty[$index];
+                $keranjang->save();
+            }else{
+                return back()->with('salah', 'Update jumlah produk melebihi stok barang, perhatikan jumlah stok produk yang ingin dipesan.');
+            }
+            
             $index++;
         }
 
