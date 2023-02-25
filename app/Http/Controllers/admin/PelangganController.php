@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,14 @@ class PelangganController extends Controller
             ->select('users.*', 'alamat.detail', 'cities.title as kota', 'provinces.title as prov')
             ->where('users.role', '=', 'customer')->get();
 
+
         return view('admin.pelanggan.index', compact('pelanggan'));
+    }
+
+    public function customer(){
+        $customer = User::where('users.role', '=', 'customer')->get();
+
+        return view('admin.pelanggan.customer', compact('customer'));
+
     }
 }

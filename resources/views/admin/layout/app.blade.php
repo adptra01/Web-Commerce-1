@@ -85,6 +85,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="{{ route('admin.customer') }}">
+						<span class="menu-title">Customer</span>
+						<i class="mdi mdi mdi-account-multiple menu-icon"></i>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="/administrator">
 						<span class="menu-title">Administrator</span>
 						<i class="mdi mdi mdi-account menu-icon"></i>

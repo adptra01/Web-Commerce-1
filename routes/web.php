@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::post('/admin/rekening/update/{id}','admin\RekeningController@update')->name('admin.rekening.update');
 
     Route::get('/admin/pelanggan','admin\PelangganController@index')->name('admin.pelanggan');
+    Route::get('/admin/customer','admin\PelangganController@customer')->name('admin.customer');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
 
     Route::get('/administrator', [AdminController::class, 'index']);
