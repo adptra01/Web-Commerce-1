@@ -17,7 +17,7 @@
                         ({{ $total }} Hasil)</h3>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5 justify-content-center">
                 <div class="col-md-9 order-2">
                     <div class="row mb-5">
                         @foreach ($produks as $produk)
@@ -43,7 +43,7 @@
                     </div>
                     <div class="row" data-aos="fade-up">
                         <div class="col-md-12 text-right">
-                            <div class="site-block-27">
+                            <div class="d-flex justify-content-center">
                                 {{ $produks->links() }}
                             </div>
                         </div>
