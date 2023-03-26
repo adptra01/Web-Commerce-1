@@ -102,3 +102,4 @@ Route::group(['middleware' => ['auth','checkRole:customer']],function(){
 
 Route::get('/ongkir', 'OngkirController@index');
 Route::get('/ongkir/province/{id}/cities', 'OngkirController@getCities');
+Route::view('/index', 'index');

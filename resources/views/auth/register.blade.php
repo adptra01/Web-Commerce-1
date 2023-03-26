@@ -2,49 +2,44 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>THANKS DREAMS</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('adminassets') }}/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="{{ asset('adminassets') }}/assets/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-    <link rel="stylesheet" href="{{ asset('adminassets') }}/assets/css/style.css">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('adminassets') }}/assets/images/favicon.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/layouts/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <div class="container-scroller">
-        <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="content-wrapper d-flex align-items-center auth">
-                <div class="row flex-grow">
-                    <div class="col-lg-4 mx-auto">
-                        <div class="auth-form-light text-left p-5">
-                            <div class="brand-logo">
-                                {{-- <img src="{{ asset('adminassets') }}/assets/images/logo.svg"> --}}
-                                <H3 class="font-weight-bold">THANKS DREAMS DISTRO ONLINE SHOP</H3>
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Buat akun!</h1>
                             </div>
-                            <h4>Baru disini?</h4>
-                            <h6 class="font-weight-light">                                Mendaftar itu mudah. Hanya membutuhkan beberapa langkah
-                                </h6>
                             <form class="pt-3" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <input id="name" type="text"
+                                        <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus
                                         placeholder="Nama">
@@ -54,22 +49,21 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-
-
                                 </div>
                                 <div class="form-group">
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
-                                <div class="form-group">
-                                    <input id="password" type="password"
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password" placeholder="Password">
 
@@ -78,46 +72,39 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
-                                <div class="form-group">
-                                    <input id="password-confirm" type="password" class="form-control"
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password"
                                         placeholder="Konfirmasi Password">
-                                </div>
-                                <div class="mb-4 d-none">
-                                    <div class="form-check">
-                                        <label class="form-check-label text-muted">
-                                            <input type="checkbox" class="form-check-input"> I agree to all Terms &
-                                            Conditions </label>
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <button type="submit"
-                                        class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Daftar</button>
-                                </div>
-                                <div class="text-center mt-4 font-weight-light">Sudah punya akun, yuk belanja!!! <a
-                                        href="{{ route('login') }}" class="text-primary">Login</a>
-                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Buat Akun
+                                </button>
                             </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="/login">Sudah punya Akun? Login!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
         </div>
-        <!-- page-body-wrapper ends -->
+
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="{{ asset('adminassets') }}/assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="{{ asset('adminassets') }}/assets/js/off-canvas.js"></script>
-    <script src="{{ asset('adminassets') }}/assets/js/hoverable-collapse.js"></script>
-    <script src="{{ asset('adminassets') }}/assets/js/misc.js"></script>
-    <!-- endinject -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/layouts/vendor/jquery/jquery.min.js"></script>
+    <script src="/layouts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/layouts/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/layouts/js/sb-admin-2.min.js"></script>
+
 </body>
 
 </html>
