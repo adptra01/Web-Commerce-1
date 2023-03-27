@@ -1,74 +1,69 @@
-@extends('admin.layout.app')
-@section('content')
-<div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Produk </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
+<x-apps>
+    <x-slot name="title">PRODUK TOKO</x-slot>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800 font-weight-bold">PRODUK TOKO</h1>
+        @if (session('success'))
+            <div class="alert alert-primary shadow" role="alert">
+                {{ session('success') }}
             </div>
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row mb-3">
-                      <div class="col">
-                      <h4 class="card-title">Data Produk</h4>
-                      </div>
-                      <div class="col text-right">
-                      <a href="{{ route('admin.product.tambah') }}" class="btn btn-primary">Tambah</a>
-                      </div>
-                    </div>
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-hovered" id="table">
-                        <thead>
-                          <tr>
-                            <th width="5%">No</th>
-                            <th>Nama Produk</th>
-                            <th>Harga</th>
-                            <th>Berat</th>
-                            <th>Kategori</th>
-                            <th>Stok</th>
-                            <th>Gambar</th>
-                            <th width="15%">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach($products as $product)
-                            <tr>
-                                <td align="center"></td>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->price }}</td>
-                                <td>{{ $product->weigth }}gr</td>
-                                <td>{{ $product->nama_kategori }}</td>
-                                <td>{{ $product->stok }}</td>
-                                <td><img src="{{ asset('imageproducts/'.$product->image) }}" alt="" ></td>
-                                <td align="center">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                  <a href="{{ route('admin.product.edit',['id'=>$product->id]) }}" class="btn btn-warning btn-sm">
-                                    <i class="mdi mdi-tooltip-edit"></i>
-                                  </a>
-                                  <a href="{{ route('admin.product.delete',['id'=>$product->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
-                                    <i class="mdi mdi-delete-forever"></i>
-                                  </a>
-                                </div>
-                                </td>
-                            </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+        @elseif ($errors->any())
+            <div class="alert alert-danger shadow" role="alert">
+                Ada yang salah dengan inputan anda, silahkan input ulang.
+            </div>
+        @else
+            <div class="media bg-primary rounded mb-3 text-white p-3">
+                <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau menghapus produk yang dijual di toko Anda. Anda harus memasukkan informasi produk secara lengkap dan
+                        akurat sebelum menyimpannya.</small>
                 </div>
-              </div>
             </div>
-          </div>
-          
-@endsection
+        @endif
+        @include('admin.product.tambah')
+    </div>
+    <div class="card shadow m-4">
+        <div class="card-body">
+            <table id="mytable" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th width="5%">No</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Berat</th>
+                        <th>Kategori</th>
+                        <th>Stok</th>
+                        <th>Gambar</th>
+                        <th width="15%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($products as $no => $product)
+                        <tr>
+                            <td align="center">{{ ++$no }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
+                            <td>{{ $product->weigth }}gr</td>
+                            <td>{{ $product->nama_kategori }}</td>
+                            <td>{{ $product->stok }}</td>
+                            <td><img src="{{ asset('imageproducts/' . $product->image) }}" class="rounded-circle" style="object-fit: cover;
+                              object-position: center; width: 25px; height:25px;"  alt="{{ $product->name }}">
+                            </td>
+                            <td>
+                                <div class="d-flex" style="gap: 5px">
+                                    <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}"
+                                        class="btn btn-warning btn-sm"><i class="fa fa-gavel" aria-hidden="true"></i>
+                                        Ubah</a>
+                                    <a href="{{ route('admin.product.delete', ['id' => $product->id]) }}"
+                                        onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i> Hapus
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</x-apps>

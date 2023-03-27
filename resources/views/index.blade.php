@@ -1,38 +1,43 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Tambah 
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sebelum Anda menginputkan admin baru, pastikan Anda telah memeriksa identitas dan kredensialnya dengan teliti. Admin baru akan memiliki akses ke data penting dan fitur sensitif yang dapat mempengaruhi keamanan dan kinerja sistem. Jangan memberikan hak admin kepada orang yang tidak Anda kenal atau percaya.</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form action="/administrator/store" method="POST">
-                @csrf
-                <div class="form-group">
-                <label for="exampleInputUsername1">Nama administrator</label>
-                <input type="text" class="form-control" name="name" required>
+<x-apps>
+  <div class="card">
+    <div class="card-body m-4">
+      <table class="table table-bordered table-hovered" id="mytable">
+        <thead>
+          <tr>
+            <th width="5%">No</th>
+            <th>Nama Produk</th>
+            <th>Harga</th>
+            <th>Berat</th>
+            <th>Kategori</th>
+            <th>Stok</th>
+            <th>Gambar</th>
+            <th width="15%">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($products as $product)
+            <tr>
+                <td align="center"></td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->price }}</td>
+                <td>{{ $product->weigth }}gr</td>
+                <td>{{ $product->nama_kategori }}</td>
+                <td>{{ $product->stok }}</td>
+                <td><img src="{{ asset('imageproducts/'.$product->image) }}" alt="" ></td>
+                <td align="center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="{{ route('admin.product.edit',['id'=>$product->id]) }}" class="btn btn-warning btn-sm">
+                    <i class="mdi mdi-tooltip-edit"></i>
+                  </a>
+                  <a href="{{ route('admin.product.delete',['id'=>$product->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                    <i class="mdi mdi-delete-forever"></i>
+                  </a>
                 </div>
-                <div class="form-group">
-                <label for="exampleInputUsername1">Email</label>
-                <input type="email" class="form-control" name="email" required>
-                </div>
-                <div class="form-group">
-                <label for="exampleInputUsername1">Password</label>
-                <input type="text" class="form-control" name="password" value="administrator  {default}" readonly>
-                </div>
-                <div class="text-right">
-                    <button type="submit" class="btn btn-outline-success text-right">Simpan</button>
-                </div>
-            </form>
-        </div>
-      </div>
+                </td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
     </div>
   </div>
+</x-apps>

@@ -5,7 +5,7 @@
   <div class="container">
     <h1 class="h3 mb-2 text-gray-800 font-weight-bold">PELANGGAN</h1>
     <div class="alert alert-warning shadow" role="alert">
-        <strong>Peringatan!!! </strong>Anda bertanggung jawab untuk mengelola data customer dengan hati-hati. Jangan menghapus, mengubah, atau menyalin data customer tanpa izin dari customer yang bersangkutan
+        <strong>Peringatan!!! </strong>Anda bertanggung jawab untuk mengelola data customer dengan hati-hati. Jangan menyalin data customer tanpa izin dari customer yang bersangkutan.
     </div>
   </div>
   

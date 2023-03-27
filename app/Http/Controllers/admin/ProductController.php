@@ -12,19 +12,19 @@ class ProductController extends Controller
 {
     public function index()
     {
+        //menampilkan form tambah kategori
+        $categories = Categories::all();
+
         //membawa data produk yang di join dengan table kategori
         $products = Product::join('categories', 'categories.id', '=', 'products.categories_id')
             ->select('products.*', 'categories.name as nama_kategori')
             ->get();
 
-        return view('admin.product.index', compact('products'));
+        return view('admin.product.index', compact('products', 'categories'));
     }
 
     public function tambah()
     {
-        //menampilkan form tambah kategori
-
-        $categories = Categories::all();
 
         return view('admin.product.tambah', compact('categories'));
     }
