@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>{{ $title }} | Jambi Ecommerce Center</title>
+    <link rel="shortcut icon" href="https://assets.turbologo.com/blog/en/2021/07/07075142/PlayStation-logo-1994.png" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

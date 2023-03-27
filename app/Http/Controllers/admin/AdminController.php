@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -37,7 +38,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         User::insert([
             'name' => $request->name,
@@ -46,7 +47,7 @@ class AdminController extends Controller
             'role' => 'admin',
         ]);
 
-        return redirect('administrator');
+        return back()->with('success', 'Data berhasil ditambahkan. Silakan cek kembali data yang Anda masukkan 😁');
     }
 
     /**
@@ -72,7 +73,7 @@ class AdminController extends Controller
             'role' => 'admin',
         ]);
 
-        return redirect('administrator');
+        return redirect('administrator')->with('success', 'Data berhasil diedit. Perubahan data telah disimpan di sistem 😂');
     }
 
     /**
@@ -85,7 +86,7 @@ class AdminController extends Controller
     {
         User::where('id', $id)->delete();
         
-        return redirect('administrator');
+        return back()->with('success', 'Data berhasil dihapus. Data yang Anda pilih tidak lagi tersedia pada sistem 😁');
 
     }
 }
