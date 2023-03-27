@@ -1,49 +1,80 @@
-@extends('admin.layout.app')
-@section('content')
-<div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Kategori </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
+<x-apps>
+    <x-slot name="title">Kategori Produk</x-slot>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800 font-weight-bold">KATEGORI PRODUK <small>/ {{ $categorie->name }}</small></h1>
+        @if (session('success'))
+            <div class="alert alert-primary shadow" role="alert">
+                {{ session('success') }}
             </div>
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row mb-3">
-                      <div class="col">
-                      <h4 class="card-title">Edit Kategori</h4>
-                      </div>
-                      <div class="col text-right">
-                      <a href="javascript:void(0)" onclick="window.history.back()" class="btn btn-primary">Kembali</a>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form action="{{ route('admin.categories.update',['id' => $categorie->id]) }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                <label for="exampleInputUsername1">Nama Kategori</label>
-                                <input type="text" class="form-control" name="name" value="{{ $categorie->name }}" required>
-                                </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-outline-success text-right">Simpan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                  </div>
+        @elseif ($errors->any())
+            <div class="alert alert-danger shadow" role="alert">
+                Ada yang salah dengan inputan anda, silahkan input ulang.
+            </div>
+        @else
+            <div class="media bg-primary rounded mb-3 text-white p-3">
+                <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
+                        menghapus kategori produk yang dijual di toko Anda. Anda harus memasukkan informasi produk
+                        secara lengkap dan
+                        akurat sebelum menyimpannya.</small>
                 </div>
-              </div>
             </div>
-          </div>
-          
-@endsection
+        @endif
+    </div>
+    <div class="card shadow m-4">
+        <div class="card-body">
+            <p class="text-center font-weight-bold">UBAH KATEGORI PRODUK</p>
+            <div class="card-header bg-white mb-3">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputUsername1">Nama lama</label>
+                        <input type="text" class="form-control" name="name" value="{{ $categorie->name }}"
+                            disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <form action="{{ route('admin.categories.update', ['id' => $categorie->id]) }}" method="POST">
+                            @csrf
+                            <label for="exampleInputUsername1">Nama baru</label>
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                required>
+                            <div class="text-right my-2">
+                                <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
+                                    Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <table id="mytable" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th width="5%">No</th>
+                        <th>Kategori produk</th>
+                        <th width="15%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($category as $no => $item)
+                        <tr>
+                            <td align="center">{{ ++$no }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>
+                                <div class="d-flex" style="gap: 5px">
+                                    <a href="{{ route('admin.categories.edit', ['id' => $item->id]) }}"
+                                        class="btn btn-warning btn-sm"><i class="fa fa-gavel" aria-hidden="true"></i>
+                                        Ubah</a>
+                                    <a href="{{ route('admin.categories.delete', ['id' => $item->id]) }}"
+                                        onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i> Hapus
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</x-apps>

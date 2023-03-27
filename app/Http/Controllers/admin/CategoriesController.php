@@ -48,8 +48,11 @@ class CategoriesController extends Controller
     //function menampilkan form edit
     public function edit(Categories $id)
     {
+        $category = Categories::all();
+
         return view('admin.categories.edit', [
-            'categorie' => $id
+            'categorie' => $id,
+            'category' => $category
         ]);
     }
 

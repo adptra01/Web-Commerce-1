@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
-    <i class="fa fa-address-book" aria-hidden="true"></i> Tambah
+    <i class="fa fa-window-maximize" aria-hidden="true"></i> Tambah
 </button>
 
 <!-- Modal -->
