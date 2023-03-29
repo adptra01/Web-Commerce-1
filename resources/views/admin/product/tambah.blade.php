@@ -50,15 +50,15 @@
 							</div>
 							<div class="form-group">
 								<label for="">Deskripsi</label>
-								<textarea name="description" id="" cols="30" rows="10" class="form-control" required>
+								<textarea name="description" id="" cols="30" rows="3" class="form-control" required>
 									</textarea>
 							</div>
 							<div class="form-group">
 								<label>File upload</label>
-								<input required type="file" name="image" class="form-control">
+								<input required type="file" name="image" class="form-control-file">
 							</div>
 							<div class="text-right">
-								<button type="submit" class="bg-success btn btn-success text-right">Simpan</button>
+								<button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i> Simpan</button>
 							</div>
 						</div>
 					</div>

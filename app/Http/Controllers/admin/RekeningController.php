@@ -49,8 +49,9 @@ class RekeningController extends Controller
     public function edit($id)
     {
         $rekening = Rekening::FindOrFail($id);
+        $bank = Rekening::all();
 
-        return view('admin.rekening.edit', compact('rekening'));
+        return view('admin.rekening.edit', compact('rekening', 'bank'));
     }
 
     public function delete(Rekening $id)

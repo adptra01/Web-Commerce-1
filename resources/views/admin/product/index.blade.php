@@ -15,14 +15,16 @@
                 <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
                     alt="Generic placeholder image">
                 <div class="media-body">
-                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau menghapus produk yang dijual di toko Anda. Anda harus memasukkan informasi produk secara lengkap dan
+                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
+                        menghapus produk yang dijual di toko Anda. Anda harus memasukkan informasi produk secara lengkap
+                        dan
                         akurat sebelum menyimpannya.</small>
                 </div>
             </div>
         @endif
         @include('admin.product.tambah')
     </div>
-    <div class="card shadow m-4">
+    <div class="card shadow m-3">
         <div class="card-body">
             <table id="mytable" class="display responsive nowrap" style="width:100%">
                 <thead>
@@ -46,8 +48,10 @@
                             <td>{{ $product->weigth }}gr</td>
                             <td>{{ $product->nama_kategori }}</td>
                             <td>{{ $product->stok }}</td>
-                            <td><img src="{{ asset('imageproducts/' . $product->image) }}" class="rounded-circle" style="object-fit: cover;
-                              object-position: center; width: 25px; height:25px;"  alt="{{ $product->name }}">
+                            <td><img src="{{ asset('imageproducts/' . $product->image) }}" class="rounded-circle"
+                                    style="object-fit: cover;
+                              object-position: center; width: 25px; height:25px;"
+                                    alt="{{ $product->name }}">
                             </td>
                             <td>
                                 <div class="d-flex" style="gap: 5px">

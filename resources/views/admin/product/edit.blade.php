@@ -18,7 +18,7 @@
     <form action="{{ route('admin.product.update', ['id' => $product->id]) }}" method="POST"
         enctype="multipart/form-data">
         @csrf
-        <div class="card shadow m-4">
+        <div class="card shadow m-3">
             <div class="card-header font-weight-bold text-baseline">
                 <div class="row">
                     <div class="col-4">

@@ -14,13 +14,16 @@
             </div>
         @else
             <div class="alert alert-warning shadow" role="alert">
-                <strong>Peringatan!!!</strong><br>Sebelum Anda menambah, mengedit, atau menghapus data pada aplikasi ini, pastikan Anda telah memeriksa kembali data yang Anda masukkan atau pilih. Data yang telah diubah atau dihapus tidak dapat dikembalikan lagi. Jika Anda yakin dengan pilihan Anda, klik tombol konfirmasi. Jika tidak, klik tombol batal.
+                <strong>Peringatan!!!</strong><br>Sebelum Anda menambah, mengedit, atau menghapus data pada aplikasi
+                ini, pastikan Anda telah memeriksa kembali data yang Anda masukkan atau pilih. Data yang telah diubah
+                atau dihapus tidak dapat dikembalikan lagi. Jika Anda yakin dengan pilihan Anda, klik tombol konfirmasi.
+                Jika tidak, klik tombol batal.
             </div>
         @endif
         @include('admin.administrator.tambah')
     </div>
 
-    <div class="card shadow m-4">
+    <div class="card shadow m-3">
         <div class="card-body">
             <table id="mytable" class="display responsive nowrap" style="width:100%">
                 <thead>
@@ -39,12 +42,13 @@
                             <td>{{ $item->email }}</td>
                             <td class="text-center">
                                 <div class="d-flex" style="gap: 5px">
-                                    <a href="/administrator/{{ $item->id }}/edit" class="btn btn-warning"><i class="fa fa-gavel" aria-hidden="true"></i> Ubah</a>
+                                    <a href="/administrator/{{ $item->id }}/edit" class="btn btn-warning"><i
+                                            class="fa fa-gavel" aria-hidden="true"></i> Ubah</a>
                                     <form action="/administrator/{{ $item->id }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="return confirm('Yakin ingin menghapus data?')" class="btn btn-danger"><i
-                                                class="fas fa-trash"></i> Hapus</button>
+                                        <button onclick="return confirm('Yakin ingin menghapus data?')"
+                                            class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                                     </form>
                                 </div>
                             </td>

@@ -23,7 +23,7 @@
             </div>
         @endif
     </div>
-    <div class="card shadow m-4">
+    <div class="card shadow m-3">
         <div class="card-body">
             <p class="text-center font-weight-bold">UBAH KATEGORI PRODUK</p>
             <div class="card-header bg-white mb-3">

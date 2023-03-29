@@ -1,156 +1,92 @@
-@extends('admin.layout.app')
-@section('content')
-<div class="content-wrapper">
-<div class="page-header">
-    <h3 class="page-title">
-        <span class="page-title-icon bg-gradient-primary text-white mr-2">
-            <i class="mdi mdi-home"></i>
-        </span> Transaksi
-    </h3>
-    <nav aria-label="breadcrumb">
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">
-                <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-            </li>
-        </ul>
-    </nav>
-</div>
-<div class="row">
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col">
-                        <h4 class="card-title">Detail Pesanan {{ $order->nama_pelanggan }}</h4>
-                    </div>
-                    <div class="col text-right">
-                        <a href="javascript:void(0)" onclick="window.history.back()"
-                            class="btn btn-primary">Kembali</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-7">
-                        <table>
-                            <tr>
-                                <td>No Invoice</td>
-                                <td>:</td>
-                                <td class="p-2">{{ $order->invoice }}</td>
-                            </tr>
-                            <tr>
-                                <td>Metode Pembayaran</td>
-                                <td>:</td>
-                                <td class="p-2">{{ $order->metode_pembayaran }}</td>
-                            </tr>
-                            @if ($order->metode_pembayaran == 'cod')
-                                <tr>
-                                    <td>Biaya Cod</td>
-                                    <td>:</td>
-                                    <td class="p-2">{{ $order->biaya_cod }}</td>
-                                </tr>
-                            @endif
-                            <tr>
-                                <td>Status Pesanan</td>
-                                <td>:</td>
-                                <td class="p-2">{{ $order->status }}</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>:</td>
-                                <td class="p-2">Rp. {{ number_format($order->subtotal, 2, ',', '.') }} ( Sudah
-                                    Termasuk Ongkir )</td>
-                            </tr>
-                            <tr>
-                                <td>Biaya Ongkir</td>
-                                <td>:</td>
-                                <td class="p-2">Rp. {{ number_format($order->ongkir, 2, ',', '.') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Kurir</td>
-                                <td>:</td>
-                                <td class="p-2">JNE Service OKE</td>
-                            </tr>
-                            @if ($order->no_resi != null)
-                                <tr>
-                                    <td>No Resi</td>
-                                    <td>:</td>
-                                    <td class="p-2">{{ $order->no_resi }}</td>
-                                </tr>
-                            @endif
-                            <tr>
-                                <td>No Hp</td>
-                                <td>:</td>
-                                <td class="p-2">{{ $order->no_hp }}</td>
-                            </tr>
-                            <tr>
-                                <td>Catatan Pelanggan</td>
-                                <td>:</td>
-                                <td class="p-2">{{ $order->pesan }}</td>
-                            </tr>
-                            @if ($order->bukti_pembayaran != null)
-                                <tr>
-                                    <td>Bukti Pembayaran</td>
-                                    <td>:</td>
-                                    <td class="p-2"><img
-                                            src="{{ asset('buktibayar/' . $order->bukti_pembayaran) }}"
-                                            alt="" srcset="" class="img-fluid" width="300"></td>
-                                </tr>
-                                @if ($order->status_order_id == 2)
-                                    <tr>
-                                        <td class="p-2"><a
-                                                href="{{ route('admin.transaksi.konfirmasi', ['id' => $order->id]) }}"
-                                                onclick="return confirm('Yakin ingin mengonfirmasi pesanan ini?')"
-                                                class="btn btn-primary mt-1">Konfirmasi Telah Bayar</a><br>
-                                            <small>Klik tombol ini jika pembeli sudah terbukti melakukan
-                                                pembayaran</small>
-                                        </td>
-                                    </tr>
+<x-apps>
+    <x-slot name="title">Detail Transaksi</x-slot>
+    <div class="container-fluid">
+        <div class="row gap-3">
+            <div class="col-12 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media">
+                            <h1 class="mr-2 text-primary" style="font-size: 50px"><i class="fa fa-sticky-note"
+                                    aria-hidden="true"></i>
+                            </h1>
+                            <div class="media-body">
+                                <h5 class="mt-0 font-weight-bold">{{ $order->invoice }}</h5>
+                                Cras sit amet nibh libero
+                            </div>
+                        </div>
+                        <div class="card my-3">
+                            <div class="card-body bg-primary rounded text-white">
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Kepada</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">{{ $order->nama_pelanggan }}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Metode Pembayaran</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">{{ $order->metode_pembayaran }} @if ($order->metode_pembayaran == 'cod')
+                                            ({{ $order->biaya_cod }})
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Status</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">{{ $order->status }}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Kurir</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">JNE Service OKE
+                                    </div>
+                                </div>
+                                @if ($order->no_resi != null)
+                                    <div class="row mb-2">
+                                        <div class="col-6 col-md-4 font-weight-bold">No. Resi</div>
+                                        <div class="col-12 col-md-8 font-weight-bold"> {{ $order->no_resi }}
+                                        </div>
+                                    </div>
                                 @endif
-                            @endif
-                            @if ($order->status_order_id == 3)
-                                <tr>
-                                    <td>No Resi</td>
-                                    <td>:</td>
-                                    <td class="p-2">
-                                        <form
-                                            action="{{ route('admin.transaksi.inputresi', ['id' => $order->id]) }}"
-                                            method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control form-control-sm"
-                                                        placeholder="Input Resi" aria-label="Recipient's username"
-                                                        aria-describedby="basic-addon2" name="no_resi" required>
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Telp/HP</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">{{ $order->no_hp }}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-6 col-md-4 font-weight-bold">Catatan</div>
+                                    <div class="col-12 col-md-8 font-weight-bold">{{ $order->pesan }}</div>
+                                </div>
+                                @if ($order->status_order_id == 3)
+                                    <div class="row mb-2">
+                                        <div class="col-6 col-md-4 font-weight-bold">Masukkan Resi</div>
+                                        <div class="col-12 col-md-8 font-weight-bold">
+                                            <form
+                                                action="{{ route('admin.transaksi.inputresi', ['id' => $order->id]) }}"
+                                                method="POST">
+                                                @csrf
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Nomor resi pengiriman" name="no_resi" required>
                                                     <div class="input-group-append">
-                                                        <button type="submit" class="btn btn-sm btn-outline-primary"
-                                                            type="button">Simpan</button>
+                                                        <button class="btn btn-sm btn-dark"
+                                                            type="submit">Simpan</button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endif
-                        </table>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hovered">
-                                <thead class="bg-primary text-white">
+                                            </form>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="table-responsive rounded">
+                            <table class="table table-striped table-sm text-center">
+                                <thead class="thead-dark">
                                     <tr>
-                                        <th width="5%">No</th>
-                                        <th>Nama Produk</th>
-                                        <th>QTY</th>
-                                        <th>Total Harga</th>
+                                        <th scope="col">NO</th>
+                                        <th scope="col">Produk</th>
+                                        <th scope="col">Total Harga</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no = 1; ?>
-                                    @foreach ($detail as $dt)
+                                    @foreach ($detail as $no => $dt)
                                         <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $dt->nama_produk }}</td>
-                                            <td>{{ $dt->qty }}</td>
+                                            <th scope="row">{{ ++$no }}</th>
+                                            <td>{{ $dt->nama_produk }} <small> X {{ $dt->qty }}</small></td>
                                             <td>Rp. {{ number_format($dt->qty * $dt->price, 2, ',', '.') }}</td>
                                         </tr>
                                     @endforeach
@@ -160,9 +96,27 @@
                     </div>
                 </div>
             </div>
+            <div class="col col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3><strong>TOTAL</strong></h3>
+                        <button class="btn btn-primary">
+                            Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</span>
+                        </button><br><small>(Termasuk Ongkir)</small><br>
+                        @if ($order->bukti_pembayaran != null)
+                            <img src="{{ asset('buktibayar/' . $order->bukti_pembayaran) }}" class="mt-3"
+                                alt="BuktiPembayaran" style="max-width: 180px"><br><small class="mb-3">(Bukti
+                                pembayaran)</small><br>
+                            @if ($order->status_order_id == 2)
+                                <a href="{{ route('admin.transaksi.konfirmasi', ['id' => $order->id]) }}"
+                                    class="btn btn-primary">Konfirmasi Telah
+                                    Membayar</a><br>
+                                <small>Klik tombol ini jika pembeli sudah terbukti melakukan pembayaran</small>
+                            @endif
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-
-@endsection
+</x-apps>

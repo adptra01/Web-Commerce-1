@@ -1,57 +1,44 @@
-@extends('admin.layout.app')
-@section('content')
-<div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Rekening </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row mb-3">
-                      <div class="col">
-                      <h4 class="card-title">Tambah Rekening</h4>
-                      </div>
-                      <div class="col text-right">
-                      <a href="javascript:void(0)" onclick="window.history.back()" class="btn btn-primary">Kembali</a>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form action="{{ route('admin.rekening.store') }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                <label for="exampleInputUsername1">Nama Bank</label>
-                                <input type="text" class="form-control" name="bank_name">
-                                </div>
-                                <div class="form-group">
-                                <label for="exampleInputUsername1">Atas Nama</label>
-                                <input type="text" class="form-control" name="atas_nama">
-                                </div>
-                                <div class="form-group">
-                                <label for="exampleInputUsername1">No Rekening</label>
-                                <input type="number" class="form-control" name="no_rekening">
-                                </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-success text-right">Simpan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                  </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
+    <i class="fa fa-window-restore" aria-hidden="true"></i> Tambah
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="alert alert-warning" role="alert">
+                    <small class="modal-title" id="exampleModalLabel">
+                        <strong class="text-warning"><i class="fas fa-exclamation-triangle"> PERINGATAN!!!</i>
+                            </span></strong> <br>Anda akan menambahkan data rekening baru. Pastikan data yang Anda masukkan sudah benar dan sesuai dengan buku rekening. Data rekening yang sudah ditambahkan tidak dapat dihapus, hanya dapat diedit. Apakah Anda yakin ingin melanjutkan?
+                    </p>
                 </div>
-              </div>
+                </button>
             </div>
-          </div>
-          
-@endsection
+            <div class="modal-body">
+                <form action="{{ route('admin.rekening.store') }}" method="POST">
+                    @csrf
+                    <div class="form-row mb-2">
+                      <div class="col">
+                        <label for="exampleInputUsername1">Nama Bank</label>
+                        <input type="text" class="form-control" name="bank_name">
+                      </div>
+                      <div class="col">
+                        <label for="exampleInputUsername1">Atas Nama</label>
+                        <input type="text" class="form-control" name="atas_nama">
+                      </div>   
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">No Rekening</label>
+                        <input type="number" class="form-control" name="no_rekening">
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i> Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
