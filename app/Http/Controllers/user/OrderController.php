@@ -77,9 +77,11 @@ class OrderController extends Controller
         //mengupload bukti pembayaran
         $order = Order::findOrFail($id);
         if ($request->hasfile('bukti_pembayaran')) {
-            $request->file('bukti_pembayaran')->move('buktibayar/', $request->file('bukti_pembayaran')->getClientOriginalName());
+            // $request->file('bukti_pembayaran')->move('buktibayar/', $request->file('bukti_pembayaran')->getClientOriginalName());
 
-            $order->bukti_pembayaran = $request->file('bukti_pembayaran')->getClientOriginalName();
+            // $order->bukti_pembayaran = $request->file('bukti_pembayaran')->getClientOriginalName();
+            $imagePath = $request->file('bukti_pembayaran')->store('public/bukti_pembayaran');
+            $order->bukti_pembayaran = $imagePath;
             $order->status_order_id  = 2;
 
             $order->save();

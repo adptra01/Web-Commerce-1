@@ -61,7 +61,7 @@
             <div class="item">
             <div class="block-4 text-center">
                 <figure class="block-4-image">
-                <img src="{{ asset('imageproducts/'. $produk->image) }}" alt="Image placeholder" class="img-fluid" width="100%" style="height:300px">
+                <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid" width="100%" style="height:300px">
                 </figure>
                 </a>
                 <div class="block-4-text p-4">

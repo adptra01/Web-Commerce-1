@@ -11,12 +11,12 @@
 
     <div class="site-section">
         <div class="container">
-            @if(session('salah'))
+            @if (session('salah'))
                 <div class="alert alert-warning text-center font-weight-bold">
                     {{ session('salah') }}
                 </div>
             @endif
-            
+
             <div class="row mb-5 table-responsive">
                 <form class="col-md-12" method="post" action="{{ route('user.keranjang.update') }}">
                     @csrf
@@ -36,8 +36,8 @@
 
                                 <?php $subtotal=0; foreach($keranjangs as $keranjang): ?>
                                 <td class="product-thumbnail">
-                                    <img src="{{ asset('imageproducts/' . $keranjang->image) }}" alt="Image"
-                                        class="img-fluid" width="150">
+                                    <img src="{{ Storage::url($keranjang->image) }}" alt="Image" class="img-fluid"
+                                        width="150">
                                 </td>
                                 <td class="product-name">
                                     <h2 class="h5 text-black">{{ $keranjang->nama_produk }}</h2>

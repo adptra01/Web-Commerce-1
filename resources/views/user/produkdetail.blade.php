@@ -13,7 +13,7 @@
     @foreach ($errors->all() as $error)
         <div class="container alert alert-danger alert-dismissible fade show text-center justify-content-center"
             role="alert">
-           {{ $error }}
+            {{ $error }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('imageproducts/' . $produk->image) }}" alt="Image" class="img-fluid">
+                    <img src="{{ Storage::url($produk->image) }}" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <h2 class="text-primary">{{ $produk->name }}</h2>

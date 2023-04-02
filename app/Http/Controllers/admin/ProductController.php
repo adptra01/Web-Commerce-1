@@ -43,8 +43,8 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasfile('image')) {
-            $request->file('image')->move('imageproducts/', $request->file('image')->getClientOriginalName());
-            $data->image = $request->file('image')->getClientOriginalName();
+            $imagePath = $request->file('image')->store('public/imageproducts');
+            $data->image = $imagePath;
             $data->save();
         }
         return redirect()->route('admin.product')->with('status', 'Berhasil Menambah Produk Baru');
@@ -65,10 +65,14 @@ class ProductController extends Controller
     {
         $prod = $id;
 
+         // Menghapus file gambar lama jika ada gambar baru yang diunggah
+        if ($request->hasFile('image')) {
+            Storage::delete($prod->image);
+        }
         // $prod = Product::find($id);
         if($request->hasFile('image')){
-            $request->file('image')->move('imageproducts/', $request->file('image')->getClientOriginalName());
-            $prod->image = $request->file('image')->getClientOriginalName();
+            $imagePath = $request->file('image')->store('public/imageproducts');
+            $prod->image = $imagePath;
             $prod->update();  
         }
 

@@ -48,7 +48,7 @@
                             <td>{{ $product->weigth }}gr</td>
                             <td>{{ $product->nama_kategori }}</td>
                             <td>{{ $product->stok }}</td>
-                            <td><img src="{{ asset('imageproducts/' . $product->image) }}" class="rounded-circle"
+                            <td><img src="{{ Storage::url($product->image) }}" class="rounded-circle"
                                     style="object-fit: cover;
                               object-position: center; width: 25px; height:25px;"
                                     alt="{{ $product->name }}">

@@ -22,7 +22,7 @@
             <div class="card-header font-weight-bold text-baseline">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{{ asset('imageproducts/' . $product->image) }}" class="rounded border-3"
+                        <img src="{{ Storage::url($product->image) }}" class="rounded border-3"
                             style="object-fit: cover;
             object-position: center; width: 150px; height:150px;"
                             alt="{{ $product->name }}">
