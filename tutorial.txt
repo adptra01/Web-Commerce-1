@@ -9,12 +9,6 @@
 RAJAONGKIR_API_KEY=d6d29f847560b916b9b107a496ef4d39
 RAJAONGKIR_PACKAGE=starter
 
-login email : isan@user.com
-login pw : password
-
-login email : isan@admin.com
-login pw : password
-
 tambah terminal laragon
  "laragon": {
             "path": "D:\\laragon\\bin\\cmder\\cmder.bat",
