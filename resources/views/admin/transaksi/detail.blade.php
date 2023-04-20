@@ -67,6 +67,9 @@
                                                             type="submit">Simpan</button>
                                                     </div>
                                                 </div>
+                                                @error('no_resi')
+                                                    <small class="text-white">{{ $message }}</small>
+                                                @enderror
                                             </form>
                                         </div>
                                     </div>
@@ -104,8 +107,8 @@
                             Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</span>
                         </button><br><small>(Termasuk Ongkir)</small><br>
                         @if ($order->bukti_pembayaran != null)
-                            <img src="{{ asset('buktibayar/' . $order->bukti_pembayaran) }}" class="mt-3"
-                                alt="BuktiPembayaran" style="max-width: 180px"><br><small class="mb-3">(Bukti
+                            <img src="{{ Storage::url($order->bukti_pembayaran) }}" class="mt-3"
+                                alt="BuktiPembayaran" style="max-width: 180px; overflow:hidden;"><br><small class="mb-3">(Bukti
                                 pembayaran)</small><br>
                             @if ($order->status_order_id == 2)
                                 <a href="{{ route('admin.transaksi.konfirmasi', ['id' => $order->id]) }}"

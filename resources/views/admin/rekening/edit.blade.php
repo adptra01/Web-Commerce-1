@@ -12,21 +12,24 @@
             </div>
         @else
             <div class="media bg-primary rounded mb-3 text-white p-3">
-                <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
+                <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (17).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
-                    <small> <strong>Peringatan!!!</strong><br>Anda akan mengedit data rekening yang sudah ada. Pastikan data yang Anda masukkan sudah benar dan sesuai dengan buku rekening. Data rekening yang sudah diedit tidak dapat dikembalikan ke data sebelumnya.
+                    <small>
+                        <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong><br>Anda akan mengedit
+                        data rekening yang sudah ada. Pastikan data yang Anda masukkan sudah benar dan sesuai dengan
+                        buku rekening. Data rekening yang sudah diedit tidak dapat dikembalikan ke data sebelumnya.
                     </small>
                 </div>
             </div>
         @endif
     </div>
     <div class="card shadow m-4">
-      <p class="text-center font-weight-bold my-2">UBAH NO. REKENING</p>
-      <div class="card-header mx-3 rounded text-white bg-primary">
-        <small>Input kan ulang semua formulir dibawah atau pilih batal.</small>
-      </div>
-      <div class="card-header bg-white mb-3">
+        <p class="text-center font-weight-bold my-2">UBAH NO. REKENING</p>
+        <div class="card-header mx-3 rounded text-white bg-primary">
+            <small>Input kan ulang semua formulir dibawah atau pilih batal.</small>
+        </div>
+        <div class="card-header bg-white mb-3">
             <form action="{{ route('admin.rekening.update', ['id' => $rekening->id]) }}" method="POST">
                 @csrf
                 <div class="form-row">
@@ -56,12 +59,13 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputUsername1">No Rekening <small class="text-success">Baru</small></label>
-                        <input type="number" class="form-control" name="no_rekening"
-                            value="{{ old('no_rekening') }}">
+                        <input type="number" class="form-control" name="no_rekening" value="{{ old('no_rekening') }}">
                     </div>
                     <div class="text-right">
-                        <a href="/admin/rekening" class="btn btn-secondary"><i class="fa fa-times" aria-hidden="true"></i> Batal</a>
-                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i> Simpan</button>
+                        <a href="/admin/rekening" class="btn btn-secondary"><i class="fa fa-times"
+                                aria-hidden="true"></i> Batal</a>
+                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
+                            Simpan</button>
                     </div>
                 </div>
             </form>

@@ -29,14 +29,14 @@
      <!-- Nav Item - Dashboard -->
      <li class="nav-item {{ Request::path() === 'administrator' ? 'active' : '' }}">
          <a class="nav-link" href="/administrator">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <i class="fas fa-solid fa-street-view"></i>
              <span>Admin</span></a>
      </li>
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item {{ Request::path() === 'customer' ? 'active' : '' }}">
          <a class="nav-link" href="{{ route('admin.customer') }}">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <i class="fas fa-solid fa-users"></i>
              <span>Pelanggan</span></a>
      </li>
 
@@ -50,14 +50,14 @@
      <!-- Nav Item - Dashboard -->
      <li class="nav-item {{ Request::path() === 'product' ? 'active' : '' }}">
          <a class="nav-link" href="{{ route('admin.product') }}">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <i class="fas fa-solid fa-cube"></i>
              <span>Produk Toko</span></a>
      </li>
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item {{ Request::path() === 'categories' ? 'active' : '' }}">
          <a class="nav-link" href="{{ route('admin.categories') }}">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
+             <i class="fas fa-regular fa-window-restore"></i>
              <span>Kategori Produk</span></a>
      </li>
 
@@ -67,21 +67,47 @@
      <div class="sidebar-heading">
          Sirkulasi
      </div>
+     
+     @php
+         $alert1 = App\Order::where('status_order_id', [2,3,4])->count();
+         $alert2 = App\Order::where('status_order_id', 2)->count();
+         $alert3 = App\Order::where('status_order_id', 3)->count();
+         $alert4 = App\Order::where('status_order_id', 4)->count();
+         $alert5 = App\Order::where('status_order_id', 5)->count();
+         $alert6 = App\Order::where('status_order_id', 6)->count();
+     @endphp
 
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
              aria-expanded="true" aria-controls="collapseTwo">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Transaksi</span>
+             <i class="fas fa-solid fa-recycle"></i>
+             <span>Transaksi @if ( $alert1 == true)
+                <sup class="font-weight-bold text-warning">!</sup>
+             @endif
+            </span>
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Informasi Transaksi</h6>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.perludicek') }}">Perlu dicek</a>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.perludikirim') }}">Perlu dikirim</a>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.dikirim') }}">Telah dikirim</a>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.selesai') }}">Telah selesai</a>
+                 <a class="collapse-item" href="{{ route('admin.transaksi.perludicek') }}">Perlu dicek 
+                @if ($alert2 == 1)
+                <sup class="badge badge-danger badge-counter">{{ $alert2 }}</sup>     
+                @endif
+                </a>
+                 <a class="collapse-item" href="{{ route('admin.transaksi.perludikirim') }}">Perlu dikirim
+                    @if ($alert3 == 1)
+                    <sup class="badge badge-danger badge-counter">{{ $alert3 }}</sup>     
+                    @endif
+                </a>
+                 <a class="collapse-item" href="{{ route('admin.transaksi.dikirim') }}">Dalam Pengiriman 
+                    @if ($alert4 == 1)
+                    <sup class="badge badge-danger badge-counter">{{ $alert4 }}</sup>     
+                    @endif
+                </a>
+                 <a class="collapse-item" href="{{ route('admin.transaksi.selesai') }}">Telah selesai
+                
+                </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.dibatalkan') }}">Dibatalkan</a>
                  <a class="collapse-item" href="{{ route('admin.pelanggan') }}">Informasi Pembelian</a>
              </div>
@@ -122,8 +148,8 @@
 
      <hr class="sidebar-divider d-none d-md-block">
      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
+         <button class="rounded-circle border-0" id="sidebarToggle"></button>
+     </div>
 
  </ul>
  <!-- End of Sidebar -->

@@ -121,6 +121,9 @@ class TransaksiController extends Controller
 
     public function inputresi($id, Request $request)
     {
+        $request->validate([
+            'no_resi' => 'required|size:17'
+        ]);
         //funtion untuk menginput no resi pesanan
         Order::where('id', $id)
             ->update([

@@ -12,13 +12,18 @@
             </div>
         @else
             <div class="media bg-primary rounded mb-3 text-white p-3">
-                <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
+                <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (10).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
-                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
-                        menghapus kategori produk yang dijual di toko Anda. Anda harus memasukkan informasi produk
-                        secara lengkap dan
-                        akurat sebelum menyimpannya.</small>
+                    <small>
+                        <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong><br>Harap perhatikan
+                        detail dan kelengkapan dari pesanan yang dibuat, seperti nama, alamat, nomor telepon,
+                        jumlah,
+                        warna, ukuran, dan lain-lain. Jika ada pesanan yang tidak jelas, kurang lengkap, atau tidak
+                        sesuai dengan stok produk, harap segera menghubungi pelanggan untuk mengkonfirmasi atau
+                        mengubah
+                        pesanan tersebut.
+                    </small>
                 </div>
             </div>
         @endif
@@ -29,7 +34,7 @@
                 <thead>
                     <tr>
                         <th width="5%">No</th>
-                        <th>No Invoice</th>
+                        <th> Invoice </th>
                         <th>Pemesan</th>
                         <th>Subtotal</th>
                         <th>Metode Pembayaran</th>
@@ -45,7 +50,8 @@
                             <td>{{ $order->nama_pemesan }}</td>
                             <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
                             <td>{{ $order->metode_pembayaran }}</td>
-                            <td><span class="badge badge-warning p-2"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ $order->name }}</span></td>
+                            <td><span class="badge badge-warning p-2"><i class="fa fa-exclamation-triangle"
+                                        aria-hidden="true"></i> {{ $order->name }}</span></td>
                             <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="{{ route('admin.transaksi.detail', ['id' => $order->id]) }}"

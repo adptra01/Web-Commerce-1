@@ -18,7 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.administrator.index',[
-            'admin' => User::where('role', 'admin')->get()
+            'admin' => User::where('role', 'admin')->latest()->get()
         ]);
     }
     public function store(AdminRequest $request)

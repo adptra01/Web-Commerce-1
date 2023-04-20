@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categories;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -18,7 +19,7 @@ class ProductController extends Controller
         //membawa data produk yang di join dengan table kategori
         $products = Product::join('categories', 'categories.id', '=', 'products.categories_id')
             ->select('products.*', 'categories.name as nama_kategori')
-            ->get();
+            ->latest()->get();
 
         return view('admin.product.index', compact('products', 'categories'));
     }
@@ -29,7 +30,7 @@ class ProductController extends Controller
         return view('admin.product.tambah', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $data = Product::create([
             'name'          => $request->name,
@@ -52,16 +53,13 @@ class ProductController extends Controller
 
     public function edit(Product $id)
     {
-        //menampilkan form edit
-        //dan mengambil data produk sesuai id dari parameter
-
         return view('admin.product.edit', [
             'product'       => $id,
             'categories'    => Categories::all(),
         ]);
     }
 
-    public function update(Product $id, Request $request)
+    public function update(Product $id, ProductRequest $request)
     {
         $prod = $id;
 

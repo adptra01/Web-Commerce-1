@@ -8,6 +8,7 @@
         <table class="table" id="mytable">
           <thead>
               <tr>
+                  <th> NO </th>
                   <th> Invoice </th>
                   <th> Pemesan </th>
                   <th> Total(+Ongkir) </th>
@@ -16,8 +17,9 @@
               </tr>
           </thead>
           <tbody>
-              @foreach ($data as $item)
+              @foreach ($data as $no => $item)
                   <tr>
+                      <td> {{ ++$no }} </td>
                       <td> {{ $item->invoice }} </td>
                       <td> {{ $item->nama_pemesan }} </td>
                       <td> {{ $item->subtotal + $item->ongkir }} </td>

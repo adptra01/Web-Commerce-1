@@ -15,7 +15,7 @@
                 <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
                     alt="Generic placeholder image">
                 <div class="media-body">
-                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
+                    <small> <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
                         menghapus produk yang dijual di toko Anda. Anda harus memasukkan informasi produk secara lengkap
                         dan
                         akurat sebelum menyimpannya.</small>

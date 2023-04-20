@@ -12,10 +12,10 @@
             </div>
         @else
             <div class="media bg-primary rounded mb-3 text-white p-3">
-                <img class="align-self-center mr-3" width="230px" src="/layouts/img/img1.png"
+                <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (5).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
-                    <small> <strong>Peringatan!!!</strong><br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
+                    <small> <i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>Sebagai admin toko, Anda dapat menambahkan, mengedit, atau
                         menghapus kategori produk yang dijual di toko Anda. Anda harus memasukkan informasi produk
                         secara lengkap dan
                         akurat sebelum menyimpannya.</small>

@@ -20,6 +20,7 @@ class PengaturanController extends Controller
             $data['provinces'] = Province::all();
         } else {
             //jika sudah di setting maka tidak menampilkan form tapi tampilkan data alamat toko
+            
             $data['alamat'] = DB::table('alamat_toko')
                 ->join('cities', 'cities.city_id', '=', 'alamat_toko.city_id')
                 ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')

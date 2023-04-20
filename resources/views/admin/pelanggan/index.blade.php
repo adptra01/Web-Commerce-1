@@ -1,12 +1,18 @@
 <x-apps>
     <x-slot name="title">
-        Pelanggan
+        Informasi Pembelian
     </x-slot>
     <div class="container">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">INFORMASI PEMBELIAN</h1>
-        <div class="alert alert-warning shadow" role="alert">
-            <strong>Peringatan!!! </strong>Anda bertanggung jawab untuk mengelola data customer dengan hati-hati. Jangan
-            menghapus, mengubah, atau menyalin data customer tanpa izin dari customer yang bersangkutan
+        <div class="media bg-primary rounded mb-3 text-white p-3">
+            <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (13).svg"
+                alt="Generic placeholder image">
+            <div class="media-body">
+                <small>
+                    <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>
+                    Harap perhatikan detail dan kelengkapan dari pesanan yang dibuat, seperti nama, alamat, nomor telepon, jumlah, warna, ukuran, dan lain-lain. Jika ada pesanan yang tidak jelas, kurang lengkap, atau tidak sesuai dengan stok produk, harap segera menghubungi pelanggan untuk mengkonfirmasi atau mengubah pesanan tersebut.
+                </small>
+            </div>
         </div>
     </div>
 
@@ -16,7 +22,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Nama Pelanggan</th>
+                        <th>Nama</th>
                         <th>Email</th>
                         <th>No Rekening</th>
                     </tr>

@@ -24,7 +24,7 @@
                                 <div class="col-md-8">
                                     <table>
                                         <tr>
-                                            <th>No Invoice</th>
+                                            <th> Invoice </th>
                                             <td>:</td>
                                             <td>{{ $order->invoice }}</td>
                                         </tr>
