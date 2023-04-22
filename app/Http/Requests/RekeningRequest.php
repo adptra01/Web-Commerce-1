@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class RekeningRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+                'bank_name' => 'required|min:3|',
+                'atas_nama' => 'required|min:5|',
+                'no_rekening' => 'required|min:13|max:19|unique:rekenings,no_rekenings'.$this->id,
+        ];
+    }
+}

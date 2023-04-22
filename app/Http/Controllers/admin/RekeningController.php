@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RekeningRequest;
 use Illuminate\Http\Request;
 use App\Rekening;
 
@@ -20,7 +21,7 @@ class RekeningController extends Controller
         return view('admin.rekening.tambah');
     }
 
-    public function store(Request $request)
+    public function store(RekeningRequest $request)
     {
         //simpan data ke db
         Rekening::create([
@@ -32,7 +33,7 @@ class RekeningController extends Controller
         return redirect()->route('admin.rekening')->with('status', 'Berhasil Menambah Rekening');
     }
 
-    public function update($id, Request $request)
+    public function update($id, RekeningRequest $request)
     {
         // update rekening
         Rekening::updateOrCreate([

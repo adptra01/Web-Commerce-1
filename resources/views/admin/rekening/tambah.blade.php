@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
-    <i class="fa fa-window-restore" aria-hidden="true"></i> Tambah
+    <i class="fa fa-credit-card" aria-hidden="true"></i> Tambah
 </button>
 
 <!-- Modal -->
@@ -26,15 +26,24 @@
                         <div class="col">
                             <label for="exampleInputUsername1">Nama Bank</label>
                             <input type="text" class="form-control" name="bank_name">
+                            @error('bank_name')
+                                <small class="text-danger">{{ $message}}</small>
+                            @enderror
                         </div>
                         <div class="col">
                             <label for="exampleInputUsername1">Atas Nama</label>
                             <input type="text" class="form-control" name="atas_nama">
+                            @error('atas_nama')
+                                <small class="text-danger">{{ $message}}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1">No Rekening</label>
                         <input type="number" class="form-control" name="no_rekening">
+                        @error('no_rekening')
+                                <small class="text-danger">{{ $message}}</small>
+                            @enderror
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
