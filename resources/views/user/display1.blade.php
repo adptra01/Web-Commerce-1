@@ -6,24 +6,13 @@
     </div>
 
     <div class="container">
-        <div class="site-blocks-cover rounded"
-            style="background-image: url({{ asset('shopper') }}/images/display.jpg); max-height:200px;" data-aos="fade">
-            <div class="container">
-                <div class="row align-items-start align-items-md-center justify-content-end">
-                    <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                        <h1 class="mb-2">Show Your Personal Style</h1> <br>
-                        <div class="intro-text text-center text-md-left">
-                            <span class="mb-4 text-white fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Molestias, sunt ducimus? Asperiores ipsa magni natus quidem, officia eius quod deleniti
-                                reiciendis, facilis repudiandae obcaecati blanditiis adipisci. Cumque aliquid libero
-                                quia.</span>
-                            <p><a href="{{ route('user.produk') }}" class="btn btn-sm btn-primary mt-5">Belanja Sekarang</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div class="site-blocks-cover rounded" style="background-image: url({{ asset('shopper') }}/images/display.jpg); max-height:200px;"
+        data-aos="fade">
+        <div class="container">
+            <div class="row align-items-start align-items-md-center justify-content-end">
             </div>
         </div>
+    </div>
     </div>
     <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
         <div class="container">
@@ -86,7 +75,7 @@
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-primary">{{ $produk->name }}</h3>
-                                        <small class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small>
+                                    <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"

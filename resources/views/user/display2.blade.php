@@ -74,7 +74,7 @@
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-primary">{{ $produk->name }}</h3>
-                                        <small class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small>
+                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
