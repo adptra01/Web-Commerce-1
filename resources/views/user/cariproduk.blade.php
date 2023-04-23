@@ -26,9 +26,9 @@
                                     <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
                                         width="100%" style="height:200px">
                                     </a>
-                                    <div class="block-4-text p-4">
+                                    <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-primary">{{ $produk->name }}</h3>
-                                        <p class="mb-0">RP {{ $produk->price }}</p>
+                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"

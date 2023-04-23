@@ -1,4 +1,4 @@
-## Analisis E-Shop
+## Online Shop Berbasis Website (Laravel)
 
 ### Deskripsi
 
@@ -28,7 +28,7 @@ Untuk menginstal E-Shop, ikuti langkah-langkah berikut:
 
 ### Kontribusi
 
-Jika Anda ingin berkontribusi pada E-Shop, Anda bisa mengirimkan pull request ke repository ini.
+Anda dapat melakukan kontribusi pada repository ini dengan melakukan fork dan pull request. Pastikan untuk melakukan perubahan pada branch yang sesuai.
 
 ### Lisensi
 
