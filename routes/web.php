@@ -30,6 +30,7 @@ Route::get('/pelanggan',function(){
 
 Route::group(['middleware' => ['auth','checkRole:admin']],function(){    
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
+    Route::put('/identity/{id}','admin\PengaturanController@identity');
     Route::get('/pengaturan/alamat','admin\PengaturanController@aturalamat')->name('admin.pengaturan.alamat');
     Route::get('/pengaturan/ubahalamat/{id}','admin\PengaturanController@ubahalamat')->name('admin.pengaturan.ubahalamat');
     Route::get('/pengaturan/alamat/getcity/{id}','admin\PengaturanController@getCity')->name('admin.pengaturan.getCity');

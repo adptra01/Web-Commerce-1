@@ -4,17 +4,67 @@
     </x-slot>
     <div class="container">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">INFORMASI TOKO</h1>
-        <div class="media bg-primary rounded mb-3 text-white p-3">
-            <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (18).svg"
-                alt="Generic placeholder image">
-            <div class="media-body">
-                <small>
-                    <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>
-                    Pengaturan alamat toko untuk memberikan kepercayaan ke pada pelanggan, harap pastikan nginputkan
-                    alamat yang benar dan tepat.
-                </small>
+        @if (session('success'))
+            <div class="alert alert-primary" role="alert">
+                <strong>{{ session('success') }}</strong>
             </div>
-        </div>
+        @elseif($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <strong> Ada yang salah dengan inputan anda, silahkan input ulang 🥱</strong>
+            </div>
+        @else
+            <div class="media bg-primary rounded mb-3 text-white p-3">
+                <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (18).svg"
+                    alt="Generic placeholder image">
+                <div class="media-body">
+                    <small>
+                        <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>
+                        Pengaturan alamat toko untuk memberikan kepercayaan ke pada pelanggan, harap pastikan nginputkan
+                        alamat yang benar dan tepat.
+                    </small>
+                </div>
+            </div>
+        @endif
+    </div>
+    <div class="card shadow m-3">
+        <form action="/identity/{{ $store->id }}" method="POST">
+            @method('PUT')
+            @csrf
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name_store" class="form-label font-weight-bold">Nama Toko</label>
+                            <input type="text" name="name_store" id="name_store" class="form-control"
+                                value="{{ $store->name_store }}" aria-describedby="helpId">
+                            @error('name_store')
+                                <small id="helpId" class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="telp" class="form-label font-weight-bold">Telp Toko</label>
+                            <input type="telp" name="telp" id="telp" class="form-control"
+                                value="{{ $store->telp }}" aria-describedby="helpId">
+                            @error('telp')
+                                <small id="helpId" class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label font-weight-bold">Deskripsi Toko</label>
+                    <textarea class="form-control" name="description" id="description" rows="3">{{ $store->description }}</textarea>
+                    @error('description')
+                        <small id="helpId" class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+                <div class="mab-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="card shadow m-3">
         <div class="card-body">

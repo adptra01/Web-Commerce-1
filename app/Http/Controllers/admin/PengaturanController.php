@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Alamat_toko;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ class PengaturanController extends Controller
     {
         //cek apa alamat toko sudah di set atau belum
         $data['cekalamat'] = $cek = DB::table('alamat_toko')->count();
+        $data['store'] = Alamat_toko::whereId(1)->first();
 
         //jika belum di setting maka ambil data provinsi untuk di tampilkan di form alamat
         if ($cek < 1) {
@@ -65,5 +67,22 @@ class PengaturanController extends Controller
             ]);
 
         return redirect()->route('admin.pengaturan.alamat')->with('status', 'Berhasil Mengubah Alamat');
+    }
+
+    public function identity($id, Request $request)
+    {
+        $request->validate([
+            'name_store' => 'required|min:5',
+            'telp' => 'required|numeric|min:11|max:12',
+            'description' => 'required|min:20',
+        ]);
+
+        Alamat_toko::whereId($id)->update([
+            'name_store' => $request->name_store,
+            'telp' => $request->telp,
+            'description' => $request->description,
+        ]);
+
+        return back()->with('success', 'Ubah identitas toko berhasil 😉');
     }
 }
