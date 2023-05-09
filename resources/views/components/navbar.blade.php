@@ -109,7 +109,7 @@
                 
                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.dibatalkan') }}">Dibatalkan</a>
-                 <a class="collapse-item" href="{{ route('admin.pelanggan') }}">Informasi Pembelian</a>
+                 {{-- <a class="collapse-item" href="{{ route('admin.pelanggan') }}">Informasi Pembelian</a> --}}
              </div>
          </div>
      </li>

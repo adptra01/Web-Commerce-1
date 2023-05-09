@@ -17,7 +17,7 @@ class WelcomeController extends Controller
             'produks' => DB::table('products')->limit(10)->get(),
             'lokasi' => DB::table('alamat_toko')->where('id', 1)->first()
         );
-        return view('user.display1', $data);
+        return view('user.display2', $data);
     }
 
     public function kontak()

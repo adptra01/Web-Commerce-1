@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span><a
-                        href="#">Produk</a> <span class="mx-2 mb-0">/</span> <strong
+                        href="#">Product</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">{{ $category->name }}</strong></div>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ Storage::url($produk->image) }}" alt="Image" class="img-fluid">
+                    <img src="{{ Storage::url($produk->image) }}" alt="Image" width="100%" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <h2 class="text-primary">{{ $produk->name }}</h2>
