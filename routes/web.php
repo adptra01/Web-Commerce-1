@@ -11,65 +11,76 @@
 */
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\LaporanController;
+use App\Http\Controllers\admin\PelangganController;
+use App\Http\Controllers\admin\PengaturanController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\RekeningController;
+use App\Http\Controllers\admin\TransaksiController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\user\ProdukController;
+use App\Http\Controllers\user\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-Route::get('/','user\WelcomeController@index')->name('home');
-Route::get('/home','user\WelcomeController@index')->name('home2');
-Route::get('/kontak','user\WelcomeController@kontak')->name('kontak');
-Route::get('/produk','user\ProdukController@index')->name('user.produk');
-Route::get('/produk/cari','user\ProdukController@cari')->name('user.produk.cari');
-Route::get('/kategori/{id}','KategoriController@produkByKategori')->name('user.kategori');
-Route::get('/produk/{id}','user\ProdukController@detail')->name('user.produk.detail');
+Route::get('/',[WelcomeController::class, 'index'])->name('home');
+Route::get('/home',[WelcomeController::class, 'index'])->name('home2');
+Route::get('/kontak',[WelcomeController::class, 'kontak'])->name('kontak');
+Route::get('/produk',[ProdukController::class, 'index'])->name('user.produk');
+Route::get('/produk/cari',[ProdukController::class, 'cari'])->name('user.produk.cari');
+Route::get('/kategori/{id}',[KategoriController::class, 'produkByKategori'])->name('user.kategori');
+Route::get('/produk/{id}',[ProdukController::class, 'detail'])->name('user.produk.detail');
 
 Route::get('/pelanggan',function(){
     return 'Pelanggan';
 });
 
-Route::group(['middleware' => ['auth','checkRole:admin']],function(){    
+Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
-    Route::put('/identity/{id}','admin\PengaturanController@identity');
-    Route::get('/pengaturan/alamat','admin\PengaturanController@aturalamat')->name('admin.pengaturan.alamat');
-    Route::get('/pengaturan/ubahalamat/{id}','admin\PengaturanController@ubahalamat')->name('admin.pengaturan.ubahalamat');
-    Route::get('/pengaturan/alamat/getcity/{id}','admin\PengaturanController@getCity')->name('admin.pengaturan.getCity');
-    Route::post('pengaturan/simpanalamat','admin\PengaturanController@simpanalamat')->name('admin.pengaturan.simpanalamat');
-    Route::post('pengaturan/updatealamat/{id}','admin\PengaturanController@updatealamat')->name('admin.pengaturan.updatealamat');
+    Route::put('/identity/{id}',[PengaturanController::class, 'identity']);
+    Route::prefix('/pengaturan')->group(function () {
+        Route::get('/alamat',[PengaturanController::class, 'aturalamat'])->name('admin.pengaturan.alamat');
+        Route::get('/ubahalamat/{id}',[PengaturanController::class, 'ubahalamat'])->name('admin.pengaturan.ubahalamat');
+        Route::get('/alamat/getcity/{id}',[PengaturanController::class, 'getCity'])->name('admin.pengaturan.getCity');
+        Route::post('/simpanalamat',[PengaturanController::class, 'simpanalamat'])->name('admin.pengaturan.simpanalamat');
+        Route::post('/updatealamat/{id}',[PengaturanController::class, 'updatealamat'])->name('admin.pengaturan.updatealamat');
+    });
 
-    Route::get('/admin/categories','admin\CategoriesController@index')->name('admin.categories');
-    Route::get('/admin/categories/tambah','admin\CategoriesController@tambah')->name('admin.categories.tambah');
-    Route::post('/admin/categories/store','admin\CategoriesController@store')->name('admin.categories.store');
-    Route::post('/admin/categories/update/{id}','admin\CategoriesController@update')->name('admin.categories.update');
-    Route::get('/admin/categories/edit/{id}','admin\CategoriesController@edit')->name('admin.categories.edit');
-    Route::get('/admin/categories/delete/{id}','admin\CategoriesController@delete')->name('admin.categories.delete');
+    Route::get('/admin/categories',[CategoriesController::class, 'index'])->name('admin.categories');
+    Route::get('/admin/categories/tambah',[CategoriesController::class, 'tambah'])->name('admin.categories.tambah');
+    Route::post('/admin/categories/store',[CategoriesController::class, 'store'])->name('admin.categories.store');
+    Route::post('/admin/categories/update/{id}',[CategoriesController::class, 'update'])->name('admin.categories.update');
+    Route::get('/admin/categories/edit/{id}',[CategoriesController::class, 'edit'])->name('admin.categories.edit');
+    Route::get('/admin/categories/delete/{id}',[CategoriesController::class, 'delete'])->name('admin.categories.delete');
 
-    Route::get('/admin/product','admin\ProductController@index')->name('admin.product');
-    Route::get('/admin/product/tambah','admin\ProductController@tambah')->name('admin.product.tambah');
-    Route::post('/admin/product/store','admin\ProductController@store')->name('admin.product.store');
-    Route::get('/admin/product/edit/{id}','admin\ProductController@edit')->name('admin.product.edit');
-    Route::get('/admin/product/delete/{id}','admin\ProductController@delete')->name('admin.product.delete');
-    Route::post('/admin/product/update/{id}','admin\ProductController@update')->name('admin.product.update');
+    Route::get('/admin/product',[ProductController::class, 'index'])->name('admin.product');
+    Route::get('/admin/product/tambah',[ProductController::class, 'tambah'])->name('admin.product.tambah');
+    Route::post('/admin/product/store',[ProductController::class, 'store'])->name('admin.product.store');
+    Route::get('/admin/product/edit/{id}',[ProductController::class, 'edit'])->name('admin.product.edit');
+    Route::get('/admin/product/delete/{id}',[ProductController::class, 'delete'])->name('admin.product.delete');
+    Route::post('/admin/product/update/{id}',[ProductController::class, 'update'])->name('admin.product.update');
 
-    Route::get('/admin/transaksi','admin\TransaksiController@index')->name('admin.transaksi');
-    Route::get('/admin/transaksi/perludicek','admin\TransaksiController@perludicek')->name('admin.transaksi.perludicek');
-    Route::get('/admin/transaksi/perludikirim','admin\TransaksiController@perludikirim')->name('admin.transaksi.perludikirim');
-    Route::get('/admin/transaksi/dikirim','admin\TransaksiController@dikirim')->name('admin.transaksi.dikirim');
-    Route::get('/admin/transaksi/detail/{id}','admin\TransaksiController@detail')->name('admin.transaksi.detail');
-    Route::get('/admin/transaksi/konfirmasi/{id}','admin\TransaksiController@konfirmasi')->name('admin.transaksi.konfirmasi');
-    Route::post('/admin/transaksi/inputresi/{id}','admin\TransaksiController@inputresi')->name('admin.transaksi.inputresi');
-    Route::get('/admin/transaksi/selesai','admin\TransaksiController@selesai')->name('admin.transaksi.selesai');
-    Route::get('/admin/transaksi/dibatalkan','admin\TransaksiController@dibatalkan')->name('admin.transaksi.dibatalkan');
+    Route::get('/admin/transaksi',[TransaksiController::class, 'index'])->name('admin.transaksi');
+    Route::get('/admin/transaksi/perludicek',[TransaksiController::class, 'perludicek'])->name('admin.transaksi.perludicek');
+    Route::get('/admin/transaksi/perludikirim',[TransaksiController::class, 'perludikirim'])->name('admin.transaksi.perludikirim');
+    Route::get('/admin/transaksi/dikirim',[TransaksiController::class, 'dikirim'])->name('admin.transaksi.dikirim');
+    Route::get('/admin/transaksi/detail/{id}',[TransaksiController::class, 'detail'])->name('admin.transaksi.detail');
+    Route::get('/admin/transaksi/konfirmasi/{id}',[TransaksiController::class, 'konfirmasi'])->name('admin.transaksi.konfirmasi');
+    Route::post('/admin/transaksi/inputresi/{id}',[TransaksiController::class, 'inputresi'])->name('admin.transaksi.inputresi');
+    Route::get('/admin/transaksi/selesai',[TransaksiController::class, 'selesai'])->name('admin.transaksi.selesai');
+    Route::get('/admin/transaksi/dibatalkan',[TransaksiController::class, 'dibatalkan'])->name('admin.transaksi.dibatalkan');
 
-    Route::get('/admin/rekening','admin\RekeningController@index')->name('admin.rekening');
-    Route::get('/admin/rekening/edit/{id}','admin\RekeningController@edit')->name('admin.rekening.edit');
-    Route::get('/admin/rekening/tambah','admin\RekeningController@tambah')->name('admin.rekening.tambah');
-    Route::post('/admin/rekening/store','admin\RekeningController@store')->name('admin.rekening.store');
-    Route::get('/admin/rekening/delete/{id}','admin\RekeningController@delete')->name('admin.rekening.delete');
-    Route::post('/admin/rekening/update/{id}','admin\RekeningController@update')->name('admin.rekening.update');
+    Route::get('/admin/rekening',[RekeningController::class, 'index'])->name('admin.rekening');
+    Route::get('/admin/rekening/edit/{id}',[RekeningController::class, 'edit'])->name('admin.rekening.edit');
+    Route::get('/admin/rekening/tambah',[RekeningController::class, 'tambah'])->name('admin.rekening.tambah');
+    Route::post('/admin/rekening/store',[RekeningController::class, 'store'])->name('admin.rekening.store');
+    Route::get('/admin/rekening/delete/{id}',[RekeningController::class, 'delete'])->name('admin.rekening.delete');
+    Route::post('/admin/rekening/update/{id}',[RekeningController::class, 'update'])->name('admin.rekening.update');
 
-    Route::get('/admin/pelanggan','admin\PelangganController@index')->name('admin.pelanggan');
-    Route::get('/admin/customer','admin\PelangganController@customer')->name('admin.customer');
+    Route::get('/admin/pelanggan',[PelangganController::class, 'index'])->name('admin.pelanggan');
+    Route::get('/admin/customer',[PelangganController::class, 'customer'])->name('admin.customer');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
 
     Route::get('/administrator', [AdminController::class, 'index']);

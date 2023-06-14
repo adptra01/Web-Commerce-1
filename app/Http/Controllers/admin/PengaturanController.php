@@ -22,7 +22,7 @@ class PengaturanController extends Controller
             $data['provinces'] = Province::all();
         } else {
             //jika sudah di setting maka tidak menampilkan form tapi tampilkan data alamat toko
-            
+
             $data['alamat'] = DB::table('alamat_toko')
                 ->join('cities', 'cities.city_id', '=', 'alamat_toko.city_id')
                 ->join('provinces', 'provinces.province_id', '=', 'cities.province_id')
@@ -73,7 +73,7 @@ class PengaturanController extends Controller
     {
         $request->validate([
             'name_store' => 'required|min:5',
-            'telp' => 'required|numeric|min:11|max:12',
+            'telp' => 'required|numeric|min:11',
             'description' => 'required|min:20',
         ]);
 

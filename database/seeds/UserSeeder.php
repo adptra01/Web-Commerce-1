@@ -1,9 +1,7 @@
 <?php
 
-use App\Categories;
 use Illuminate\Database\Seeder;
 use App\User;
-use Illuminate\Support\Str;
 class UserSeeder extends Seeder
 {
     /**
@@ -24,6 +22,6 @@ class UserSeeder extends Seeder
         ];
         User::insert($data);
 
-        factory(App\User::class, 50)->create();    
+        factory(App\User::class, 50)->create();
     }
 }

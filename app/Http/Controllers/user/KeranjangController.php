@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Keranjang;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class KeranjangController extends Controller
 {
@@ -79,7 +78,7 @@ class KeranjangController extends Controller
             }else{
                 return back()->with('salah', 'Update jumlah produk melebihi stok barang, perhatikan jumlah stok produk yang ingin dipesan.');
             }
-            
+
             $index++;
         }
 

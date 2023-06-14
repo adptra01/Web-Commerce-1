@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login-PetShop</title>
+    <title>Login Page</title>
 
     <!-- Custom fonts for this template-->
     <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-white">
 
     <div class="container">
 
@@ -40,18 +40,20 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Selamat datang kembali!</h1>
-                                        <div class="alert alert-primary" role="alert">
-                                            <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum memiliki akun, silakan klik tombol daftar di bawah ini.
-                                                </small>
+                                        <div class="alert bg-primary text-white alert-primary" role="alert">
+                                            <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
+                                                memiliki akun, silakan klik tombol daftar di bawah ini.
+                                            </small>
                                         </div>
-                                        
+
                                     </div>
                                     <form class="pt-3" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
                                             <input id="email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror form-control-user" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email">
+                                                class="form-control @error('email') is-invalid @enderror form-control-user"
+                                                name="email" value="{{ old('email') }}" required
+                                                autocomplete="email">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">

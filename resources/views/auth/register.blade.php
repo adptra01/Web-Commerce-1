@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Register Page</title>
 
     <!-- Custom fonts for this template-->
     <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-white">
 
     <div class="container">
 
@@ -39,7 +39,7 @@
                             <form class="pt-3" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
-                                        <input id="name" type="text"
+                                    <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus
                                         placeholder="Nama">
@@ -52,31 +52,31 @@
                                 </div>
                                 <div class="form-group">
                                     <input id="email" type="email"
-                                    class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password" placeholder="Password">
-
-                                    @error('password')
+                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input id="password" type="password"
+                                            class="form-control @error('password') is-invalid @enderror" name="password"
+                                            required autocomplete="new-password" placeholder="Password">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password"
-                                        placeholder="Konfirmasi Password">
+                                            name="password_confirmation" required autocomplete="new-password"
+                                            placeholder="Konfirmasi Password">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">

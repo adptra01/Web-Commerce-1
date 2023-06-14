@@ -10,7 +10,8 @@
                 </ol>
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
-                        <img class="d-block m-auto" src="/layouts/drawKit/vector (7).svg" style="height: 400px;" alt="First slide">
+                        <img class="d-block m-auto" src="/layouts/drawKit/vector (7).svg" style="height: 400px;"
+                            alt="First slide">
                         <div class="carousel-caption d-md-block">
                             <h5>Pengiriman cepat dan andal</h5>
                             <p>Jangan sampai menunggu lama untuk mendapatkan pakaian berkualitas terbaik yang Anda inginkan!
@@ -18,7 +19,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block m-auto" src="/layouts/drawKit/vector (4).svg" style="height: 400px;" alt="Second slide">
+                        <img class="d-block m-auto" src="/layouts/drawKit/vector (4).svg" style="height: 400px;"
+                            alt="Second slide">
                         <div class="carousel-caption d-md-block">
                             <h5>Kami hanya menggunakan bahan berkualitas terbaik untuk setiap pakaian yang kami produksi
                             </h5>
@@ -26,7 +28,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block m-auto" src="/layouts/drawKit/vector (8).svg" style="height: 400px;" alt="Third slide">
+                        <img class="d-block m-auto" src="/layouts/drawKit/vector (8).svg" style="height: 400px;"
+                            alt="Third slide">
                         <div class="carousel-caption d-md-block">
                             <h5>Dapatkan pakaian berkualitas tinggi dengan harga terjangkau di sini! </h5>
                             <p>Kami menawarkan produk-produk terbaik tanpa merusak dompet Anda.</p>
@@ -45,13 +48,21 @@
         </div>
     </div>
 
-    <div class="media mx-5">
-        <img class="align-self-center mr-3 w-50" src="/layouts/drawKit/vector (3).svg" alt="Generic placeholder image">
-        <div class="media-body align-self-center text-dark">
-            <h3 class="mt-0">Tampil Keren dengan Pakaian Anak Berkualitas Tinggi</h3>
-            Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak berkualitas
-            tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk tampil keren
-            sepanjang hari.
+    <div class="media mx-5 justify-content-center">
+        <div class="row">
+            <div class="col-lg text-center">
+                <img class="align-self-center mr-3 w-50" src="/layouts/drawKit/vector (3).svg"
+                    alt="Generic placeholder image">
+            </div>
+            <div class="col-lg">
+                <div class="media-body align-self-center text-dark">
+                    <h3 class="mt-0">Tampil Keren dengan Pakaian Anak Berkualitas Tinggi</h3>
+                    Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak
+                    berkualitas
+                    tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk tampil keren
+                    sepanjang hari.
+                </div>
+            </div>
         </div>
     </div>
     <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
@@ -74,15 +85,15 @@
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-primary">{{ $produk->name }}</h3>
-                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small>
-                                        @if ($produk->stok == 0)
-                                            <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
-                                                aria-disabled="true">Habis</a>
-                                        @else
-                                            <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                class="btn btn-primary mt-2">Detail</a>
-                                        @endif
+                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small> <br>
+                                            @if ($produk->stok == 0)
+                                                <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
+                                                    class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
+                                                    aria-disabled="true">Habis</a>
+                                            @else
+                                                <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
+                                                    class="btn btn-primary mt-2">Detail</a>
+                                            @endif
                                     </div>
                                 </div>
                             </div>
