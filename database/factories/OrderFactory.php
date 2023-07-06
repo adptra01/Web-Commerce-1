@@ -31,7 +31,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'bukti_pembayaran' => function (array $order) {
             if (in_array($order['status_order_id'], [3, 4, 5, 6])) {
                 $imagePath = 'public/imageproducts/bukti_pembayaran.jpg';
-                Storage::put($imagePath, file_get_contents(public_path('contoh_baju.jpg')));
+                Storage::put($imagePath, file_get_contents(public_path('bukti_pembayaran.jpg')));
                 return $imagePath;
             }
             return null;

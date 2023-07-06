@@ -50,17 +50,18 @@
 
     <div class="media mx-5 justify-content-center">
         <div class="row">
-            <div class="col-lg text-center">
+            <div class="col-md text-center">
                 <img class="align-self-center mr-3 w-50" src="/layouts/drawKit/vector (3).svg"
                     alt="Generic placeholder image">
             </div>
-            <div class="col-lg">
+            <div class="col-md">
                 <div class="media-body align-self-center text-dark">
-                    <h3 class="mt-0">Tampil Keren dengan Pakaian Anak Berkualitas Tinggi</h3>
-                    Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak
-                    berkualitas
-                    tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk tampil keren
-                    sepanjang hari.
+                    <h3 class="mt-5">Tampil Keren dengan Pakaian Anak Berkualitas Tinggi</h3>
+                    <p>Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak
+                        berkualitas
+                        tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk tampil
+                        keren
+                        sepanjang hari.</p>
                 </div>
             </div>
         </div>

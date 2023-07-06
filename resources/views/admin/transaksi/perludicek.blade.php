@@ -49,7 +49,11 @@
                             <td>{{ $order->invoice }}</td>
                             <td>{{ $order->nama_pemesan }}</td>
                             <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
-                            <td>{{ $order->metode_pembayaran }}</td>
+                            <td> @if ($order->metode_pembayaran == 'cod')
+                                            Cash On Delivery (COD)
+                                        @elseif ($order->metode_pembayaran == 'trf')
+                                            Transfer
+                                        @endif</td>
                             <td><span class="badge badge-warning p-2"><i class="fa fa-exclamation-triangle"
                                         aria-hidden="true"></i> {{ $order->name }}</span></td>
                             <td class="text-center">

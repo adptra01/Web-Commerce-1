@@ -44,7 +44,11 @@
                                             <td>{{ $order->invoice }}</td>
                                             <td>{{ $order->nama_pemesan }}</td>
                                             <td>{{ $order->subtotal + $order->biaya_cod }}</td>
-                                            <td>{{ $order->metode_pembayaran }}</td>
+                                            <td> @if ($order->metode_pembayaran == 'cod')
+                                            Cash On Delivery (COD)
+                                        @elseif ($order->metode_pembayaran == 'trf')
+                                            Transfer
+                                        @endif</td>
                                             <td>{{ $order->name }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">

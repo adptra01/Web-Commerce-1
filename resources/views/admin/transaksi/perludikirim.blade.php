@@ -50,10 +50,10 @@
                             <td>{{ $order->nama_pemesan }}</td>
                             <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
                             <td>
-                                @if ($order->metode_pembayaran == 'trf')
+                                @if ($order->metode_pembayaran == 'cod')
+                                    Cash On Delivery (COD)
+                                @elseif ($order->metode_pembayaran == 'trf')
                                     Transfer
-                                @else
-                                    COD
                                 @endif
                             </td>
                             <td>{{ $order->name }}</td>
