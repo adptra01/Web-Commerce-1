@@ -25,7 +25,7 @@
                 <div class="col-12 col-md-8 font-weight-bold">@if ($order->metode_pembayaran == 'cod')
                     Cash On Delivery (COD)
                 @elseif ($order->metode_pembayaran == 'trf')
-                    Transfer
+                    TRANSFER
                 @endif
                 </div>
             </div>
