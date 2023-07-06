@@ -8,6 +8,7 @@ use App\Order;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Illuminate\Http\UploadedFile as HttpUploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
@@ -29,8 +30,8 @@ $factory->define(Order::class, function (Faker $faker) {
         'updated_at' => $faker->dateTime(),
         'bukti_pembayaran' => function (array $order) {
             if (in_array($order['status_order_id'], [3, 4, 5, 6])) {
-                $image = HttpUploadedFile::fake()->image('product.jpg');
-                $imagePath = $image->store('public/imageproducts');
+                $imagePath = 'public/imageproducts/contoh_baju.jpg';
+                Storage::put($imagePath, file_get_contents(public_path('contoh_baju.jpg')));
                 return $imagePath;
             }
             return null;

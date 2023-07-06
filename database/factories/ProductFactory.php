@@ -6,10 +6,11 @@ use App\Categories;
 use App\Product;
 use Faker\Generator as Faker;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 $factory->define(Product::class, function (Faker $faker) {
-    $image = UploadedFile::fake()->image('product.jpg');
-    $imagePath = $image->store('public/imageproducts');
+    $imagePath = 'public/imageproducts/contoh_baju.jpg';
+    Storage::put($imagePath, file_get_contents(public_path('contoh_baju.jpg')));
     return [
         'name' => $faker->sentence(3),
         'description' => $faker->paragraph(),
@@ -20,6 +21,6 @@ $factory->define(Product::class, function (Faker $faker) {
             return Categories::all()->random();
         },
         'stok' => $faker->numberBetween(0, 100)
-        
+
     ];
 });
