@@ -13,7 +13,7 @@ class LaporanController extends Controller
         'data' => Order::join('status_order', 'status_order.id', '=', 'order.status_order_id')
         ->join('users', 'users.id', '=', 'order.user_id')
         ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
-        ->get(),
+        ->latest()->get(),
    ] );
     }
 }

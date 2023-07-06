@@ -18,7 +18,7 @@ class TransaksiController extends Controller
         ->join('users', 'users.id', '=', 'order.user_id')
         ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
         ->limit(10)
-        ->get();
+        ->latest()->get();
 
         return view('admin.transaksi.index', compact('order_terbaru'));
     }
@@ -51,7 +51,7 @@ class TransaksiController extends Controller
             ->join('users', 'users.id', '=', 'order.user_id')
             ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
             ->where('order.status_order_id', 2)
-            ->get();
+            ->latest()->get();
 
         return view('admin.transaksi.perludicek', compact('orderbaru'));
     }
@@ -63,7 +63,7 @@ class TransaksiController extends Controller
             ->join('users', 'users.id', '=', 'order.user_id')
             ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
             ->where('order.status_order_id', 3)
-            ->get();
+            ->latest()->get();
 
         return view('admin.transaksi.perludikirim', compact('orderbaru'));
     }
@@ -75,7 +75,7 @@ class TransaksiController extends Controller
             ->join('users', 'users.id', '=', 'order.user_id')
             ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
             ->where('order.status_order_id', 5)
-            ->get();
+            ->latest()->get();
 
         return view('admin.transaksi.selesai', compact('orderbaru'));
     }
@@ -87,7 +87,7 @@ class TransaksiController extends Controller
             ->join('users', 'users.id', '=', 'order.user_id')
             ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
             ->where('order.status_order_id', 6)
-            ->get();
+            ->latest()->get();
 
         return view('admin.transaksi.dibatalkan', compact('orderbaru'));
     }
@@ -99,7 +99,7 @@ class TransaksiController extends Controller
             ->join('users', 'users.id', '=', 'order.user_id')
             ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
             ->where('order.status_order_id', 4)
-            ->get();
+            ->latest()->get();
 
         return view('admin.transaksi.dikirim', compact('orderbaru'));
     }
