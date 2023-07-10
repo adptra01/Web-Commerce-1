@@ -44,7 +44,7 @@
                             <td>{{ ++$no }}</td>
                             <td>{{ $order->invoice }}</td>
                             <td>{{ $order->nama_pemesan }}</td>
-                            <td>{{ $order->subtotal + $order->biaya_cod }}</td>
+                            <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
                             <td>
                                 @if ($order->metode_pembayaran == 'cod')
                                 Cash On Delivery (COD)

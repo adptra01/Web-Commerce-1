@@ -17,6 +17,7 @@
                         Transfer - {{ $order->nama_pelanggan }}
                     @endif</p>
                 </div>
+                <a class="btn btn-primary" href="{{ Route('admin.transaksi.invoice', $order->id) }}" role="button">Invoice</a>
             </div>
             <div class="card my-3">
                 <div class="card-body bg-primary rounded text-white">

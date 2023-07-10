@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::post('/admin/transaksi/inputresi/{id}',[TransaksiController::class, 'inputresi'])->name('admin.transaksi.inputresi');
     Route::get('/admin/transaksi/selesai',[TransaksiController::class, 'selesai'])->name('admin.transaksi.selesai');
     Route::get('/admin/transaksi/dibatalkan',[TransaksiController::class, 'dibatalkan'])->name('admin.transaksi.dibatalkan');
+    Route::get('/admin/transaksi/invoice/{id}',[TransaksiController::class, 'invoice'])->name('admin.transaksi.invoice');
 
     Route::get('/admin/rekening',[RekeningController::class, 'index'])->name('admin.rekening');
     Route::get('/admin/rekening/edit/{id}',[RekeningController::class, 'edit'])->name('admin.rekening.edit');

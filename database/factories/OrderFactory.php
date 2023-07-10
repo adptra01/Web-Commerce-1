@@ -2,39 +2,47 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Detailorder;
 use App\User;
-use App\Model;
 use App\Order;
+use App\Product;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
-use Illuminate\Http\UploadedFile as HttpUploadedFile;
-use Illuminate\Support\Facades\Storage;
 
 $factory->define(Order::class, function (Faker $faker) {
+    $statusOrder = rand(1, 6);
+    $noResi = in_array($statusOrder, [4, 5, 6]) ? Str::random() : null;
+    $buktiPembayaran = in_array($statusOrder, [2, 3, 4, 5, 6]) ? 'public/imageproducts/bukti_pembayaran.jpg' : null;
+
     return [
-        'invoice' => 'ALV' . Date('Ymdhi'),
-        'user_id' => function() {
-            return User::all()->random();
-        },
-        'subtotal' => $faker->numberBetween(10000, 999999),
-        'no_resi' => function (array $order) {
-            if (in_array($order['status_order_id'], [3, 4, 5, 6])) {
-                Str::random();
-            }
-            return null;
-        },
-        'status_order_id' => rand(1,6),
-        'metode_pembayaran' => $this->faker->randomElement(['trf', 'cod']),
+        'invoice' => 'ALV' . date('Ymdhi'),
+        'user_id' => User::all()->random()->id,
+        'subtotal' => 0, // Inisialisasi subtotal dengan 0
+        'no_resi' => $noResi,
+        'status_order_id' => $statusOrder,
+        'metode_pembayaran' => $faker->randomElement(['trf', 'cod']),
         'ongkir' => $faker->numberBetween(10000, 999999),
-        'created_at' => $faker->dateTime(),
-        'updated_at' => $faker->dateTime(),
-        'bukti_pembayaran' => function (array $order) {
-            if (in_array($order['status_order_id'], [3, 4, 5, 6])) {
-                $imagePath = 'public/imageproducts/bukti_pembayaran.jpg';
-                Storage::put($imagePath, file_get_contents(public_path('bukti_pembayaran.jpg')));
-                return $imagePath;
-            }
-            return null;
-        },
+        'bukti_pembayaran' => $buktiPembayaran,
+        'no_hp' => $faker->phoneNumber(),
+        'pesan' => $faker->paragraph(),
+    ];
+});
+
+$factory->afterCreating(Order::class, function ($order, Faker $faker) {
+    $detailOrders = factory(Detailorder::class, rand(1, 5))->create(['order_id' => $order->id]);
+
+    $subtotal = $detailOrders->sum(function ($detailOrder) {
+        $product = Product::find($detailOrder->product_id);
+        return $product ? $product->price * $detailOrder->qty : 0;
+    });
+
+    $order->subtotal = $subtotal;
+    $order->save();
+});
+
+$factory->define(Detailorder::class, function (Faker $faker) {
+    return [
+        'product_id' => Product::all()->random()->id,
+        'qty' => rand(1, 10),
     ];
 });

@@ -133,4 +133,27 @@ class TransaksiController extends Controller
 
         return redirect()->route('admin.transaksi.perludikirim')->with('status', 'Berhasil Menginput No Resi');
     }
+
+    public function invoice($id)
+    {
+        //ambil data detail order sesuai id
+        $detail_order = Detailorder::join('products', 'products.id', '=', 'detail_order.product_id')
+            ->join('order', 'order.id', '=', 'detail_order.order_id')
+            ->select('products.name as nama_produk', 'products.image', 'detail_order.*', 'products.price', 'order.*')
+            ->where('detail_order.order_id', $id)
+            ->get();
+
+        $order = Order::join('users', 'users.id', '=', 'order.user_id')
+            ->join('status_order', 'status_order.id', '=', 'order.status_order_id')
+            ->select('order.*', 'users.name as nama_pelanggan', 'status_order.name as status')
+            ->where('order.id', $id)
+            ->first();
+
+        return view('admin.invoice', [
+            'detail' => $detail_order,
+            'order'  => $order
+        ]);
+    }
+
+
 }

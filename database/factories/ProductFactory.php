@@ -5,7 +5,6 @@
 use App\Categories;
 use App\Product;
 use Faker\Generator as Faker;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 $factory->define(Product::class, function (Faker $faker) {
