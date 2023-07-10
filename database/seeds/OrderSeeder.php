@@ -13,6 +13,5 @@ class OrderSeeder extends Seeder
     {
         factory(App\Order::class, 20)->create();
         factory(App\Alamat::class, 50)->create();
-        // factory(App\Detailorder::class, 50)->create();
     }
 }

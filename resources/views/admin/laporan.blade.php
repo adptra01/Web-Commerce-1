@@ -1,11 +1,11 @@
 <x-layout>
     <x-slot name="title">Laporan Penjualan</x-slot>
-    <div class="container">
+    <div class="container-fluid">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">LAPORAN PENJUALAN</h1>
     </div>
     <div class="card m-3">
         <div class="card-header text-center">
-            <strong>LAPORAN DATA PENJUALAN</strong>
+            <strong>LAPORAN PENJUALAN</strong>
         </div>
         <div class="card-body">
             <table class="table" id="mytable">

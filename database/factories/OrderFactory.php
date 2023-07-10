@@ -11,7 +11,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     $statusOrder = rand(1, 6);
-    $noResi = in_array($statusOrder, [4, 5, 6]) ? Str::random() : null;
+    $noResi = in_array($statusOrder, [4, 5, 6]) ? Str::random(17) : null;
     $buktiPembayaran = in_array($statusOrder, [2, 3, 4, 5, 6]) ? 'public/imageproducts/bukti_pembayaran.jpg' : null;
 
     return [
@@ -36,7 +36,12 @@ $factory->afterCreating(Order::class, function ($order, Faker $faker) {
         return $product ? $product->price * $detailOrder->qty : 0;
     });
 
-    $order->subtotal = $subtotal;
+
+    if ($order->metode_pembayaran == 'cod') {
+        $subtotal += 10000;
+    }
+
+    $order->subtotal = $subtotal + $order->ongkir;
     $order->save();
 });
 

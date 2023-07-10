@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVOICE {{ $order->invoice }}</title>
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
 
 <style>
@@ -175,7 +180,7 @@
     <table class="invoice-info-container">
         <tr>
             <td rowspan="2" class="client-name">
-                {{ $order->nama_pelanggan }}
+                <h3 class="fw-bold text-primary">{{ $order->nama_pelanggan }}</h3>
             </td>
             <td>
                 @if ($order->metode_pembayaran == 'cod')
@@ -187,7 +192,7 @@
         </tr>
         <tr>
             <td>
-
+                {{ $order->no_resi }}
             </td>
         </tr>
         <tr>
@@ -195,7 +200,10 @@
                 Invoice Date: <strong>{{ Carbon\carbon::parse($order->created_at)->format('l, d M Y') }}</strong>
             </td>
             <td>
-                {{-- {{ $detail }} --}}
+                @php
+                    $address = App\Alamat::where('user_id', $order->user_id )->first();
+                @endphp
+               {{ App\City::where('city_id', $address->cities_id)->first()->title }}, {{ $address->detail }}
             </td>
         </tr>
         <tr>
@@ -204,70 +212,94 @@
             </td>
 
             <td>
-                {{-- {{ $order->user->id }} --}}
+                {{ $order->no_hp }}
             </td>
         </tr>
     </table>
+    <div class="table-responsive mt-5">
+        <table class="table table-hover
+        align-middle">
+            <thead>
+                <tr class="text-center">
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Harga</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @foreach ($detail as $item)
+                    <tr>
+                        <td>
+                            .<div class="row justify-content-center align-items-center g-1">
+                                <div class="col"><img src="{{ Storage::url($item->image) }}"
+                                        style="width: 100px; object-fit: cover;" alt="{{ $item->image }}"></div>
+                                <div class="col">
+                                    <p>{{ $item->nama_produk }}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ $item->qty }} X</td>
+                        <td>Rp. {{ number_format($item->price, 2, ',', '.') }}</td>
+                        <td>Rp. {{ number_format($item->qty * $item->price, 2, ',', '.') }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Biaya Tambahan : </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        @if ($order->metode_pembayaran == 'cod')
+                        Rp. {{ number_format(10000, 2, ',', '.') }}
+                        @else
+                        Rp. {{ number_format(0, 2, ',', '.') }}
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ongkir : </td>
+                    <td></td>
+                    <td></td>
+                    <td>Rp. {{ number_format($order->ongkir, 2, ',', '.') }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="fw-bold text-primary">Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
-
-    <table class="line-items-container">
-        <thead>
-            <tr>
-                <th class="heading-quantity">Qty</th>
-                <th class="heading-description">Description</th>
-                <th>Price</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($detail as $item)
-            <tr>
-                <td>{{ $item->qty }}</td>
-                <td style="display: flex;"><img src="{{ Storage::url($item->image) }}" style="width: 10%; object-fit: cover;" alt="{{ $item->image }}">
-                    <p style="margin-left: 10px;">{{ $item->nama_produk }}</p></td>
-                <td>Rp. {{ number_format($item->price, 2, ',', '.') }}</td>
-                <td class="bold">Rp. {{ number_format($item->qty * $item->price, 2, ',', '.') }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-
-    <table class="line-items-container has-bottom-border">
-        <thead>
-            <tr>
-                <th>Payment Info</th>
-                <th>Due By</th>
-                <th>Total Due</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="payment-info">
-                    <div>
-                        Account No: <strong>123567744</strong>
-                    </div>
-                    <div>
-                        Routing No: <strong>120000547</strong>
-                    </div>
-                </td>
-                <td class="large">May 30th, 2024</td>
-                <td class="large total">{{ $order->subtotal }}</td>
-            </tr>
-        </tbody>
-    </table>
 
     <div class="footer">
         <div class="footer-info">
-            <span>hello@useanvil.com</span> |
-            <span>555 444 6666</span> |
-            <span>useanvil.com</span>
+            @php
+                $store = App\Alamat_toko::first();
+                $city = App\City::where('city_id', $store->city_id)->first();
+
+            @endphp
+            <span>{{ $store->name_store }}</span> |
+            <span>{{ $city->title . '' . $store->detail }}</span> |
+            <span>{{ $store->telp }}</span>
         </div>
         <div class="footer-thanks">
             <img src="https://github.com/anvilco/html-pdf-invoice-template/raw/main/img/heart.png" alt="heart">
             <span>Thank you!</span>
         </div>
     </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

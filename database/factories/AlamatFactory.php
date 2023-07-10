@@ -4,6 +4,7 @@
 
 use App\Alamat;
 use App\City;
+use App\Model;
 use App\User;
 use Faker\Generator as Faker;
 
@@ -14,5 +15,4 @@ $factory->define(Alamat::class, function (Faker $faker) {
         'cities_id' => City::all()->random()->id,
         'detail' => $faker->address(),
     ];
-
 });

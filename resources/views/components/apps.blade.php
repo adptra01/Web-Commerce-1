@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ $title }} | Jambi Ecommerce Center</title>
+    <title>{{ $title }} | {{App\Alamat_toko::first()->name_store}}</title>
 
     <!-- Custom fonts for this template-->
     <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
