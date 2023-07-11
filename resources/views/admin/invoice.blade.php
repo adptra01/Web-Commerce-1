@@ -283,7 +283,7 @@
 
             @endphp
             <span>{{ $store->name_store }}</span> |
-            <span>{{ $city->title . '' . $store->detail }}</span> |
+            <span>{{ $city->title . ', ' . $store->detail }}</span> |
             <span>{{ $store->telp }}</span>
         </div>
         <div class="footer-thanks">
