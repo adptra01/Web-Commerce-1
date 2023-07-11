@@ -21,7 +21,7 @@ $factory->define(Order::class, function (Faker $faker) {
 
         $buktiPembayaran = $imagePath;
     } else {
-        return null;
+        $buktiPembayaran = null;
     }
 
     return [

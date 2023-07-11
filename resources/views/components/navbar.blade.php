@@ -67,7 +67,7 @@
      <div class="sidebar-heading">
          Sirkulasi
      </div>
-     
+
      @php
          $alert1 = App\Order::where('status_order_id', [2,3,4])->count();
          $alert2 = App\Order::where('status_order_id', 2)->count();
@@ -90,23 +90,23 @@
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Informasi Transaksi</h6>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.perludicek') }}">Perlu dicek 
+                 <a class="collapse-item" href="{{ route('admin.transaksi.perludicek') }}">Perlu dicek
                 @if ($alert2 == 1)
-                <sup class="badge badge-danger badge-counter">{{ $alert2 }}</sup>     
+                <sup class="badge badge-danger badge-counter">{{ $alert2 }}</sup>
                 @endif
                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.perludikirim') }}">Perlu dikirim
                     @if ($alert3 == 1)
-                    <sup class="badge badge-danger badge-counter">{{ $alert3 }}</sup>     
+                    <sup class="badge badge-danger badge-counter">{{ $alert3 }}</sup>
                     @endif
                 </a>
-                 <a class="collapse-item" href="{{ route('admin.transaksi.dikirim') }}">Dalam Pengiriman 
+                 <a class="collapse-item" href="{{ route('admin.transaksi.dikirim') }}">Dalam Pengiriman
                     @if ($alert4 == 1)
-                    <sup class="badge badge-danger badge-counter">{{ $alert4 }}</sup>     
+                    <sup class="badge badge-danger badge-counter">{{ $alert4 }}</sup>
                     @endif
                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.selesai') }}">Telah selesai
-                
+
                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.dibatalkan') }}">Dibatalkan</a>
                  {{-- <a class="collapse-item" href="{{ route('admin.pelanggan') }}">Informasi Pembelian</a> --}}
@@ -145,6 +145,12 @@
              <i class="fas fa-fw fa-tachometer-alt"></i>
              <span>Laporan Penjualan</span></a>
      </li>
+
+     <li class="nav-item {{ Request::path() === 'admin/contact' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('contact') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Bantuan</span></a>
+    </li>
 
      <hr class="sidebar-divider d-none d-md-block">
      <div class="text-center d-none d-md-inline">

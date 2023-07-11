@@ -18,9 +18,15 @@ use App\Http\Controllers\admin\PengaturanController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RekeningController;
 use App\Http\Controllers\admin\TransaksiController;
-use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\user\AlamatController;
+use App\Http\Controllers\user\CheckoutController;
+use App\Http\Controllers\user\KeranjangController;
+use App\Http\Controllers\user\OrderController;
 use App\Http\Controllers\user\ProdukController;
 use App\Http\Controllers\user\WelcomeController;
+
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,11 +47,11 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
     Route::put('/identity/{id}',[PengaturanController::class, 'identity']);
     Route::prefix('/pengaturan')->group(function () {
-    Route::get('/alamat',[PengaturanController::class, 'aturalamat'])->name('admin.pengaturan.alamat');
-    Route::get('/ubahalamat/{id}',[PengaturanController::class, 'ubahalamat'])->name('admin.pengaturan.ubahalamat');
-    Route::get('/alamat/getcity/{id}',[PengaturanController::class, 'getCity'])->name('admin.pengaturan.getCity');
-    Route::post('/simpanalamat',[PengaturanController::class, 'simpanalamat'])->name('admin.pengaturan.simpanalamat');
-    Route::post('/updatealamat/{id}',[PengaturanController::class, 'updatealamat'])->name('admin.pengaturan.updatealamat');
+        Route::get('/alamat',[PengaturanController::class, 'aturalamat'])->name('admin.pengaturan.alamat');
+        Route::get('/ubahalamat/{id}',[PengaturanController::class, 'ubahalamat'])->name('admin.pengaturan.ubahalamat');
+        Route::get('/alamat/getcity/{id}',[PengaturanController::class, 'getCity'])->name('admin.pengaturan.getCity');
+        Route::post('/simpanalamat',[PengaturanController::class, 'simpanalamat'])->name('admin.pengaturan.simpanalamat');
+        Route::post('/updatealamat/{id}',[PengaturanController::class, 'updatealamat'])->name('admin.pengaturan.updatealamat');
     });
 
     Route::get('/admin/categories',[CategoriesController::class, 'index'])->name('admin.categories');
@@ -93,26 +99,32 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
 });
 
 Route::group(['middleware' => ['auth','checkRole:customer']],function(){
-    Route::post('/keranjang/simpan','user\KeranjangController@simpan')->name('user.keranjang.simpan');
-    Route::get('/keranjang','user\KeranjangController@index')->name('user.keranjang');
-    Route::post('/keranjang/update','user\KeranjangController@update')->name('user.keranjang.update');
-    Route::get('/keranjang/delete/{id}','user\KeranjangController@delete')->name('user.keranjang.delete');
-    Route::get('/alamat','user\AlamatController@index')->name('user.alamat');
-    Route::get('/getcity/{id}','user\AlamatController@getCity')->name('user.alamat.getCity');
-    Route::post('/alamat/simpan','user\AlamatController@simpan')->name('user.alamat.simpan');
-    Route::post('/alamat/update/{id}','user\AlamatController@update')->name('user.alamat.update');
-    Route::get('/alamat/ubah/{id}','user\AlamatController@ubah')->name('user.alamat.ubah');
-    Route::get('/checkout','user\CheckoutController@index')->name('user.checkout');
-    Route::post('/order/simpan','user\OrderController@simpan')->name('user.order.simpan');
-    Route::get('/order/sukses','user\OrderController@sukses')->name('user.order.sukses');
-    Route::get('/order','user\OrderController@index')->name('user.order');
-    Route::get('/order/detail/{id}','user\OrderController@detail')->name('user.order.detail');
-    Route::get('/order/pesananditerima/{id}','user\OrderController@pesananditerima')->name('user.order.pesananditerima');
-    Route::get('/order/pesanandibatalkan/{id}','user\OrderController@pesanandibatalkan')->name('user.order.pesanandibatalkan');
-    Route::get('/order/pembayaran/{id}','user\OrderController@pembayaran')->name('user.order.pembayaran');
-    Route::post('/order/kirimbukti/{id}','user\OrderController@kirimbukti')->name('user.order.kirimbukti');
+    Route::post('/keranjang/simpan',[KeranjangController::class, 'simpan'])->name('user.keranjang.simpan');
+    Route::get('/keranjang',[KeranjangController::class, 'index'])->name('user.keranjang');
+    Route::post('/keranjang/update',[KeranjangController::class, 'update'])->name('user.keranjang.update');
+    Route::get('/keranjang/delete/{id}',[KeranjangController::class, 'delete'])->name('user.keranjang.delete');
+    Route::get('/alamat',[AlamatController::class, 'index'])->name('user.alamat');
+    Route::get('/getcity/{id}',[AlamatController::class, 'getCity'])->name('user.alamat.getCity');
+    Route::post('/alamat/simpan',[AlamatController::class, 'simpan'])->name('user.alamat.simpan');
+    Route::post('/alamat/update/{id}',[AlamatController::class, 'update'])->name('user.alamat.update');
+    Route::get('/alamat/ubah/{id}',[AlamatController::class, 'ubah'])->name('user.alamat.ubah');
+
+    Route::get('/checkout',[CheckoutController::class, 'index'])->name('user.checkout');
+
+    Route::post('/order/simpan',[OrderController::class, 'simpan'])->name('user.order.simpan');
+    Route::get('/order/sukses',[OrderController::class, 'sukses'])->name('user.order.sukses');
+    Route::get('/order',[OrderController::class, 'index'])->name('user.order');
+    Route::get('/order/detail/{id}',[OrderController::class, 'detail'])->name('user.order.detail');
+    Route::get('/order/pesananditerima/{id}',[OrderController::class, 'pesananditerima'])->name('user.order.pesananditerima');
+    Route::get('/order/pesanandibatalkan/{id}',[OrderController::class, 'pesanandibatalkan'])->name('user.order.pesanandibatalkan');
+    Route::get('/order/pembayaran/{id}',[OrderController::class, 'pembayaran'])->name('user.order.pembayaran');
+    Route::post('/order/kirimbukti/{id}',[OrderController::class, 'kirimbukti'])->name('user.order.kirimbukti');
 });
 
-Route::get('/ongkir', 'OngkirController@index');
-Route::get('/ongkir/province/{id}/cities', 'OngkirController@getCities');
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store')
+;
+Route::get('admin/contact', [ContactController::class, 'tables'])->name('contact');
+Route::get('admin/contact/{id}', [ContactController::class, 'show'])->name('contact.show');
+
 Route::view('/index', 'index');

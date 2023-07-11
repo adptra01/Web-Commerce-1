@@ -152,7 +152,7 @@
                         </li>
                         <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
                                 href="{{ route('user.produk') }}">Produk</a></li>
-                        {{-- <li class="{{ Request::path() === 'kontak' ? '' : '' }}"><a href="{{ route('kontak') }}">Kontak</a></li> --}}
+                        <li><a href="{{ route('contact.index') }}">Contact</a></li>
                     </ul>
                 </div>
             </nav>
