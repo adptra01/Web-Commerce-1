@@ -1,10 +1,19 @@
+@php
+    $store = App\Alamat_toko::first();
+
+    $cityStore = App\City::where('city_id', $store->city_id)->first();
+
+    $address = App\Alamat::where('user_id', $order->user_id)->first();
+
+    $city = App\City::where('city_id', $address->cities_id)->first()->title;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVOICE {{ $order->invoice }}</title>
+    <title>INVOICE {{ $order->invoice }} - {{ $store->name_store ?? '' }}</title>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -200,10 +209,7 @@
                 Invoice Date: <strong>{{ Carbon\carbon::parse($order->created_at)->format('l, d M Y') }}</strong>
             </td>
             <td>
-                @php
-                    $address = App\Alamat::where('user_id', $order->user_id )->first();
-                @endphp
-               {{ App\City::where('city_id', $address->cities_id)->first()->title }}, {{ $address->detail }}
+                {{ $city ?? '' }}, {{ $address->detail ?? '' }}
             </td>
         </tr>
         <tr>
@@ -252,9 +258,9 @@
                     <td></td>
                     <td>
                         @if ($order->metode_pembayaran == 'cod')
-                        Rp. {{ number_format(10000, 2, ',', '.') }}
+                            Rp. {{ number_format(10000, 2, ',', '.') }}
                         @else
-                        Rp. {{ number_format(0, 2, ',', '.') }}
+                            Rp. {{ number_format(0, 2, ',', '.') }}
                         @endif
                     </td>
                 </tr>
@@ -265,7 +271,7 @@
                     <td>Rp. {{ number_format($order->ongkir, 2, ',', '.') }}</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td class="fw-bold text-primary">Total : </td>
                     <td></td>
                     <td></td>
                     <td class="fw-bold text-primary">Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</td>
@@ -277,18 +283,12 @@
 
     <div class="footer">
         <div class="footer-info">
-            @php
-                $store = App\Alamat_toko::first();
-                $city = App\City::where('city_id', $store->city_id)->first();
-
-            @endphp
-            <span>{{ $store->name_store }}</span> |
-            <span>{{ $city->title . ', ' . $store->detail }}</span> |
-            <span>{{ $store->telp }}</span>
+            <span>{{ $store->name_store ?? '' }}</span> |
+            <span>{{ $cityStore->title ?? '' }}, {{ $store->detail ?? '' }}</span> |
+            <span>{{ $store->telp ?? '' }}</span>
         </div>
         <div class="footer-thanks">
-            <img src="https://github.com/anvilco/html-pdf-invoice-template/raw/main/img/heart.png" alt="heart">
-            <span>Thank you!</span>
+            <span>❤ Thank you!</span>
         </div>
     </div>
 
