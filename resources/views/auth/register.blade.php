@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-white">
+<body class="bg-gradient-primary">
 
     <div class="container">
 

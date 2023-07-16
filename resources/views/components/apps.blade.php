@@ -29,6 +29,8 @@
 </head>
 
 <body id="page-top">
+    <x-dateTarget></x-dateTarget>
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">

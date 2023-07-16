@@ -41,7 +41,7 @@
 </head>
 
 <body>
-
+    <x-dateTarget></x-dateTarget>
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             <div class="site-navbar-top">
@@ -152,7 +152,7 @@
                         </li>
                         <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
                                 href="{{ route('user.produk') }}">Produk</a></li>
-                        <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                        {{-- <li><a href="{{ route('contact.index') }}">Contact</a></li> --}}
                     </ul>
                 </div>
             </nav>

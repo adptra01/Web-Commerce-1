@@ -146,11 +146,11 @@
              <span>Laporan Penjualan</span></a>
      </li>
 
-     <li class="nav-item {{ Request::path() === 'admin/contact' ? 'active' : '' }}">
+     {{-- <li class="nav-item {{ Request::path() === 'admin/contact' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('contact') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Bantuan</span></a>
-    </li>
+    </li> --}}
 
      <hr class="sidebar-divider d-none d-md-block">
      <div class="text-center d-none d-md-inline">

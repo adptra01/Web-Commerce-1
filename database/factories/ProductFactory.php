@@ -8,8 +8,8 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Storage;
 
 $factory->define(Product::class, function (Faker $faker) {
-    $imagePath = 'public/imageproducts/contoh_baju.jpg';
-    Storage::put($imagePath, file_get_contents(public_path('contoh_baju.jpg')));
+    $imagePath = 'public/imageproducts/whiskas.jpg';
+    Storage::put($imagePath, file_get_contents(public_path('whiskas.jpg')));
 
     return [
         'name' => $faker->sentence(3),

@@ -41,17 +41,19 @@
                 <tbody>
                     @foreach ($orderbaru as $order)
                         <tr>
-                            <td align="center"></td>
+                            <td></td>
                             <td>{{ $order->invoice }}</td>
                             <td>{{ $order->nama_pemesan }}</td>
                             <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
-                            <td> @if ($order->metode_pembayaran == 'cod')
-                                            Cash On Delivery (COD)
-                                        @elseif ($order->metode_pembayaran == 'trf')
-                                            Transfer
-                                        @endif</td>
+                            <td>
+                                @if ($order->metode_pembayaran == 'cod')
+                                    Cash On Delivery (COD)
+                                @elseif ($order->metode_pembayaran == 'trf')
+                                    Transfer
+                                @endif
+                            </td>
                             <td>{{ $order->name }}</td>
-                            <td align="center">
+                            <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="{{ route('admin.transaksi.detail', ['id' => $order->id]) }}"
                                         class="btn btn-primary btn-sm">

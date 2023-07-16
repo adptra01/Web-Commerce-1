@@ -6,13 +6,14 @@
     </div>
 
     <div class="container">
-        <div class="site-blocks-cover rounded" style="background-image: url({{ asset('shopper') }}/images/display.jpg); max-height:200px;"
-        data-aos="fade">
-        <div class="container">
-            <div class="row align-items-start align-items-md-center justify-content-end">
+        <div class="site-blocks-cover rounded"
+            style="background-image: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGV0JTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'); max-height:200px;"
+            data-aos="fade">
+            <div class="container">
+                <div class="row align-items-start align-items-md-center justify-content-end">
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
         <div class="container">
@@ -75,7 +76,7 @@
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-primary">{{ $produk->name }}</h3>
-                                    <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
+                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"

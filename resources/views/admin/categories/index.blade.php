@@ -37,7 +37,7 @@
                 <tbody>
                     @foreach ($categories as $no => $item)
                         <tr>
-                            <td align="center">{{ ++$no }}</td>
+                            <td >{{ ++$no }}</td>
                             <td>{{ $item->name }}</td>
                             <td>
                                 <div class="d-flex" style="gap: 5px">

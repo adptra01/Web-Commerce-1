@@ -41,7 +41,7 @@
                 <tbody>
                     @foreach ($rekening as $no => $rek)
                         <tr>
-                            <td align="center">{{ ++$no }}</td>
+                            <td>{{ ++$no }}</td>
                             <td>{{ $rek->bank_name }}</td>
                             <td>{{ $rek->atas_nama }}</td>
                             <td>{{ $rek->no_rekening }}</td>

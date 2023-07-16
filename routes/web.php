@@ -33,15 +33,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/',[WelcomeController::class, 'index'])->name('home');
 Route::get('/home',[WelcomeController::class, 'index'])->name('home2');
-Route::get('/kontak',[WelcomeController::class, 'kontak'])->name('kontak');
 Route::get('/produk',[ProdukController::class, 'index'])->name('user.produk');
 Route::get('/produk/cari',[ProdukController::class, 'cari'])->name('user.produk.cari');
 Route::get('/kategori/{id}',[KategoriController::class, 'produkByKategori'])->name('user.kategori');
 Route::get('/produk/{id}',[ProdukController::class, 'detail'])->name('user.produk.detail');
-
-Route::get('/pelanggan',function(){
-    return 'Pelanggan';
-});
 
 Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');

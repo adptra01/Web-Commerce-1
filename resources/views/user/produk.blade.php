@@ -52,11 +52,11 @@
 
                 <div class="col-md-4 order-1 mb-5 mb-md-0">
                     <div class="border p-4 rounded mb-4">
-                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Kategori Produk</h3>
+                        <h2 class="mb-3 h6 text-uppercase  text-primary d-block font-weight-bold">Kategori Produk</h3>
                         <ul class="list-unstyled mb-0">
                             @foreach ($categories as $categori)
                                 <li class="mb-1"><a href="{{ route('user.kategori', ['id' => $categori->id]) }}"
-                                        class="d-flex"><small>{{ $categori->name }}</small> <small class="text-black ml-auto">(
+                                        class="d-flex text-dark"><small>{{ $categori->name }}</small> <small class="text-primary ml-auto">(
                                             {{ $categori->jumlah }} )</small></a>
                                 </li>
                             @endforeach
