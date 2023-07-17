@@ -16,10 +16,6 @@ class RekeningController extends Controller
         return view('admin.rekening.index', compact('rekening'));
     }
 
-    public function tambah()
-    {
-        return view('admin.rekening.tambah');
-    }
 
     public function store(RekeningRequest $request)
     {
@@ -33,20 +29,6 @@ class RekeningController extends Controller
         return redirect()->route('admin.rekening')->with('status', 'Berhasil Menambah Rekening');
     }
 
-    public function update($id, RekeningRequest $request)
-    {
-        // update rekening
-        Rekening::updateOrCreate([
-            'id'    => $id
-        ], [
-            'bank_name'   => $request->bank_name,
-            'atas_nama'   => $request->atas_nama,
-            'no_rekening' => $request->no_rekening
-        ]);
-
-        return redirect()->route('admin.rekening')->with('status', 'Berhasil Mengubah Rekening');
-    }
-
     public function edit($id)
     {
         $rekening = Rekening::FindOrFail($id);
@@ -55,11 +37,21 @@ class RekeningController extends Controller
         return view('admin.rekening.edit', compact('rekening', 'bank'));
     }
 
-    public function delete(Rekening $id)
+    public function update($id, RekeningRequest $request)
     {
-        //hapus rekening
-        $id->delete();
+        // update rekening
+        Rekening::whereId($id)->update([
+            'bank_name'   => $request->bank_name,
+            'atas_nama'   => $request->atas_nama,
+            'no_rekening' => $request->no_rekening
+        ]);
 
+        return redirect()->route('admin.rekening')->with('status', 'Berhasil Mengubah Rekening');
+    }
+
+    public function delete($id)
+    {
+        Rekening::whereId($id)->delete();
         return redirect()->route('admin.rekening')->with('status', 'Berhasil Mengahapus Rekening');
     }
 }

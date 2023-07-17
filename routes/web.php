@@ -74,13 +74,6 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin/transaksi/dibatalkan',[TransaksiController::class, 'dibatalkan'])->name('admin.transaksi.dibatalkan');
     Route::get('/admin/transaksi/invoice/{id}',[TransaksiController::class, 'invoice'])->name('admin.transaksi.invoice');
 
-    Route::get('/admin/rekening',[RekeningController::class, 'index'])->name('admin.rekening');
-    Route::get('/admin/rekening/edit/{id}',[RekeningController::class, 'edit'])->name('admin.rekening.edit');
-    Route::get('/admin/rekening/tambah',[RekeningController::class, 'tambah'])->name('admin.rekening.tambah');
-    Route::post('/admin/rekening/store',[RekeningController::class, 'store'])->name('admin.rekening.store');
-    Route::get('/admin/rekening/delete/{id}',[RekeningController::class, 'delete'])->name('admin.rekening.delete');
-    Route::post('/admin/rekening/update/{id}',[RekeningController::class, 'update'])->name('admin.rekening.update');
-
     Route::get('/admin/pelanggan',[PelangganController::class, 'index'])->name('admin.pelanggan');
     Route::get('/admin/customer',[PelangganController::class, 'customer'])->name('admin.customer');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
@@ -91,6 +84,12 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/administrator/{id}/edit', [AdminController::class, 'show']);
     Route::put('/administrator/{id}', [AdminController::class, 'update']);
     Route::delete('/administrator/{id}', [AdminController::class, 'destroy']);
+
+    Route::get('/admin/rekening',[RekeningController::class, 'index'])->name('admin.rekening');
+    Route::get('/admin/rekening/edit/{id}',[RekeningController::class, 'edit'])->name('admin.rekening.edit');
+    Route::post('/admin/rekening/store',[RekeningController::class, 'store'])->name('admin.rekening.store');
+    Route::get('/admin/rekening/delete/{id}',[RekeningController::class, 'delete'])->name('admin.rekening.delete');
+    Route::post('/admin/rekening/update/{id}',[RekeningController::class, 'update'])->name('admin.rekening.update');
 });
 
 Route::group(['middleware' => ['auth','checkRole:customer']],function(){
