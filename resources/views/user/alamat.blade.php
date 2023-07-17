@@ -16,13 +16,11 @@
                 $address = App\Alamat::where('user_id', Auth()->user()->id)->first();
                 if ($address == true) {
                     $city = App\City::where('city_id', $address->cities_id)->first();
-                    $provinces = App\Province::where('id', $city->province_id)->first();
                 }
             @endphp
             <h4 class="font-weight-bold mb-3 text-primary">Alamat Sekarang:</h3>
-                <h3 class="mb-4 font-weight-bold">Provinsi : {{ $h3rovinces->title ?? 'Belum di atur' }}</h3>
                 <h3 class="mb-4 font-weight-bold">Kota : {{ $city->title ?? 'Belum di atur' }}</h3>
-                <h3 class="mb-4 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h3>
+                <h3 class="mb-5 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h3>
 
                 @if ($address == true)
                     <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-primary">Ubah
