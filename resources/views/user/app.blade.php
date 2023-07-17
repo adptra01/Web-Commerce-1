@@ -147,7 +147,7 @@
             </div>
             <nav class="site-navigation text-right text-md-center" role="navigation">
                 <div class="container">
-                    <ul class="site-menu js-clone-nav d-none d-md-block">
+                    <ul class="site-menu js-clone-nav d-none d-md-block" style="padding: 0;">
                         <li class="{{ Request::path() === '/' ? '' : '' }}"><a href="{{ route('home') }}">Beranda</a>
                         </li>
                         <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
