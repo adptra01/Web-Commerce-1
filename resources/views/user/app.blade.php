@@ -159,13 +159,13 @@ img {
 @yield('content')
 
 <footer class="site-footer border-top">
-    <div class="container">
+    <div class="container bg-primary p-5 rounded">
         <div class="row">
             <div class="col-md mb-5 mb-lg-0">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Tentang Toko</h3>
-                        <ul class="list-unstyled">
+                        <h3 class="footer-heading mb-4 text-white font-weight-bold">Tentang Toko</h3>
+                        <ul class="list-unstyled text-white">
                             <p>{{ $toko->description }}</p>
                         </ul>
                     </div>
@@ -176,13 +176,13 @@ img {
             @endphp
             <div class="col-md col-lg-4">
                 <div class="block-5 mb-5">
-                    <h3 class="footer-heading mb-4">Contact Info</h3>
+                    <h3 class="footer-heading mb-4 text-white font-weight-bold">Contact Info</h3>
                     <ul class="list-unstyled">
                         <li class="address">
                             {{ $city->title }}, {{ $toko->detail }}
                         </li>
                         <li class="phone"><a
-                                href="https://api.whatsapp.com/send/?phone={{ $toko->telp }}&text&type=phone_number&app_absent=0">{{ $toko->telp }}</a>
+                                href="https://api.whatsapp.com/send/?phone={{ $toko->telp }}&text&type=phone_number&app_absent=0" class="text-white">{{ $toko->telp }}</a>
                         </li>
                     </ul>
                 </div>
