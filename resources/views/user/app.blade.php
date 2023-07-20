@@ -178,7 +178,7 @@ img {
                 <div class="block-5 mb-5">
                     <h3 class="footer-heading mb-4 text-white font-weight-bold">Contact Info</h3>
                     <ul class="list-unstyled">
-                        <li class="address">
+                        <li class="address text-white">
                             {{ $city->title }}, {{ $toko->detail }}
                         </li>
                         <li class="phone"><a
