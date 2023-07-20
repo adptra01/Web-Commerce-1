@@ -1,8 +1,9 @@
 @extends('user.app')
 @section('content')
     <div class="container my-5 text-center text-dark">
-        <h3 class="font-weight-bold text-primary">PET SHOP</h3>
-        <h1 class="font-weight-bold">MAKE YOUR PETS HAPPY</h1>
+        <h3 class="font-weight-bold text-primary">TOKO HEWAN PELIHARAAN</h3>
+        <h1 class="font-weight-bold">BUAT HEWAN PELIHARAANMU BAHAGIA
+        </h1>
     </div>
 
     <div class="container">
@@ -56,16 +57,15 @@
         </div>
     </div> --}}
     <div class="site-section">
-        <h6 class="text-center text-primary"><strong>ABOUT US</strong></h6>
-        <h2 class="text-center text-dark"><strong>WE KEEP YOUR PETS HAPPY ALL TIME</strong></h2>
+        <h6 class="text-center text-primary"><strong>TENTANG KAMI</strong></h6>
+        <h2 class="text-center text-dark"><strong>MENJAGA BAHAGIA SEPANJANG WAKTU</strong></h2>
         <div class="container pt-5">
             <div class="row">
                 <div class="col-md"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
                         alt=""></div>
                 <div class="col-md text-right">
-                    <h4 class="text-dark">“<span class="text-primary">Pet House</span> Is <span class="text-primary">Caring
-                            Us</span>, That’s Why<br>
-                        We Are So <span class="text-primary">Naughty</span>”</h4>
+                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span class="text-primary">Bahagia</span> Itu <br>
+                        <span class="text-primary">Penting</span> Bagi Mereka”</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laborum, nulla suscipit id alias,
                         ratione veniam quisquam ullam earum aperiam repudiandae ut adipisci deleniti obcaecati, ipsam dicta
                         quaerat fugit. Possimus?</p>
@@ -78,8 +78,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-7 site-section-heading text-center pt-4">
 
-                    <h6 class="font-weight-bold text-primary">PRODUCTS</h6>
-                    <h2 class="font-weight-bold">PRODUCTS FOR YOUR BEST FRIENDS</h2>
+                    <h6 class="font-weight-bold text-primary">PRODUK TOKO</h6>
+                    <h2 class="font-weight-bold">PRODUK UNTUK SAHABAT ANDA</h2>
                 </div>
             </div>
             <div class="row">
@@ -118,13 +118,13 @@
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s"
                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <h6 class="text-primary font-weight-bold text-uppercase mb-3">Our Features</h6>
-                    <h1 class="font-weight-bold text-dark mb-5">We Are Trusted Petshop</h1>
+                    <h6 class="text-primary font-weight-bold text-uppercase mb-3">FITUR KAMI</h6>
+                    <h1 class="font-weight-bold text-dark mb-5">KAMI PETSHOP TERPECAYA</h1>
                     <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s"
                         style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                         <i class="fa fa-globe text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">High Quality</h5>
+                            <h5 class="font-weight-bold text-primary">Produk Asli</h5>
                             <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
                                 clita duo
                                 justo magna erat amet</p>
@@ -134,7 +134,7 @@
                         style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
                         <i class="fa fa-shipping-fast text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">On Time Delivery</h5>
+                            <h5 class="font-weight-bold text-primary">Pengiriman Tepat Waktu</h5>
                             <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
                                 clita duo
                                 justo magna erat amet</p>
@@ -144,7 +144,7 @@
                         style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
                         <i class="fa fa-headphones text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">24/7 Telephone Support</h5>
+                            <h5 class="font-weight-bold text-primary">Dukungan Telepon 24/7</h5>
                             <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
                                 clita duo
                                 justo magna erat amet</p>
