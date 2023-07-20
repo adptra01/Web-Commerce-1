@@ -26,7 +26,7 @@ class AdminController extends Controller
         User::insert([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Crypt::encryptString('administrator'),
+            'password' => bcrypt('administrator'),
             'role' => 'admin',
         ]);
 
@@ -47,10 +47,16 @@ class AdminController extends Controller
             'name' => 'required|min:5',
             'email' => 'required|email|unique:users,email,'.$id,
         ]);
+        if($request->password == null)
+        {
+            $password = User::where('id', $id)->first()->password;
+        }else{
+            $password = bcrypt($request->password);
+        }
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Crypt::encryptString($request->password),
+            'password' => $password ,
             'role' => 'admin',
         ]);
 
