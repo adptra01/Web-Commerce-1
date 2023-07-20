@@ -116,7 +116,7 @@ class TransaksiController extends Controller
         foreach ($order as $item) {
             Product::where('id', $item->product_id)->decrement('stok', $item->qty);
         }
-        return redirect()->route('admin.transaksi.perludikirim')->with('status', 'Berhasil Mengonfirmasi Pembayaran Pesanan');
+        return redirect()->route('admin.transaksi.perludikirim')->with('success', 'Berhasil Mengonfirmasi Pembayaran Pesanan');
     }
 
     public function inputresi($id, Request $request)
@@ -131,7 +131,7 @@ class TransaksiController extends Controller
                 'status_order_id'   => 4
             ]);
 
-        return redirect()->route('admin.transaksi.perludikirim')->with('status', 'Berhasil Menginput No Resi');
+        return redirect()->route('admin.transaksi.perludikirim')->with('success', 'Berhasil Menginput No Resi');
     }
 
     public function invoice($id)

@@ -52,7 +52,7 @@ class PengaturanController extends Controller
             'detail'  => $request->detail
         ]);
 
-        return redirect()->route('admin.pengaturan.alamat')->with('status', 'Berhasil Mengatur Alamat');
+        return redirect()->route('admin.pengaturan.alamat')->with('success', 'Berhasil Mengatur Alamat');
     }
 
     public function updatealamat($id, Request $request)
@@ -66,7 +66,7 @@ class PengaturanController extends Controller
                 'detail'  => $request->detail
             ]);
 
-        return redirect()->route('admin.pengaturan.alamat')->with('status', 'Berhasil Mengubah Alamat');
+        return redirect()->route('admin.pengaturan.alamat')->with('success', 'Berhasil Mengubah Alamat');
     }
 
     public function identity($id, Request $request)

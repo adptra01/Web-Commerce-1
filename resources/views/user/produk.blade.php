@@ -11,6 +11,12 @@
 
     <div class="site-section">
         <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center font-weight-bold text-primary mb-4">
+                    <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Produk Toko</h3>
+                        <hr>
+                </div>
+            </div>
 
             <div class="row mb-5">
                 <div class="col-md-8 order-2">
@@ -22,7 +28,7 @@
                                         width="100%" style="height:200px">
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-primary">{{ $produk->name }}
+                                        <h3 class="text-dark">{{ $produk->name }}
                                         </h3>
                                         <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small>
                                         @if ($produk->stok == 0)
@@ -31,7 +37,7 @@
                                                 aria-disabled="true">Habis</a>
                                         @else
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                class="btn btn-primary mt-2">Detail</a>
+                                                class="btn btn-dark mt-2">Detail</a>
                                         @endif
 
                                     </div>

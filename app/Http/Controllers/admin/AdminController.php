@@ -40,9 +40,13 @@ class AdminController extends Controller
         ]);
     }
 
-    
-    public function update(AdminRequest $request, $id)
+
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|min:5',
+            'email' => 'required|email|unique:users,email,'.$id,
+        ]);
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -55,7 +59,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         User::where('id', $id)->delete();
-        
+
         return back()->with('success', 'Data berhasil dihapus. Data yang Anda pilih tidak lagi tersedia pada sistem 😁');
 
     }

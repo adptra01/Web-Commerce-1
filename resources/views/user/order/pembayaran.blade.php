@@ -52,7 +52,7 @@
                                                 class="form-control" required>
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-primary">Kirim</button>
+                                            <button type="submit" class="btn btn-dark">Kirim</button>
                                         </div>
                                     </form>
                                 </div>

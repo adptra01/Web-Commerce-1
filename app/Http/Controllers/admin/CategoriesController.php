@@ -27,13 +27,13 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-        //Simpan datab ke database    
+        //Simpan datab ke database
         Categories::updateOrCreate([
             'name' => $request->name
         ], []);
 
         //lalu reireact ke route admin.categories dengan mengirim flashdata(session) berhasil tambah data untuk manampilkan alert succes tambah data
-        return redirect()->route('admin.categories')->with('status', 'Berhasil Menambah Kategori');
+        return redirect()->route('admin.categories')->with('success', 'Berhasil Menambah Kategori');
     }
 
     public function update(Categories $id, Request $request)
@@ -42,7 +42,7 @@ class CategoriesController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('admin.categories')->with('status', 'Berhasil Mengubah Kategori');
+        return redirect()->route('admin.categories')->with('success', 'Berhasil Mengubah Kategori');
     }
 
     //function menampilkan form edit
@@ -61,6 +61,6 @@ class CategoriesController extends Controller
         //hapus data sesuai id dari parameter
         Categories::destroy($id);
 
-        return redirect()->route('admin.categories')->with('status', 'Berhasil Mengahapus Kategori');
+        return redirect()->route('admin.categories')->with('success', 'Berhasil Mengahapus Kategori');
     }
 }

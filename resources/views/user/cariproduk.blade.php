@@ -4,7 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Shop</strong></div>
+                        class="text-primary">Shop</strong> <span class="mx-2 mb-0">/</span> <strong
+                        class="text-dark">Search</strong></div>
             </div>
         </div>
     </div>
@@ -12,9 +13,11 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3 class="display-5" style="text-transform:uppercase">Hasil Pencarian Untuk : {{ $cari }}
+                <div class="col-md-12 text-center font-weight-bold text-primary mb-4">
+                    <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Hasil Pencarian Untuk :
+                        {{ $cari }}
                         ({{ $total }} Hasil)</h3>
+                    <hr>
                 </div>
             </div>
             <div class="row mb-5 justify-content-center">
@@ -27,7 +30,7 @@
                                         width="100%" style="height:200px">
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-primary">{{ $produk->name }}</h3>
+                                        <h3 class="text-dark">{{ $produk->name }}</h3>
                                         <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
@@ -35,7 +38,7 @@
                                                 aria-disabled="true">Habis</a>
                                         @else
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                class="btn btn-primary mt-2">Detail</a>
+                                                class="btn btn-dark mt-2">Detail</a>
                                         @endif
                                     </div>
                                 </div>

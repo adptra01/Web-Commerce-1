@@ -26,7 +26,7 @@ class RekeningController extends Controller
             'no_rekening'   => $request->no_rekening,
         ]);
 
-        return redirect()->route('admin.rekening')->with('status', 'Berhasil Menambah Rekening');
+        return redirect()->route('admin.rekening')->with('success', 'Berhasil Menambah Rekening');
     }
 
     public function edit($id)
@@ -46,12 +46,12 @@ class RekeningController extends Controller
             'no_rekening' => $request->no_rekening
         ]);
 
-        return redirect()->route('admin.rekening')->with('status', 'Berhasil Mengubah Rekening');
+        return redirect()->route('admin.rekening')->with('success', 'Berhasil Mengubah Rekening');
     }
 
     public function delete($id)
     {
         Rekening::whereId($id)->delete();
-        return redirect()->route('admin.rekening')->with('status', 'Berhasil Mengahapus Rekening');
+        return redirect()->route('admin.rekening')->with('success', 'Berhasil Mengahapus Rekening');
     }
 }

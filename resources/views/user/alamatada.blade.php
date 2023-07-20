@@ -23,7 +23,7 @@
                     </div>
                     <div class="row">
                     <div class="col-md-12 text-right">
-                            <a href="{{ route('user.alamat.ubah',['id' => $alamat[0]->id] ) }}" class="btn btn-primary">Ubah Alamat</a>
+                            <a href="{{ route('user.alamat.ubah',['id' => $alamat[0]->id] ) }}" class="btn btn-dark">Ubah Alamat</a>
                     </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ var toHtml = (tag, value) => {
     //  $('#cities_id').select2();
      $('#province_id').on('change',function(){
      var id = $('#province_id').val();
-     var url = window.location.href + '/getcity/' + id;   
+     var url = window.location.href + '/getcity/' + id;
      $.ajax({
          type:'GET',
          url:url,

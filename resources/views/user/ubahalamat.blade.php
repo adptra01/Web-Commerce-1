@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Cart</strong></div>
+                        class="text-black">Address</strong></div>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                                     </select>
                                 </div>
                                 <div class="mt-4 text-right">
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
                                 </div>
                             </form>
                         </div>

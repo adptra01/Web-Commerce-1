@@ -10,7 +10,7 @@
             <div class="alert alert-danger shadow" role="alert">
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
-        @else
+        {{-- @else
             <div class="media bg-primary rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (11).svg"
                     alt="Generic placeholder image">
@@ -21,7 +21,7 @@
                         sesuai dengan stok produk, harap segera menghubungi pelanggan untuk mengkonfirmasi atau mengubah
                         pesanan tersebut.</small>
                 </div>
-            </div>
+            </div> --}}
         @endif
     </div>
     <div class="card shadow m-3">

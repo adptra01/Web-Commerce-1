@@ -18,12 +18,12 @@
                     $city = App\City::where('city_id', $address->cities_id)->first();
                 }
             @endphp
-            <h4 class="font-weight-bold mb-3 text-primary">Alamat Sekarang:</h3>
-                <h3 class="mb-4 font-weight-bold">Kota : {{ $city->title ?? 'Belum di atur' }}</h3>
-                <h3 class="mb-5 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h3>
+            <h4 class="font-weight-bold mb-3 text-primary">Alamat Sekarang</h3>
+                <h5 class="mb-4 font-weight-bold">Kota : {{ $city->title ?? 'Belum di atur' }}</h5>
+                <h5 class="mb-5 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h5>
 
                 @if ($address == true)
-                    <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-primary">Ubah
+                    <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-dark">Ubah
                         Alamat</a>
                 @else
                     <div class="card">
@@ -52,7 +52,7 @@
                                     </select>
                                 </div>
                                 <div class="mt-4 text-right">
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
                                 </div>
                             </form>
                         </div>

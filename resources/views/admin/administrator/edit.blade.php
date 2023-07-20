@@ -8,7 +8,7 @@
             <div class="alert alert-danger shadow" role="alert">
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
-        @else
+            {{-- @else
         <div class="media bg-primary rounded mb-3 text-white p-3">
             <img class="align-self-center mr-3" width="230px" src="/layouts/DrawKit/vector (4).svg"
                 alt="Generic placeholder image">
@@ -21,7 +21,7 @@
                     tidak, klik tombol batal.
                 </small>
             </div>
-        </div>
+        </div> --}}
         @endif
     </div>
 
@@ -47,8 +47,10 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputUsername1">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="password">                    
-                    <small class="text-danger"> <i class="mdi mdi-alert-circle-outline icon-sm text-warning align-middle"></i> Kosongkan jika tidak ingin mengubah password</small>                        
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                    <small class="text-danger"> <i
+                            class="mdi mdi-alert-circle-outline icon-sm text-warning align-middle"></i> Kosongkan jika
+                        tidak ingin mengubah password</small>
                 </div>
                 <div class="text-right">
                     <a href="/administrator" class="btn btn-secondary"><i class="fa fa-arrow-left"

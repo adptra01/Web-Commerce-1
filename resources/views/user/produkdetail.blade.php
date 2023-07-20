@@ -22,12 +22,18 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
+                <div class="col-md-12 text-center text-primary mb-4">
+                    <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Detail Produk</h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <img src="{{ Storage::url($produk->image) }}" alt="Image" width="100%" class="img-fluid">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-primary">{{ $produk->name }}</h2>
-                    <p>
+                    <h2 class="font-weight-bold text-primary">{{ $produk->name }}</h2>
+                    <p class="text-dark">
                         {{ $produk->description }}
                     </p>
                     <p>
@@ -57,7 +63,7 @@
                             </div>
 
                     </div>
-                    <p><button type="submit" class="buy-now btn btn-sm btn-primary">Masukkan ke keranjang</button></p>
+                    <p><button type="submit" class="buy-now btn btn-sm btn-dark">Masukkan ke keranjang</button></p>
                     </form>
                 </div>
             </div>

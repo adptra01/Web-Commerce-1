@@ -15,11 +15,11 @@
           <div class="col-md-8">
             <div class="row mb-5">
               <div class="col-md-12">
-                <h2 class="h3 mb-3 text-black">Your Order</h2>
                 <div class="p-3 p-lg-5 border">
                   <form action="{{ route('user.order.simpan') }}" method="POST">
                     @csrf
                   <table class="table site-block-order-table mb-5">
+                    <h2 class="h3 mb-3 text-black font-weight-bold text-primary text-center mb-4">Your Order</h2>
                     <thead>
                       <th>Product</th>
                       <th>Total</th>
@@ -47,7 +47,7 @@
                       <tr>
                         <td class="text-black font-weight-bold"><strong>Jumlah Pembayaran</strong></td>
                         <td class="text-black font-weight-bold">
-                        <?php $alltotal = $subtotal + $ongkir; ?>  
+                        <?php $alltotal = $subtotal + $ongkir; ?>
                         <strong>Rp. {{ number_format($alltotal,2,',','.') }}</strong></td>
                       </tr>
                       <tr>
@@ -73,13 +73,13 @@
                       <option value="trf">Transfer</option>
                       <option value="cod">Cod</option>
                     </select>
-                    <small>Jika memilih cod maka akan dikenakan biaya tambahan sebesar Rp. 10.000,00 dan ScreenShot halaman ini sebagai bukti pembayaran COD, </small> 
+                    <small>Jika memilih cod maka akan dikenakan biaya tambahan sebesar Rp. 10.000,00 dan ScreenShot halaman ini sebagai bukti pembayaran COD, </small>
                     <a type="button" class="text-danger" value="Capture" onclick="capture()">Klik disini.</a>
                   </div>
-                 
+
 
                   <div class="form-group">
-                    <button class="btn btn-primary btn-lg py-3 btn-block" type="submit">Pesan Sekarang</button>
+                    <button class="btn btn-dark btn-lg py-3 btn-block" type="submit">Pesan Sekarang</button>
                     <small>Mohon periksa alamat penerima dengan benar agar tidak terjadi salah pengiriman</small>
                   </div>
                 </form>

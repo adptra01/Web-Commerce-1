@@ -48,7 +48,7 @@ class ProductController extends Controller
             $data->image = $imagePath;
             $data->save();
         }
-        return redirect()->route('admin.product')->with('status', 'Berhasil Menambah Produk Baru');
+        return redirect()->route('admin.product')->with('success', 'Berhasil Menambah Produk Baru');
     }
 
     public function edit(Product $id)
@@ -71,7 +71,7 @@ class ProductController extends Controller
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('public/imageproducts');
             $prod->image = $imagePath;
-            $prod->update();  
+            $prod->update();
         }
 
         $prod->name = $request->name;
@@ -80,19 +80,19 @@ class ProductController extends Controller
         $prod->weigth = $request->weigth;
         $prod->categories_id = $request->categories_id;
         $prod->stok = $request->stok;
-        
+
         $prod->update();
 
-        return redirect()->route('admin.product')->with('status', 'Berhasil Mengubah Produk');
+        return redirect()->route('admin.product')->with('success', 'Berhasil Mengubah Produk');
     }
 
     public function delete(Product $id)
     {
-        
+
         //mengahapus produk
         Storage::delete('imageproducts/' . $id->image);
         $id->delete();
 
-        return redirect()->route('admin.product')->with('status', 'Berhasil Menghapus Produk');
+        return redirect()->route('admin.product')->with('success', 'Berhasil Menghapus Produk');
     }
 }

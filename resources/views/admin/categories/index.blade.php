@@ -10,7 +10,7 @@
             <div class="alert alert-danger shadow" role="alert">
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
-        @else
+            {{-- @else
             <div class="media bg-primary rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (5).svg"
                     alt="Generic placeholder image">
@@ -20,7 +20,7 @@
                         secara lengkap dan
                         akurat sebelum menyimpannya.</small>
                 </div>
-            </div>
+            </div> --}}
         @endif
         @include('admin.categories.tambah')
     </div>
@@ -37,7 +37,7 @@
                 <tbody>
                     @foreach ($categories as $no => $item)
                         <tr>
-                            <td >{{ ++$no }}</td>
+                            <td>{{ ++$no }}</td>
                             <td>{{ $item->name }}</td>
                             <td>
                                 <div class="d-flex" style="gap: 5px">
