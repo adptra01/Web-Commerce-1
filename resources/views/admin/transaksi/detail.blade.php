@@ -22,6 +22,21 @@
                                     <div class="col-6 col-md-4 font-weight-bold">Kepada</div>
                                     <div class="col-12 col-md-8 font-weight-bold">{{ $order->nama_pelanggan }}</div>
                                 </div>
+                                @php
+                                    $address = App\Alamat::where('user_id', $order->user_id)->first();
+
+                                    if ($address == true) {
+                                        # code...
+                                        $city = App\City::where('city_id', $address->cities_id)->first()->title;
+                                    }
+                                @endphp
+                                @if ($address == true)
+                                    <div class="row mb-2">
+                                        <div class="col-6 col-md-4 font-weight-bold">Alamat</div>
+                                        <div class="col-12 col-md-8 font-weight-bold">
+                                            {{ $address->detail ?? '' }}</div>
+                                    </div>
+                                @endif
                                 <div class="row mb-2">
                                     <div class="col-6 col-md-4 font-weight-bold">Metode Pembayaran</div>
                                     <div class="col-12 col-md-8 font-weight-bold">

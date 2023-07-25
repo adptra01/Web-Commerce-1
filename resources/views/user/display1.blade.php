@@ -64,11 +64,12 @@
                 <div class="col-md"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
                         alt=""></div>
                 <div class="col-md text-right">
-                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span class="text-primary">Bahagia</span> Itu <br>
-                        <span class="text-primary">Penting</span> Bagi Mereka”</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laborum, nulla suscipit id alias,
-                        ratione veniam quisquam ullam earum aperiam repudiandae ut adipisci deleniti obcaecati, ipsam dicta
-                        quaerat fugit. Possimus?</p>
+                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span
+                            class="text-primary">Bahagia</span> Itu <br>
+                        <span class="text-primary">Penting</span> Bagi Mereka”
+                    </h4>
+                    <p>Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan memperoleh
+                        perlengkapan berkualitas dari toko kami.</p>
                 </div>
             </div>
         </div>
@@ -94,7 +95,7 @@
                                     </figure>
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-dark">{{ $produk->name }}</h3>
+                                        <h3 class="text-dark">{{ Str::limit($produk->name, 20, '...') }}</h3>
                                         <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
@@ -125,9 +126,8 @@
                         <i class="fa fa-globe text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
                             <h5 class="font-weight-bold text-primary">Produk Asli</h5>
-                            <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
-                                clita duo
-                                justo magna erat amet</p>
+                            <p class="mb-0 text-dark">Menjamin kualitas terbaik yang siap memenuhi kebutuhan dan harapan
+                                pelanggan kami</p>
                         </div>
                     </div>
                     <div class="d-flex mb-5 wow fadeIn" data-wow-delay="0.5s"
@@ -135,9 +135,8 @@
                         <i class="fa fa-shipping-fast text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
                             <h5 class="font-weight-bold text-primary">Pengiriman Tepat Waktu</h5>
-                            <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
-                                clita duo
-                                justo magna erat amet</p>
+                            <p class="mb-0 text-dark">Layanan pengiriman JNE yang membantu kami mengirimkan semua kebutuhan
+                                hewan peliharaan Anda.</p>
                         </div>
                     </div>
                     <div class="d-flex mb-0 wow fadeInUp" data-wow-delay="0.7s"
@@ -145,9 +144,9 @@
                         <i class="fa fa-headphones text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
                             <h5 class="font-weight-bold text-primary">Dukungan Telepon 24/7</h5>
-                            <p class="mb-0 text-dark">Diam dolor ipsum sit amet eos erat ipsum lorem sed stet lorem sit
-                                clita duo
-                                justo magna erat amet</p>
+                            <p class="mb-0 text-dark">Anda dapat menghubungi kami kapan saja, baik siang maupun malam, untuk
+                                berkonsultasi tentang kebutuhan hewan peliharaan Anda. Tim dukungan kami siap membantu Anda
+                                dengan senang hati.</p>
                         </div>
                     </div>
                 </div>

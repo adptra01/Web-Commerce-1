@@ -14,8 +14,8 @@ class Alamat_tokoSeeder extends Seeder
     {
         $data = [
             'name_store' => 'Gery Petshop',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit purus aliquam non diam semper, elementum ullamcorper taciti in mattis leo habitant mauris nam lectus vehicula. Nascetur netus urna leo venenatis quis morbi sociis cursus, mus interdum viverra tellus curae fermentum malesuada erat rutrum, faucibus tortor nostra nam dictumst laoreet mi. Felis venenatis eu inceptos malesuada massa conubia aptent, facilisis ultrices libero per platea dapibus, nullam sociosqu luctus quis aliquam iaculis.',
-            'telp' => '08978301766',
+            'description' => 'Gery Pet Shop adalah toko hewan peliharaan yang menyediakan berbagai jenis hewan, makanan, peralatan, dan layanan kesehatan. Toko ini berlokasi di Jl. Sersan Derpin No.38 36139 Jambi, dan buka setiap hari dari pukul 08.00 sampai 20.00. Anda juga bisa membeli makanan berkualitas, peralatan lengkap, dan obat-obatan untuk hewan peliharaan Anda.',
+            'telp' => '+6285265659186',
             'city_id' => 156,
             'detail' => 'Sumatera Selatan, Indonesia'
         ];
