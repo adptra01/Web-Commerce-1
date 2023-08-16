@@ -45,7 +45,7 @@ href="cart.html">Cart</a> <span class="mx-2 mb-0">/</span> <strong class="text-b
                     Ongkir
                 </td>
                 <td>
-                    Rp .{{ number_format($ongkir, 2, ',', '.') }}
+                    Rp. {{ number_format($ongkir, 2, ',', '.') }}
                 </td>
             </tr>
             <tr>
