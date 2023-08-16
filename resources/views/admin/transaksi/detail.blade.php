@@ -82,7 +82,7 @@
             </div>
             @if ($order->status_order_id == 3)
                 <div class="row mb-2">
-                    <div class="col-6 col-md-4 font-weight-bold">Mohon masukkan nomor resi <p>(Silakan berikan informasi apabila melalui Maxim atau Gojek).</p>
+                    <div class="col-6 col-md-4 font-weight-bold">Masukkan nomor resi (atau sertakan informasi pengiriman seperti Maxim, Grab, atau layanan lainnya).
                     </div>
                     <div class="col-12 col-md-8 font-weight-bold">
                         <form
