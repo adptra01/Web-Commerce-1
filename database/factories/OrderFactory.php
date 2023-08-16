@@ -6,6 +6,7 @@ use App\Detailorder;
 use App\User;
 use App\Order;
 use App\Product;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Storage;
@@ -59,5 +60,7 @@ $factory->define(Detailorder::class, function (Faker $faker) {
     return [
         'product_id' => Product::all()->random()->id,
         'qty' => rand(1, 10),
+        'created_at' => Carbon::now()->subMonths(rand(0, 11)),
+        'updated_at' => Carbon::now()->subMonths(rand(0, 11))
     ];
 });

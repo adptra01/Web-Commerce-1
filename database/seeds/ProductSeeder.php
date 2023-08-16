@@ -108,7 +108,7 @@ class ProductSeeder extends Seeder
                 'description' => $product['description'],
                 'price' => $product['price'],
                 'image' => $storagePath,
-                'weigth' => $product['weigth'],
+                'weigth' => rand(1,10),
                 'categories_id' => $product['categories_id'],
                 'stok' => rand(1,44)
             ]);
