@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-dark font-weight-bold" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
     <i class="fa fa-credit-card" aria-hidden="true"></i> Tambah
 </button>
 
@@ -9,7 +9,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="alert bg-dark text-white" role="alert">
+                <div class="alert bg-primary text-white" role="alert">
                     <small class="modal-title" id="exampleModalLabel">
                         <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>Anda akan menambahkan
                         data rekening baru. Pastikan data yang Anda masukkan sudah benar dan sesuai dengan buku
@@ -46,7 +46,7 @@
                         @enderror
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
+                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
                             Simpan</button>
                     </div>
                 </form>

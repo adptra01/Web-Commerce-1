@@ -71,7 +71,7 @@
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-dark" type="button">
+                                            <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -110,7 +110,7 @@
                                     <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.transaksi.detail', ['id' => $order->id]) }}">
                                         <div class="mr-3">
-                                            <div class="icon-circle bg-dark">
+                                            <div class="icon-circle bg-primary">
                                                 <i class="fas fa-file-alt text-white"></i>
                                             </div>
                                         </div>
@@ -194,7 +194,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 
-                    <a class="btn btn-dark" href="{{ route('logout') }}"
+                    <a class="btn btn-primary" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">Logout</a>
                 </div>

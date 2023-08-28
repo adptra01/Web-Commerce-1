@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-dark font-weight-bold" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
     <i class="fas fa-solid fa-cube"></i> Tambah
 </button>
 
@@ -83,7 +83,7 @@
                                 @enderror
                             </div>
                             <div class="text-right">
-                                <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
+                                <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
                                     Simpan</button>
                             </div>
                         </div>

@@ -4,7 +4,7 @@
     </x-slot>
     <div class="container">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">PRODUK TOKO <small>/ {{ $product->name }}</small></h1>
-        {{-- <div class="media bg-dark rounded mb-3 text-white p-3">
+        {{-- <div class="media bg-primary rounded mb-3 text-white p-3">
             <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (2).svg" alt="Generic placeholder image">
             <div class="media-body">
                 <small> <i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>Perubahan ini akan berpengaruh pada tampilan dan ketersediaan
@@ -30,7 +30,7 @@
                     <div class="col-8">
                         <div class="custom-file">
                             <label for="exampleFormControlFile1">Foto produk</label>
-                            <input type="file" name="image" class="form-control-file btn btn-dark"
+                            <input type="file" name="image" class="form-control-file btn btn-primary"
                                 id="exampleFormControlFile1">
                             <small class="text-danger">Kosongkan jika tidak mengubah gambar</small>
 
@@ -94,7 +94,7 @@
                     @enderror
                 </div>
                 <div class="text-right">
-                    <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
+                    <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
                         Simpan</button>
                 </div>
             </div>
