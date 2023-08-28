@@ -21,7 +21,7 @@
                                 <form action="{{ route('user.order.simpan') }}" method="POST">
                                     @csrf
                                     <table class="table site-block-order-table mb-5">
-                                        <h2 class="h3 mb-3 text-black font-weight-bold text-dark text-center mb-4">Your
+                                        <h2 class="h3 mb-3 text-black font-weight-bold text-primary text-center mb-4">Your
                                             Order</h2>
                                         <thead>
                                             <th>Product</th>
@@ -87,7 +87,7 @@
 
 
                                     <div class="form-group">
-                                        <button class="btn btn-dark btn-lg py-3 btn-block" type="submit">Pesan
+                                        <button class="btn btn-primary btn-lg py-3 btn-block" type="submit">Pesan
                                             Sekarang</button>
                                         <small>Mohon periksa alamat penerima dengan benar agar tidak terjadi salah
                                             pengiriman</small>

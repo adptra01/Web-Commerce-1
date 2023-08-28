@@ -29,7 +29,8 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image" style="background-image: url('toko.jpeg')"></div>
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"
+                        style="background-image: url('toko.jpeg')"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -79,12 +80,12 @@
                                             placeholder="Konfirmasi Password">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-dark btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Buat Akun
                                 </button>
                             </form>
                             <hr>
-                            <div class="text-center text-dark font-weight-bold">Sudah punya Akun?
+                            <div class="text-center text-primary font-weight-bold">Sudah punya Akun?
                                 <a class="text-primary font-weight-bold" href="/login">Gasss Login!</a>
                             </div>
                         </div>

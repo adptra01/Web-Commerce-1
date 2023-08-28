@@ -54,15 +54,15 @@
                 </div>
             </div>
         </div>
-        <div class="media bg-dark">
-            <div class="row justify-content-center align-items-center bg-dark" style="border-radius: 10px;">
+        <div class="media bg-primary">
+            <div class="row justify-content-center align-items-center bg-primary" style="border-radius: 10px;">
                 <div class="col-md text-center">
                     <img src="/layouts/drawKit/vector (3).svg" alt="Generic placeholder image" style="max-width: 400px">
                 </div>
                 <div class="col-md">
                     <div class="media-body text-white">
                         <h3 class="mt-5">Tampil Keren dengan Pakaian Anak
-                        Berkualitas Tinggi</h3>
+                            Berkualitas Tinggi</h3>
                         <p>Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak
                             berkualitas
                             tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk
@@ -93,15 +93,15 @@
                                     </figure>
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-dark">{{ $produk->name }}</h3>
+                                        <h3 class="text-primary">{{ $produk->name }}</h3>
                                         <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</small> <br>
                                             @if ($produk->stok == 0)
                                                 <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                    class="btn btn-dark mt-2 disabled" tabindex="-1" role="button"
+                                                    class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
                                                     aria-disabled="true">Habis</a>
                                             @else
                                                 <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                    class="btn btn-dark mt-2">Detail</a>
+                                                    class="btn btn-primary mt-2">Detail</a>
                                             @endif
                                     </div>
                                 </div>
@@ -115,10 +115,17 @@
     <div class="site-section">
         <div class="container">
             <div class="row g-5 mx-lg-0">
+                <div class="col-lg-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s"
+                    style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100 h-100" src="toko.jpeg"
+                            style="object-fit: cover; border-radius: 10px; max-height: 600px">
+                    </div>
+                </div>
                 <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s"
                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                     <h6 class="text-dark font-weight-bold text-uppercase mb-3">FITUR KAMI</h6>
-                    <h1 class="font-weight-bold text-dark mb-5">BERSAMA KAMI DISTRO BZL KIDS</h1>
+                    <h1 class="font-weight-bold text-primary mb-5">BERSAMA KAMI DISTRO BZL KIDS</h1>
                     <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s"
                         style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                         <i class="fa fa-globe text-dark fa-3x flex-shrink-0"></i>
@@ -150,14 +157,6 @@
                                 Anda
                                 dengan senang hati.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s"
-                    style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
-                    <div class="position-relative">
-                        <img class="img-fluid w-100 h-100"
-                            src="toko.jpeg"
-                            style="object-fit: cover; border-radius: 10px; max-height: 600px">
                     </div>
                 </div>
             </div>

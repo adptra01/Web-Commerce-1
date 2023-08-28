@@ -1,11 +1,10 @@
 @extends('user.app')
 @section('content')
-
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h2 class="display-5 font-weight-bold text-dark">Detail Pesanan </h2>
+                    <h2 class="display-5 font-weight-bold text-primary">Detail Pesanan </h2>
                 </div>
             </div>
             <div class="row">
@@ -51,8 +50,8 @@
                             @if ($order->status_order_id == 4)
                                 <div class="col-md text-right">
                                     <a href="{{ route('user.order.pesananditerima', ['id' => $order->id]) }}"
-                                        onclik="return confirm('Yakin ingin melanjutkan ?')"
-                                        class="btn btn-dark">Pesanan Di Terima</a><br>
+                                        onclik="return confirm('Yakin ingin melanjutkan ?')" class="btn btn-dark">Pesanan
+                                        Di Terima</a><br>
                                     <small>Jika pesanan belum datang harap jangan tekan tombol ini</small>
                                 </div>
                             @endif

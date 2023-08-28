@@ -24,44 +24,44 @@
                 </div>
                 <div class="col-md">
                     @if ($address == true)
-                    <h5 class="font-weight-bold text-uppercase">Alamat Tujuan</h5>
+                        <h5 class="font-weight-bold text-uppercase">Alamat Tujuan</h5>
                         <span class="text-uppercase">Kota: <p class="font-weight-bold">{{ $city->title ?? 'Belum di atur' }}
                             </p>
                         </span>
                         <span class="text-uppercase">alamat lengkap: <p class="font-weight-bold">
                                 {{ $address->detail ?? 'Belum di atur' }}</p>
                         </span>
-                        <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-dark">Ubah
+                        <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-primary">Ubah
                             Alamat</a>
                     @else
-                    <h5 class="font-weight-bold text-uppercase">atur alamat</h5>
-                    <form action="{{ route('user.alamat.simpan') }}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label for="">Pilih Provinsi</label>
-                            <select name="province_id" id="province_id" class="form-control">
-                                <option value="">Pilih Provinsi</option>
-                                @foreach ($province as $provinsi)
-                                    <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-grup">
-                            <label for="">Pilih Kota/Kabupaten</label>
-                            <select name="cities_id" id="cities_id" class="form-control">
-                            </select>
-                        </div>
-                        <div class="form-grup">
-                            <label for="">Alamat Lengkap</label>
-                            <input type="text" name="detail" id=""
-                                placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
-                            </select>
-                        </div>
-                        <div class="mt-4 text-right">
-                            <button type="submit" class="btn btn-dark">Simpan</button>
-                        </div>
-                    </form>
+                        <h5 class="font-weight-bold text-uppercase">atur alamat</h5>
+                        <form action="{{ route('user.alamat.simpan') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="">Pilih Provinsi</label>
+                                <select name="province_id" id="province_id" class="form-control">
+                                    <option value="">Pilih Provinsi</option>
+                                    @foreach ($province as $provinsi)
+                                        <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-grup">
+                                <label for="">Pilih Kota/Kabupaten</label>
+                                <select name="cities_id" id="cities_id" class="form-control">
+                                </select>
+                            </div>
+                            <div class="form-grup">
+                                <label for="">Alamat Lengkap</label>
+                                <input type="text" name="detail" id="" placeholde="Kecamatan/Desa/Nama Jalan"
+                                    class="form-control">
+                                </select>
+                            </div>
+                            <div class="mt-4 text-right">
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </div>
+                        </form>
                     @endif
                 </div>
             </div>

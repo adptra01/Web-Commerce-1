@@ -1,6 +1,5 @@
 @extends('user.app')
 @section('content')
-
     <div class="site-section">
         <div class="container">
             <div class="row mb-3">
@@ -44,7 +43,7 @@
                                                 class="form-control" required>
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-dark">Kirim</button>
+                                            <button type="submit" class="btn btn-primary">Kirim</button>
                                         </div>
                                     </form>
                                 </div>

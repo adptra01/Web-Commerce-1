@@ -890,7 +890,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/front-end/" class="dark-btn">Shop Now</a>
+                    <a href="/front-end/" class="primary-btn">Shop Now</a>
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">

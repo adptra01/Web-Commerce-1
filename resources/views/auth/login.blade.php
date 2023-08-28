@@ -35,12 +35,14 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('toko.jpeg')"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"
+                                style="background-image: url('toko.jpeg')"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold">SELAMAT <br> DATANG PELANGGAN</h1>
-                                        {{-- <div class="alert bg-dark text-white alert-dark" role="alert">
+                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold">SELAMAT <br> DATANG PELANGGAN
+                                        </h1>
+                                        {{-- <div class="alert bg-primary text-white alert-primary" role="alert">
                                             <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
                                                 memiliki akun, silakan klik tombol daftar di bawah ini.
                                             </small>
@@ -80,13 +82,14 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-dark btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Masuk
                                         </button>
                                     </form>
                                     <hr>
-                                    <div class="text-center text-dark font-weight-bold">
-                                        <strong>Kamu baru disini? <a class="text-primary font-weight-bold" href="/register">Buat Akun!</a></strong>
+                                    <div class="text-center text-primary font-weight-bold">
+                                        <strong>Kamu baru disini? <a class="text-primary font-weight-bold"
+                                                href="/register">Buat Akun!</a></strong>
                                     </div>
                                 </div>
                             </div>

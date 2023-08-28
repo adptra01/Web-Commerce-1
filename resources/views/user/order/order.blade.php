@@ -1,11 +1,10 @@
 @extends('user.app')
 @section('content')
-
     <div class="site-section">
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <h4 class="text-center font-weight-bold text-dark">Belum Dibayar</h4>
+                    <h4 class="text-center font-weight-bold text-primary">Belum Dibayar</h4>
                     <hr>
                 </div>
             </div>
@@ -49,7 +48,7 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <h4 class="text-center font-weight-bold text-dark">Sedang Dalam Proses</h4>
+                        <h4 class="text-center font-weight-bold text-primary">Sedang Dalam Proses</h4>
                         <hr>
                     </div>
                 </div>
@@ -90,7 +89,7 @@
                 <div class="container">
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <h4 class="text-center font-weight-bold text-dark">Riwayat Pesanan Anda</h4>
+                            <h4 class="text-center font-weight-bold text-primary">Riwayat Pesanan Anda</h4>
                             <hr>
                         </div>
                     </div>

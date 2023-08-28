@@ -32,12 +32,12 @@
                         </div>
                         <div class="form-grup">
                             <label for="">Alamat Lengkap</label>
-                            <input type="text" name="detail" id=""
-                                placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
+                            <input type="text" name="detail" id="" placeholde="Kecamatan/Desa/Nama Jalan"
+                                class="form-control">
                             </select>
                         </div>
                         <div class="mt-4 text-right">
-                            <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                         </div>
                     </form>
                 </div>

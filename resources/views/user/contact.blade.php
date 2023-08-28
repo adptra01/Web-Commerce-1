@@ -3,7 +3,7 @@
     <div class="site-section">
         <div class="container mb-5">
             <div class="row">
-                <div class="col-md-12 text-center font-weight-bold text-dark mb-4">
+                <div class="col-md-12 text-center font-weight-bold text-primary mb-4">
                     <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">kontak kami</h3>
                     <hr>
                 </div>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="mb-3 text-right">
-                            <button type="submit" class="btn btn-outline-dark">Submit</button>
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
                         </div>
                     </form>
                 </div>

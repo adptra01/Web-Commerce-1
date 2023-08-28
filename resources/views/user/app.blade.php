@@ -45,7 +45,7 @@
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             <div class="site-navbar pt-5">
-                <div class="container bg-dark p-3 text-white" style="border-radius: 10px;">
+                <div class="container bg-primary p-3 text-white" style="border-radius: 10px;">
                     <div class="row align-items-center">
                         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
                             <form action="{{ route('user.produk.cari') }}" method="get" class="site-block-top-search">
@@ -160,7 +160,7 @@
         @yield('content')
 
         <footer>
-            <div class="container bg-dark p-5 rounded">
+            <div class="container bg-primary p-5 rounded">
                 <div class="row">
                     <div class="col-md mb-5 mb-lg-0">
                         <div class="row">

@@ -29,24 +29,26 @@
 
                                     <?php $subtotal=0; foreach($keranjangs as $keranjang): ?>
                                     <td>
-                                        <img src="{{ Storage::url($keranjang->image) }}" alt="Image" style="max-width: 100px" class="img-fluid">
+                                        <img src="{{ Storage::url($keranjang->image) }}" alt="Image"
+                                            style="max-width: 100px" class="img-fluid">
                                     </td>
                                     <td>
-                                       {{ $keranjang->nama_produk }}
+                                        {{ $keranjang->nama_produk }}
                                     </td>
                                     <td>Rp. {{ number_format($keranjang->price, 2, ',', '.') }} </td>
                                     <td>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <button class="btn btn-outline-dark js-btn-minus"
+                                                <button class="btn btn-outline-primary js-btn-minus"
                                                     type="button">&minus;</button>
                                             </div>
                                             <input type="hidden" name="id[]" value="{{ $keranjang->id }}">
-                                            <input type="text" name="qty[]" class="form-control text-center" placeholder=""
-                                                aria-label="Example text with button addon" aria-describedby="button-addon1"
-                                                value="{{ $keranjang->qty }}">
+                                            <input type="text" name="qty[]" class="form-control text-center"
+                                                placeholder="" aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1" value="{{ $keranjang->qty }}">
                                             <div class="input-group-append">
-                                                <button class="btn btn-outline-dark js-btn-plus" type="button">&plus;</button>
+                                                <button class="btn btn-outline-primary js-btn-plus"
+                                                    type="button">&plus;</button>
                                             </div>
                                         </div>
 
@@ -57,7 +59,7 @@
                                     ?>
                                     <td>Rp. {{ number_format($total, 2, ',', '.') }}</td>
                                     <td><a href="{{ route('user.keranjang.delete', ['id' => $keranjang->id]) }}"
-                                            class="btn btn-dark btn-sm">X</a></td>
+                                            class="btn btn-primary btn-sm">X</a></td>
                                 </tr>
                                 <?php endforeach;?>
                             </tbody>
@@ -70,7 +72,7 @@
                     <div class="col-md-6">
                         <div class="row mb-5">
                             <div class="col-md-6 mb-3 mb-md-0">
-                                <button type="submit" class="btn btn-dark btn-sm">Update Keranjang</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Update Keranjang</button>
                             </div>
                             </form>
                         </div>
@@ -84,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3 justify-content-center">
-                                    <h5 class="text-black text-center text-dark">Rp.
+                                    <h5 class="text-black text-center text-primary">Rp.
                                         {{ number_format($subtotal, 2, ',', '.') }}</h5>
                                 </div>
 
@@ -92,7 +94,7 @@
                                     @if ($cekalamat > 0)
                                         <div class="col-md-12">
                                             <a href="{{ route('user.checkout') }}"
-                                                class="btn btn-dark btn-block">Checkout</a>
+                                                class="btn btn-primary btn-block">Checkout</a>
                                             <small class="font-weight-bold">Jika Merubah Quantity Pada Keranjang Maka Klik
                                                 Update Keranjang Dulu
                                                 Sebelum
@@ -100,9 +102,9 @@
                                         </div>
                                     @else
                                         <div class="col-md-12 justify-content-center text-center">
-                                            <a href="{{ route('user.alamat') }}" class="btn btn-dark btn-block">Atur
+                                            <a href="{{ route('user.alamat') }}" class="btn btn-primary btn-block">Atur
                                                 Alamat</a>
-                                            <small class=" text-dark">Anda Belum Mengatur Alamat</small>
+                                            <small class=" text-primary">Anda Belum Mengatur Alamat</small>
                                         </div>
                                     @endif
                                 </div>
@@ -113,7 +115,7 @@
             @else
                 <div class="container text-center">
                     <h2>Keranjang Kosong</h2><br>
-                    <a href="{{ route('user.produk') }}" class="btn btn-sm btn-dark">Belanja Sekarang</a>
+                    <a href="{{ route('user.produk') }}" class="btn btn-sm btn-primary">Belanja Sekarang</a>
                 </div>
             @endif
         </div>
