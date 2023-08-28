@@ -151,7 +151,7 @@
                             </li>
                             <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
                                     href="{{ route('user.produk') }}">Produk</a></li>
-                            <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                            <li><a href="{{ route('contact.index') }}">Kontak</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -177,7 +177,7 @@
                     @endphp
                     <div class="col-md col-lg-4">
                         <div class="block-5 mb-5">
-                            <h3 class="footer-heading mb-4 text-white font-weight-bold">Contact Info</h3>
+                            <h3 class="footer-heading mb-4 text-white font-weight-bold">Kontak Kami</h3>
                             <ul class="list-unstyled">
                                 <p class="text-white">
                                     {{ $city->title }}, {{ $toko->detail }}

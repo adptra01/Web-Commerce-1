@@ -22,12 +22,12 @@
 
 </head>
 
-<body class="bg-gradient-dark">
+<body>
 
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
@@ -35,18 +35,19 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('toko.jpeg')"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Selamat datang kembali!</h1>
-                                        <div class="alert bg-dark text-white alert-dark" role="alert">
+                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold">SELAMAT <br> DATANG PELANGGAN</h1>
+                                        {{-- <div class="alert bg-dark text-white alert-dark" role="alert">
                                             <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
                                                 memiliki akun, silakan klik tombol daftar di bawah ini.
                                             </small>
-                                        </div>
+                                        </div> --}}
 
                                     </div>
+                                    <hr>
                                     <form class="pt-3" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
@@ -84,8 +85,8 @@
                                         </button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <strong><a class="small" href="/register">Buat Akun!</a></strong>
+                                    <div class="text-center text-dark font-weight-bold">
+                                        <strong>Kamu baru disini? <a class="text-primary font-weight-bold" href="/register">Buat Akun!</a></strong>
                                     </div>
                                 </div>
                             </div>

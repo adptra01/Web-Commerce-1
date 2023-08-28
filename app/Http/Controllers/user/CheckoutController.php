@@ -41,7 +41,7 @@ class CheckoutController extends Controller
 
             //lalu hitung ongkirnya
             $cost = RajaOngkir::ongkosKirim([
-                'origin'        => $alamat_toko->id,
+                'origin'        => 156, // sesuaikan dengan lokasi toko
                 'destination'   => $city_destination,
                 'weight'        => $berattotal,
                 'courier'       => 'jne'
@@ -49,15 +49,16 @@ class CheckoutController extends Controller
             ->get();
 
             //Jika alamat pembeli = 156 (Jambi), maka
-            if ($city_destination == 156)
-            {
-                // ongkir 10000
-                $ongkir = 10000;
-            }else{
-                //ambil hasil nya dari perhitungan raja ongkir
-                $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
-            }
-            // $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+            // if ($city_destination == 156)
+            // {
+            //     // ongkir 10000
+            //     $ongkir = 10000;
+            // }else{
+            //     //ambil hasil nya dari perhitungan raja ongkir
+            //     $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
+            // }
+
+            $ongkir =  $cost[0]['costs'][0]['cost'][0]['value'];
             // dd($ongkir);
 
             //lalu ambil alamat user untuk ditampilkan di view

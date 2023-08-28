@@ -16,7 +16,7 @@
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
                                     <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
-                                        width="100%" style="height:200px">
+                                        width="400px" style="height:200px">
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-dark">{{ Str::limit($produk->name, 20, '...') }}</h3>
@@ -52,7 +52,8 @@
                             <ul class="list-unstyled mb-0">
                                 @foreach ($categories as $categori)
                                     <li class="mb-1"><a href="{{ route('user.kategori', ['id' => $categori->id]) }}"
-                                            class="d-flex text-dark"><small>{{ $categori->name }}</small> <small
+                                            class="d-flex text-dark"><small>{{ $categori->name }}</small>
+                                             <small
                                                 class="text-dark ml-auto">(
                                                 {{ $categori->jumlah }} )</small></a>
                                     </li>

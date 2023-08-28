@@ -13,9 +13,9 @@ class Alamat_tokoSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name_store' => 'Gery Petshop',
-            'description' => 'Gery Pet Shop adalah toko hewan peliharaan yang menyediakan berbagai jenis hewan, makanan, peralatan, dan layanan kesehatan. Toko ini berlokasi di Jl. Sersan Derpin No.38 36139 Jambi, dan buka setiap hari dari pukul 08.00 sampai 20.00. Anda juga bisa membeli makanan berkualitas, peralatan lengkap, dan obat-obatan untuk hewan peliharaan Anda.',
-            'telp' => '+6285265659186',
+            'name_store' => 'Distro BZL Kids',
+            'description' => 'Distro B.Z.L kids adalah toko online yang menyediakan berbagai macam pakaian anak-anak yang trendy dan stylish. Toko ini menawarkan produk-produk berkualitas dengan harga terjangkau, mulai dari kaos, kemeja, jaket, celana, rok, hingga aksesoris. Anda dapat memilih pakaian yang sesuai dengan selera dan ukuran anak Anda, serta mendapatkan layanan pengiriman yang cepat dan aman.',
+            'telp' => '+628978111111',
             'city_id' => 156,
             'detail' => 'Sumatera Selatan, Indonesia'
         ];

@@ -15,13 +15,22 @@ class CategorySeeder extends Seeder
         // factory(App\Categories::class, 10)->create();
         $categories = [
             [
-                'name' => 'Makanan',
+                'name' => 'Celana',
             ],
             [
-                'name' => 'Perawatan',
+                'name' => 'Jaket',
             ],
             [
-                'name' => 'Aksesoris',
+                'name' => 'Ikat Pinggang',
+            ],
+            [
+                'name' => 'Kaos',
+            ],
+            [
+                'name' => 'Tas',
+            ],
+            [
+                'name' => 'Topi',
             ],
             // Tambahkan kategori lainnya
         ];

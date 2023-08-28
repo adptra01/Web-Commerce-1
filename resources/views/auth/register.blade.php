@@ -22,20 +22,20 @@
 
 </head>
 
-<body class="bg-gradient-dark">
+<body>
 
     <div class="container">
-
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image" style="background-image: url('toko.jpeg')"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Buat akun!</h1>
+                                <h1 class="h4 text-gray-900 mb-4 font-weight-bold">YUK BUAT AKUNMU!</h1>
                             </div>
+                            <hr>
                             <form class="pt-3" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="form-group">
@@ -84,8 +84,8 @@
                                 </button>
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <a class="small" href="/login">Sudah punya Akun? Login!</a>
+                            <div class="text-center text-dark font-weight-bold">Sudah punya Akun?
+                                <a class="text-primary font-weight-bold" href="/login">Gasss Login!</a>
                             </div>
                         </div>
                     </div>
