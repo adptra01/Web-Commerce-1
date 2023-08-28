@@ -1,5 +1,5 @@
  <!-- Sidebar -->
- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+ <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
      <!-- Sidebar - Brand -->
      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -69,7 +69,7 @@
      </div>
 
      @php
-         $alert1 = App\Order::where('status_order_id', [2,3,4])->count();
+         $alert1 = App\Order::where('status_order_id', [2, 3, 4])->count();
          $alert2 = App\Order::where('status_order_id', 2)->count();
          $alert3 = App\Order::where('status_order_id', 3)->count();
          $alert4 = App\Order::where('status_order_id', 4)->count();
@@ -82,32 +82,32 @@
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
              aria-expanded="true" aria-controls="collapseTwo">
              <i class="fas fa-solid fa-recycle"></i>
-             <span>Transaksi @if ( $alert1 == true)
-                <sup class="font-weight-bold text-warning">!</sup>
-             @endif
-            </span>
+             <span>Transaksi @if ($alert1 == true)
+                     <sup class="font-weight-bold text-warning">!</sup>
+                 @endif
+             </span>
          </a>
          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Informasi Transaksi</h6>
                  <a class="collapse-item" href="{{ route('admin.transaksi.perludicek') }}">Perlu dicek
-                @if ($alert2 == 1)
-                <sup class="badge badge-danger badge-counter">{{ $alert2 }}</sup>
-                @endif
-                </a>
+                     @if ($alert2 == 1)
+                         <sup class="badge badge-danger badge-counter">{{ $alert2 }}</sup>
+                     @endif
+                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.perludikirim') }}">Perlu dikirim
-                    @if ($alert3 == 1)
-                    <sup class="badge badge-danger badge-counter">{{ $alert3 }}</sup>
-                    @endif
-                </a>
+                     @if ($alert3 == 1)
+                         <sup class="badge badge-danger badge-counter">{{ $alert3 }}</sup>
+                     @endif
+                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.dikirim') }}">Dalam Pengiriman
-                    @if ($alert4 == 1)
-                    <sup class="badge badge-danger badge-counter">{{ $alert4 }}</sup>
-                    @endif
-                </a>
+                     @if ($alert4 == 1)
+                         <sup class="badge badge-danger badge-counter">{{ $alert4 }}</sup>
+                     @endif
+                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.selesai') }}">Telah selesai
 
-                </a>
+                 </a>
                  <a class="collapse-item" href="{{ route('admin.transaksi.dibatalkan') }}">Dibatalkan</a>
                  {{-- <a class="collapse-item" href="{{ route('admin.pelanggan') }}">Informasi Pembelian</a> --}}
              </div>

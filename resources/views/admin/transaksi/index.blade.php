@@ -3,14 +3,14 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <span class="page-title-icon bg-gradient-dark text-white mr-2">
                     <i class="mdi mdi-home"></i>
                 </span> Transaksi
             </h3>
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                        <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-dark align-middle"></i>
                     </li>
                 </ul>
             </nav>
@@ -43,12 +43,15 @@
                                             <td class="text-center"></td>
                                             <td>{{ $order->invoice }}</td>
                                             <td>{{ $order->nama_pemesan }}</td>
-                                            <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
-                                            <td> @if ($order->metode_pembayaran == 'cod')
-                                            Cash On Delivery (COD)
-                                        @elseif ($order->metode_pembayaran == 'trf')
-                                            Transfer
-                                        @endif</td>
+                                            <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}
+                                            </td>
+                                            <td>
+                                                @if ($order->metode_pembayaran == 'cod')
+                                                    Cash On Delivery (COD)
+                                                @elseif ($order->metode_pembayaran == 'trf')
+                                                    Transfer
+                                                @endif
+                                            </td>
                                             <td>{{ $order->name }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">

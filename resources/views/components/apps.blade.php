@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ $title }} | {{App\Alamat_toko::first()->name_store}}</title>
+    <title>{{ $title }} | {{ App\Alamat_toko::first()->name_store }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="/layouts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-dark" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -108,7 +108,7 @@
                                     <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.transaksi.detail', ['id' => $order->id]) }}">
                                         <div class="mr-3">
-                                            <div class="icon-circle bg-primary">
+                                            <div class="icon-circle bg-dark">
                                                 <i class="fas fa-file-alt text-white"></i>
                                             </div>
                                         </div>
@@ -130,7 +130,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth()->user()->name }}</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://api.dicebear.com/6.x/big-ears-neutral/svg" alt="avatar" /> </a>
                             </a>
@@ -159,7 +160,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website {{ now() }}</span>
                     </div>
                 </div>
             </footer>
@@ -191,7 +192,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 
-                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                    <a class="btn btn-dark" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">Logout</a>
                 </div>

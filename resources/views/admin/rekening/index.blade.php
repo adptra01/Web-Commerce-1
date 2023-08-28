@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">REKENING TOKO</h1>
         @if (session('success'))
-            <div class="alert alert-primary shadow" role="alert">
+            <div class="alert alert-dark shadow" role="alert">
                 {{ session('success') }}
             </div>
         @elseif ($errors->any())
@@ -11,7 +11,7 @@
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
         @else
-            <div class="media bg-primary rounded mb-3 text-white p-3">
+            <div class="media bg-dark rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (14).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">

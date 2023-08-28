@@ -5,7 +5,7 @@
     <div class="container">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">INFORMASI TOKO</h1>
         @if (session('success'))
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-dark" role="alert">
                 <strong>{{ session('success') }}</strong>
             </div>
         @elseif($errors->any())
@@ -13,7 +13,7 @@
                 <strong> Ada yang salah dengan inputan anda, silahkan input ulang 🥱</strong>
             </div>
         @else
-            <div class="media bg-primary rounded mb-3 text-white p-3">
+            <div class="media bg-dark rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (18).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
@@ -61,7 +61,7 @@
                     @enderror
                 </div>
                 <div class="mab-3">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-dark">Submit</button>
                 </div>
             </div>
         </form>
@@ -91,7 +91,7 @@
                                 <input type="text" class="form-control" name="detail" required>
                             </div>
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary text-right">Simpan</button>
+                                <button type="submit" class="btn btn-dark text-right">Simpan</button>
                             </div>
                         </form>
                     </div>

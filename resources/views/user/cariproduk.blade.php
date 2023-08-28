@@ -1,19 +1,10 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-primary">Shop</strong> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-dark">Search</strong></div>
-            </div>
-        </div>
-    </div>
 
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center font-weight-bold text-primary mb-4">
+                <div class="col-md-12 text-center font-weight-bold text-dark mb-4">
                     <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Hasil Pencarian Untuk :
                         {{ $cari }}
                         ({{ $total }} Hasil)</h3>
@@ -33,7 +24,7 @@
                                     <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                     @if ($produk->stok == 0)
                                         <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                            class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
+                                            class="btn btn-dark mt-2 disabled" tabindex="-1" role="button"
                                             aria-disabled="true">Habis</a>
                                     @else
                                         <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"

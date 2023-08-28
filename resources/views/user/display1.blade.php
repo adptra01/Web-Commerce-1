@@ -1,7 +1,7 @@
 @extends('user.app')
 @section('content')
     <div class="container my-5 text-center text-dark">
-        <h3 class="font-weight-bold text-primary">TOKO HEWAN PELIHARAAN</h3>
+        <h3 class="font-weight-bold text-dark">TOKO HEWAN PELIHARAAN</h3>
         <h1 class="font-weight-bold">BUAT HEWAN PELIHARAANMU BAHAGIA
         </h1>
     </div>
@@ -57,16 +57,16 @@
         </div>
     </div> --}}
     <div class="site-section">
-        <h6 class="text-center text-primary"><strong>TENTANG KAMI</strong></h6>
+        <h6 class="text-center text-dark"><strong>TENTANG KAMI</strong></h6>
         <h2 class="text-center text-dark"><strong>MENJAGA BAHAGIA SEPANJANG WAKTU</strong></h2>
         <div class="container pt-5">
             <div class="row">
                 <div class="col-md"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
                         alt=""></div>
                 <div class="col-md text-right">
-                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span
-                            class="text-primary">Bahagia</span> Itu <br>
-                        <span class="text-primary">Penting</span> Bagi Mereka”
+                    <h4 class="text-dark">“<span class="text-dark">Kami Tahu</span> Bahwa <span
+                            class="text-dark">Bahagia</span> Itu <br>
+                        <span class="text-dark">Penting</span> Bagi Mereka”
                     </h4>
                     <p>Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan memperoleh
                         perlengkapan berkualitas dari toko kami.</p>
@@ -79,7 +79,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-7 site-section-heading text-center pt-4">
 
-                    <h6 class="font-weight-bold text-primary">PRODUK TOKO</h6>
+                    <h6 class="font-weight-bold text-dark">PRODUK TOKO</h6>
                     <h2 class="font-weight-bold">PRODUK UNTUK SAHABAT ANDA</h2>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                                         <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
-                                                class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
+                                                class="btn btn-dark mt-2 disabled" tabindex="-1" role="button"
                                                 aria-disabled="true">Habis</a>
                                         @else
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
@@ -119,13 +119,13 @@
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s"
                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <h6 class="text-primary font-weight-bold text-uppercase mb-3">FITUR KAMI</h6>
+                    <h6 class="text-dark font-weight-bold text-uppercase mb-3">FITUR KAMI</h6>
                     <h1 class="font-weight-bold text-dark mb-5">KAMI PETSHOP TERPECAYA</h1>
                     <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s"
                         style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                         <i class="fa fa-globe text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">Produk Asli</h5>
+                            <h5 class="font-weight-bold text-dark">Produk Asli</h5>
                             <p class="mb-0 text-dark">Menjamin kualitas terbaik yang siap memenuhi kebutuhan dan harapan
                                 pelanggan kami</p>
                         </div>
@@ -134,7 +134,7 @@
                         style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
                         <i class="fa fa-shipping-fast text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">Pengiriman Tepat Waktu</h5>
+                            <h5 class="font-weight-bold text-dark">Pengiriman Tepat Waktu</h5>
                             <p class="mb-0 text-dark">Layanan pengiriman JNE yang membantu kami mengirimkan semua kebutuhan
                                 hewan peliharaan Anda.</p>
                         </div>
@@ -143,7 +143,7 @@
                         style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
                         <i class="fa fa-headphones text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
-                            <h5 class="font-weight-bold text-primary">Dukungan Telepon 24/7</h5>
+                            <h5 class="font-weight-bold text-dark">Dukungan Telepon 24/7</h5>
                             <p class="mb-0 text-dark">Anda dapat menghubungi kami kapan saja, baik siang maupun malam, untuk
                                 berkonsultasi tentang kebutuhan hewan peliharaan Anda. Tim dukungan kami siap membantu Anda
                                 dengan senang hati.</p>

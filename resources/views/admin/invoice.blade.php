@@ -1,15 +1,16 @@
 @php
     $store = App\Alamat_toko::first();
-
+    
     $cityStore = App\City::where('city_id', $store->city_id)->first();
-
+    
     $address = App\Alamat::where('user_id', $order->user_id)->first();
-
+    
     $city = App\City::where('city_id', $address->cities_id)->first()->title;
 @endphp
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +190,7 @@
     <table class="invoice-info-container">
         <tr>
             <td rowspan="2" class="client-name">
-                <h3 class="fw-bold text-primary">{{ $order->nama_pelanggan }}</h3>
+                <h3 class="fw-bold text-dark">{{ $order->nama_pelanggan }}</h3>
             </td>
             <td>
                 @if ($order->metode_pembayaran == 'cod')
@@ -271,10 +272,10 @@
                     <td>Rp. {{ number_format($order->ongkir, 2, ',', '.') }}</td>
                 </tr>
                 <tr>
-                    <td class="fw-bold text-primary">Total : </td>
+                    <td class="fw-bold text-dark">Total : </td>
                     <td></td>
                     <td></td>
-                    <td class="fw-bold text-primary">Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</td>
+                    <td class="fw-bold text-dark">Rp. {{ number_format($order->subtotal, 2, ',', '.') }}</td>
                 </tr>
             </tfoot>
         </table>

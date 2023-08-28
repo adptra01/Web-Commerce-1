@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-dark font-weight-bold" data-toggle="modal" data-target="#exampleModal">
     <i class="fa fa-credit-card" aria-hidden="true"></i> Tambah
 </button>
 
@@ -9,7 +9,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="alert bg-primary text-white" role="alert">
+                <div class="alert bg-dark text-white" role="alert">
                     <small class="modal-title" id="exampleModalLabel">
                         <strong><i class="fas fa-regular fa-bell"></i> Peringatan!!!</strong> <br>Anda akan menambahkan
                         data rekening baru. Pastikan data yang Anda masukkan sudah benar dan sesuai dengan buku
@@ -27,14 +27,14 @@
                             <label for="exampleInputUsername1">Nama Bank</label>
                             <input type="text" class="form-control" name="bank_name">
                             @error('bank_name')
-                                <small class="text-danger">{{ $message}}</small>
+                                <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="col">
                             <label for="exampleInputUsername1">Atas Nama</label>
                             <input type="text" class="form-control" name="atas_nama">
                             @error('atas_nama')
-                                <small class="text-danger">{{ $message}}</small>
+                                <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                     </div>
@@ -42,11 +42,11 @@
                         <label for="exampleInputUsername1">No Rekening</label>
                         <input type="number" class="form-control" name="no_rekening">
                         @error('no_rekening')
-                                <small class="text-danger">{{ $message}}</small>
-                            @enderror
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
+                        <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
                             Simpan</button>
                     </div>
                 </form>

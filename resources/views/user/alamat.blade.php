@@ -1,16 +1,8 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Address</strong></div>
-            </div>
-        </div>
-    </div>
     {{-- contoh --}}
     <div class="site-section">
-        <div class="container text-center">
+        <div class="container">
 
             @php
                 $address = App\Alamat::where('user_id', Auth()->user()->id)->first();
@@ -18,48 +10,61 @@
                     $city = App\City::where('city_id', $address->cities_id)->first();
                 }
             @endphp
-            <h4 class="font-weight-bold mb-3 text-primary">Alamat Sekarang</h3>
-                <h5 class="mb-4 font-weight-bold">Kota : {{ $city->title ?? 'Belum di atur' }}</h5>
-                <h5 class="mb-5 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h5>
 
-                @if ($address == true)
-                    <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-dark">Ubah
-                        Alamat</a>
-                @else
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="{{ route('user.alamat.simpan') }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="">Pilih Provinsi</label>
-                                    <select name="province_id" id="province_id" class="form-control">
-                                        <option value="">Pilih Provinsi</option>
-                                        @foreach ($province as $provinsi)
-                                            <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-grup">
-                                    <label for="">Pilih Kota/Kabupaten</label>
-                                    <select name="cities_id" id="cities_id" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="form-grup">
-                                    <label for="">Alamat Lengkap</label>
-                                    <input type="text" name="detail" id=""
-                                        placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="mt-4 text-right">
-                                    <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
-                                </div>
-                            </form>
-                        </div>
+            <div class="row">
+                <div class="col-md">
+                    <h5 class="font-weight-bold text-uppercase">Profil Akun</h5>
+
+                    <div class="list-unstyled">
+                        <span class="text-uppercase">nama: <p class="font-weight-bold">{{ auth()->user()->name }}</p>
+                        </span>
+                        <span class="text-uppercase">email: <p class="font-weight-bold">{{ auth()->user()->email }}</p>
+                        </span>
                     </div>
-                @endif
-
-
+                </div>
+                <div class="col-md">
+                    @if ($address == true)
+                    <h5 class="font-weight-bold text-uppercase">Alamat Tujuan</h5>
+                        <span class="text-uppercase">Kota: <p class="font-weight-bold">{{ $city->title ?? 'Belum di atur' }}
+                            </p>
+                        </span>
+                        <span class="text-uppercase">alamat lengkap: <p class="font-weight-bold">
+                                {{ $address->detail ?? 'Belum di atur' }}</p>
+                        </span>
+                        <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-dark">Ubah
+                            Alamat</a>
+                    @else
+                    <h5 class="font-weight-bold text-uppercase">atur alamat</h5>
+                    <form action="{{ route('user.alamat.simpan') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Pilih Provinsi</label>
+                            <select name="province_id" id="province_id" class="form-control">
+                                <option value="">Pilih Provinsi</option>
+                                @foreach ($province as $provinsi)
+                                    <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-grup">
+                            <label for="">Pilih Kota/Kabupaten</label>
+                            <select name="cities_id" id="cities_id" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-grup">
+                            <label for="">Alamat Lengkap</label>
+                            <input type="text" name="detail" id=""
+                                placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
+                            </select>
+                        </div>
+                        <div class="mt-4 text-right">
+                            <button type="submit" class="btn btn-dark">Simpan</button>
+                        </div>
+                    </form>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 @endsection

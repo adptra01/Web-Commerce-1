@@ -1,50 +1,45 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Address</strong></div>
-            </div>
-        </div>
-    </div>
-
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <form action="{{ route('user.alamat.update', ['id' => $id]) }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="">Pilih Provinsi</label>
-                                    <select name="province_id" id="province_id" class="form-control">
-                                        <option value="">Pilih Provinsi</option>
-                                        @foreach ($province as $provinsi)
-                                            <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-grup">
-                                    <label for="">Pilih Kota/Kabupaten</label>
-                                    <select name="cities_id" id="cities_id" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="form-grup">
-                                    <label for="">Alamat Lengkap</label>
-                                    <input type="text" name="detail" id=""
-                                        placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
-                                    </select>
-                                </div>
-                                <div class="mt-4 text-right">
-                                    <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
-                                </div>
-                            </form>
-                        </div>
+                <div class="col-md">
+                    <h5 class="font-weight-bold text-uppercase">Profil Akun</h5>
+                    <div class="list-unstyled">
+                        <span class="text-uppercase">nama: <p class="font-weight-bold">{{ auth()->user()->name }}</p>
+                        </span>
+                        <span class="text-uppercase">email: <p class="font-weight-bold">{{ auth()->user()->email }}</p>
+                        </span>
                     </div>
+                </div>
+                <div class="col-md">
+                    <h5 class="font-weight-bold text-uppercase">Atur Alamat</h5>
+                    <form action="{{ route('user.alamat.update', ['id' => $id]) }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Pilih Provinsi</label>
+                            <select name="province_id" id="province_id" class="form-control">
+                                <option value="">Pilih Provinsi</option>
+                                @foreach ($province as $provinsi)
+                                    <option value="{{ $provinsi->province_id }}">{{ $provinsi->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-grup">
+                            <label for="">Pilih Kota/Kabupaten</label>
+                            <select name="cities_id" id="cities_id" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-grup">
+                            <label for="">Alamat Lengkap</label>
+                            <input type="text" name="detail" id=""
+                                placeholde="Kecamatan/Desa/Nama Jalan" class="form-control">
+                            </select>
+                        </div>
+                        <div class="mt-4 text-right">
+                            <button type="submit" class="btn btn-dark">Simpan Perubahan</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-2"></div>
             </div>

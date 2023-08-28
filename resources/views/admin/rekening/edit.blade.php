@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">REKENING TOKO <small>/ {{ $rekening->atas_nama }}</small></h1>
         @if (session('success'))
-            <div class="alert alert-primary shadow" role="alert">
+            <div class="alert alert-dark shadow" role="alert">
                 {{ session('success') }}
             </div>
         @elseif ($errors->any())
@@ -11,7 +11,7 @@
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
         @else
-            <div class="media bg-primary rounded mb-3 text-white p-3">
+            <div class="media bg-dark rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (17).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
@@ -26,7 +26,7 @@
     </div>
     <div class="card shadow m-4">
         <p class="text-center font-weight-bold my-2">UBAH NO. REKENING</p>
-        <div class="card-header mx-3 rounded text-white bg-primary">
+        <div class="card-header mx-3 rounded text-white bg-dark">
             <small>Input kan ulang semua formulir dibawah atau pilih batal.</small>
         </div>
         <div class="card-header bg-white mb-3">
@@ -54,8 +54,8 @@
                         <label for="exampleInputUsername1">Atas Nama <small class="text-success">Baru</small></label>
                         <input type="text" class="form-control" name="atas_nama" value="{{ old('atas_nama') }}">
                         @error('atas_nama')
-                        <small class="text-danger fw-bold">{{ $message }}</small>
-                    @enderror
+                            <small class="text-danger fw-bold">{{ $message }}</small>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-row">
@@ -67,13 +67,13 @@
                         <label for="exampleInputUsername1">No Rekening <small class="text-success">Baru</small></label>
                         <input type="number" class="form-control" name="no_rekening" value="{{ old('no_rekening') }}">
                         @error('no_rekening')
-                        <small class="text-danger fw-bold">{{ $message }}</small>
-                    @enderror
+                            <small class="text-danger fw-bold">{{ $message }}</small>
+                        @enderror
                     </div>
                     <div class="text-right">
                         <a href="/admin/rekening" class="btn btn-secondary"><i class="fa fa-times"
                                 aria-hidden="true"></i> Batal</a>
-                        <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
+                        <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
                             Simpan</button>
                     </div>
                 </div>

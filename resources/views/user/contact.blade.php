@@ -19,7 +19,8 @@
                     <div class="mb-3 row">
                         <label for="name" class="col-md-2 col-form-label">Nama Lengkap</label>
                         <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name" autofocus>
+                            <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                                id="name" autofocus>
                             @error('name')
                                 <small class="text-danger fw-bold">{{ $message }}</small>
                             @enderror
@@ -28,7 +29,8 @@
                     <div class="mb-3 row">
                         <label for="telp" class="col-md-2 col-form-label">Telepon</label>
                         <div class="col-md-10">
-                            <input type="number" value="{{ old('telp') }}" name="telp" class="form-control" id="telp">
+                            <input type="number" value="{{ old('telp') }}" name="telp" class="form-control"
+                                id="telp">
                             @error('telp')
                                 <small class="text-danger fw-bold">{{ $message }}</small>
                             @enderror
@@ -44,7 +46,7 @@
                         </div>
                     </div>
                     <div class="mb-3 text-right">
-                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="submit" class="btn btn-outline-dark">Submit</button>
                     </div>
                 </form>
             </div>

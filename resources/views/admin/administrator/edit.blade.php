@@ -9,7 +9,7 @@
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
             {{-- @else
-        <div class="media bg-primary rounded mb-3 text-white p-3">
+        <div class="media bg-dark rounded mb-3 text-white p-3">
             <img class="align-self-center mr-3" width="230px" src="/layouts/DrawKit/vector (4).svg"
                 alt="Generic placeholder image">
             <div class="media-body">
@@ -56,7 +56,7 @@
                     <a href="/administrator" class="btn btn-secondary"><i class="fa fa-arrow-left"
                             aria-hidden="true"></i>
                         Kembali</a>
-                    <button type="submit" class="btn btn-primary text-right"><i class="fas fa-check"></i>
+                    <button type="submit" class="btn btn-dark text-right"><i class="fas fa-check"></i>
                         Simpan</button>
                 </div>
             </form>

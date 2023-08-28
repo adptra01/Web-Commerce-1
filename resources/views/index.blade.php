@@ -40,7 +40,8 @@
             <nav class="navbar navbar-expand-lg navbar-light main_box">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="/front-end/index.html"><img src="/front-end/img/logo.png" alt=""></a>
+                    <a class="navbar-brand logo_h" href="/front-end/index.html"><img src="/front-end/img/logo.png"
+                            alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -53,25 +54,31 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="/front-end/index.html">Home</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="/front-end/#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Shop</a>
+                                <a href="/front-end/#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/category.html">Shop Category</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/single-product.html">Product
+                                    <li class="nav-item"><a class="nav-link" href="/front-end/category.html">Shop
+                                            Category</a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                            href="/front-end/single-product.html">Product
                                             Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/checkout.html">Product Checkout</a>
+                                    <li class="nav-item"><a class="nav-link" href="/front-end/checkout.html">Product
+                                            Checkout</a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/cart.html">Shopping Cart</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/confirmation.html">Confirmation</a>
+                                    <li class="nav-item"><a class="nav-link" href="/front-end/cart.html">Shopping
+                                            Cart</a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                            href="/front-end/confirmation.html">Confirmation</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item submenu dropdown">
-                                <a href="/front-end/#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <a href="/front-end/#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="/front-end/blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/single-blog.html">Blog Details</a>
+                                    <li class="nav-item"><a class="nav-link" href="/front-end/single-blog.html">Blog
+                                            Details</a>
                                     </li>
                                 </ul>
                             </li>
@@ -79,15 +86,19 @@
                                 <a href="/front-end/#" class="nav-link dropdown-toggle" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/login.html">Login</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/tracking.html">Tracking</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/front-end/elements.html">Elements</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/front-end/login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link"
+                                            href="/front-end/tracking.html">Tracking</a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                            href="/front-end/elements.html">Elements</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="/front-end/contact.html">Contact</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="nav-item"><a href="/front-end/#" class="cart"><span class="ti-bag"></span></a>
+                            <li class="nav-item"><a href="/front-end/#" class="cart"><span
+                                        class="ti-bag"></span></a>
                             </li>
                             <li class="nav-item">
                                 <button class="search"><span class="lnr lnr-magnifier"
@@ -879,7 +890,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/front-end/" class="primary-btn">Shop Now</a>
+                    <a href="/front-end/" class="dark-btn">Shop Now</a>
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">
@@ -1075,7 +1086,8 @@
                 <div class="col-lg-3">
                     <div class="ctg-right">
                         <a href="/front-end/#" target="_blank">
-                            <img class="img-fluid d-block mx-auto" src="/front-end/img/category/c5.jpg" alt="">
+                            <img class="img-fluid d-block mx-auto" src="/front-end/img/category/c5.jpg"
+                                alt="">
                         </a>
                     </div>
                 </div>

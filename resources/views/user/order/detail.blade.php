@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-12 text-center">
-                    <h2 class="display-5 font-weight-bold text-primary">Detail Pesanan Anda</h2>
+                    <h2 class="display-5 font-weight-bold text-dark">Detail Pesanan Anda</h2>
                 </div>
             </div>
             <div class="row">
@@ -27,20 +27,20 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md">
-                                            <span class="text-primary"> Invoice </span>
+                                            <span class="text-dark"> Invoice </span>
                                             <td>:</td>
                                             <p class="text-dark">{{ $order->invoice }}</p>
 
-                                            <span class="text-primary">No Resi</span>
+                                            <span class="text-dark">No Resi</span>
                                             <td>:</td>
                                             <p class="text-dark">{{ $order->no_resi == null ? '-' : $order->no_resi }}</p>
 
-                                            <span class="text-primary">Status Pesanan</span>
+                                            <span class="text-dark">Status Pesanan</span>
                                             <td>:</td>
                                             <p class="text-dark">{{ $order->status }}</p>
                                         </div>
                                         <div class="col-md">
-                                            <span class="text-primary">Metode Pembayaran</span>
+                                            <span class="text-dark">Metode Pembayaran</span>
                                             <td>:</td>
                                             <p>
                                                 @if ($order->metode_pembayaran == 'trf')
@@ -50,11 +50,11 @@
                                                 @endif
                                             </p>
 
-                                            <span class="text-primary">Ongkir</span>
+                                            <span class="text-dark">Ongkir</span>
                                             <td>:</td>
                                             <p class="text-dark">Rp. {{ number_format($order->ongkir, 2, ',', '.') }}</p>
 
-                                            <span class="text-primary">Total Pembayaran</span>
+                                            <span class="text-dark">Total Pembayaran</span>
                                             <td>:</td>
                                             <p class="text-dark">Rp.
                                                 {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}
@@ -65,7 +65,7 @@
                                         <div class="col-md text-right">
                                             <a href="{{ route('user.order.pesananditerima', ['id' => $order->id]) }}"
                                                 onclik="return confirm('Yakin ingin melanjutkan ?')"
-                                                class="btn btn-primary">Pesanan Di Terima</a><br>
+                                                class="btn btn-dark">Pesanan Di Terima</a><br>
                                             <small>Jika pesanan belum datang harap jangan tekan tombol ini</small>
                                         </div>
                                     @endif

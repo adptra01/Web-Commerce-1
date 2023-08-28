@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-dark">
 
     <div class="container">
 
@@ -40,7 +40,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Selamat datang kembali!</h1>
-                                        <div class="alert bg-primary text-white alert-primary" role="alert">
+                                        <div class="alert bg-dark text-white alert-dark" role="alert">
                                             <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
                                                 memiliki akun, silakan klik tombol daftar di bawah ini.
                                             </small>
@@ -79,7 +79,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-dark btn-user btn-block">
                                             Masuk
                                         </button>
                                     </form>

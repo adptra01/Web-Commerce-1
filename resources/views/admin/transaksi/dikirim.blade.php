@@ -3,15 +3,15 @@
     <div class="container-fluid">
         <h1 class="h3 mb-2 text-gray-800 font-weight-bold">TRANSAKSI DALAM PENGIRIMAN</h1>
         @if (session('success'))
-            <div class="alert alert-primary shadow" role="alert">
+            <div class="alert alert-dark shadow" role="alert">
                 {{ session('success') }}
             </div>
         @elseif ($errors->any())
             <div class="alert alert-danger shadow" role="alert">
                 Ada yang salah dengan inputan anda, silahkan input ulang.
             </div>
-        {{-- @else
-            <div class="media bg-primary rounded mb-3 text-white p-3">
+            {{-- @else
+            <div class="media bg-dark rounded mb-3 text-white p-3">
                 <img class="align-self-center mr-3" width="230px" src="/layouts/drawKit/vector (12).svg"
                     alt="Generic placeholder image">
                 <div class="media-body">
@@ -47,16 +47,16 @@
                             <td>Rp. {{ number_format($order->subtotal + $order->biaya_cod, 2, ',', '.') }}</td>
                             <td>
                                 @if ($order->metode_pembayaran == 'cod')
-                                Cash On Delivery (COD)
-                            @elseif ($order->metode_pembayaran == 'trf')
-                                Transfer
-                            @endif
+                                    Cash On Delivery (COD)
+                                @elseif ($order->metode_pembayaran == 'trf')
+                                    Transfer
+                                @endif
                             </td>
                             <td>{{ $order->name }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="{{ route('admin.transaksi.detail', ['id' => $order->id]) }}"
-                                        class="btn btn-primary btn-sm">
+                                        class="btn btn-dark btn-sm">
                                         <i class="fa fa-eye" aria-hidden="true"></i> Detail
                                     </a>
                                 </div>
